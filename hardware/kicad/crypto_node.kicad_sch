@@ -8,7 +8,148 @@
 		(title "Cryptographical Node")
 		(rev "1.0.0")
 	)
-	(lib_symbols)
+	(lib_symbols
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
 	(wire
 		(pts
 			(xy 99.06 88.9) (xy 121.92 88.9)
@@ -21,7 +162,37 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 92.71) (xy 196.85 92.71)
+			(xy 190.5 91.44) (xy 198.12 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18b48204-7379-45eb-a927-351b361678f1")
+	)
+	(wire
+		(pts
+			(xy 146.05 128.27) (xy 146.05 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "280d353e-c919-41b9-8853-ecf0ba2a6051")
+	)
+	(wire
+		(pts
+			(xy 175.26 100.33) (xy 198.12 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "354be538-c61e-4e1e-a5c7-98a11ede978a")
+	)
+	(wire
+		(pts
+			(xy 175.26 91.44) (xy 182.88 91.44)
 		)
 		(stroke
 			(width 0)
@@ -31,7 +202,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 114.3) (xy 146.05 123.19)
+			(xy 146.05 114.3) (xy 146.05 120.65)
 		)
 		(stroke
 			(width 0)
@@ -51,17 +222,7 @@
 	)
 	(wire
 		(pts
-			(xy 142.24 38.1) (xy 142.24 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "82f1fc42-7f09-4a18-829f-b4960c318986")
-	)
-	(wire
-		(pts
-			(xy 175.26 88.9) (xy 196.85 88.9)
+			(xy 175.26 86.36) (xy 182.88 86.36)
 		)
 		(stroke
 			(width 0)
@@ -71,13 +232,43 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 114.3) (xy 151.13 123.19)
+			(xy 190.5 86.36) (xy 198.12 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87594319-a2ec-4d8d-b5d7-a5c00c3d423d")
+	)
+	(wire
+		(pts
+			(xy 152.4 114.3) (xy 152.4 120.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "b1fd5ad3-885b-42b8-afc7-1613a34a5709")
+	)
+	(wire
+		(pts
+			(xy 152.4 128.27) (xy 152.4 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc632305-cafd-4cd7-93f8-0edf2520edda")
+	)
+	(wire
+		(pts
+			(xy 142.24 38.1) (xy 142.24 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9abfcdd-0f87-42d6-96e6-a95625684450")
 	)
 	(wire
 		(pts
@@ -88,6 +279,336 @@
 			(type default)
 		)
 		(uuid "ec7c870f-2b3a-4366-82f9-f9cc68e3e391")
+	)
+	(wire
+		(pts
+			(xy 175.26 104.14) (xy 198.12 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8be1955-cd3e-44da-a15b-cb676cc59d20")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 186.69 86.36 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "832bc2c1-275c-4698-bbbd-79b6adbeb2f9")
+		(property "Reference" "R32"
+			(at 186.69 86.36 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0Ω"
+			(at 186.69 88.9 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 186.69 88.138 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 186.69 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 186.69 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8bceb2be-0aac-46d3-baaa-eb6a67ad438a")
+		)
+		(pin "2"
+			(uuid "64e8e5e1-eea0-4108-b6db-7d0d5e08d69d")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3"
+					(reference "R32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 186.69 91.44 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8ce4c23c-1516-4f51-a33e-926adc481deb")
+		(property "Reference" "R33"
+			(at 186.69 91.44 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0Ω"
+			(at 186.69 93.98 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 186.69 93.218 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 186.69 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 186.69 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ebfd0f1b-7400-4bfc-961c-b900db51276b")
+		)
+		(pin "2"
+			(uuid "eb519d43-d6ed-4963-bd38-d173c727916d")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3"
+					(reference "R33")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 152.4 124.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9eb021b4-9838-4611-a6ec-55b40dca28cb")
+		(property "Reference" "R31"
+			(at 153.67 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0Ω"
+			(at 153.67 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 150.622 124.46 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 152.4 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "811d27f0-76ec-4f45-9c97-955d74025620")
+		)
+		(pin "2"
+			(uuid "e518498d-e431-49a3-a6e9-1e52514be052")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3"
+					(reference "R31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 146.05 124.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fcd011a1-68b2-487e-a23f-8101a3f10749")
+		(property "Reference" "R28"
+			(at 147.32 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0Ω"
+			(at 147.32 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 144.272 124.46 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 146.05 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 146.05 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "64d881fa-f2b9-4380-91ac-de3466995a8c")
+		)
+		(pin "2"
+			(uuid "e9725860-5a7d-4f71-ab18-b26e823ee462")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3"
+					(reference "R28")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(sheet
 		(at 78.74 20.32)
@@ -182,17 +703,7 @@
 				(justify left top)
 			)
 		)
-		(pin "BATTERY_PERCENTAGE" input
-			(at 142.24 73.66 90)
-			(uuid "d6a1175d-0e1c-475c-9725-10878c46e3b3")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "I2C1_SCL" passive
+		(pin "I2C1_SCL" output
 			(at 121.92 88.9 180)
 			(uuid "23a018fd-ffef-48c4-a873-c0e4f1d71a43")
 			(effects
@@ -202,7 +713,7 @@
 				(justify left)
 			)
 		)
-		(pin "I2C1_SDA" passive
+		(pin "I2C1_SDA" bidirectional
 			(at 121.92 92.71 180)
 			(uuid "5cae5417-d8bc-4077-ab25-d4a955a087b6")
 			(effects
@@ -213,7 +724,7 @@
 			)
 		)
 		(pin "USART1_RX" input
-			(at 175.26 92.71 0)
+			(at 175.26 91.44 0)
 			(uuid "27ef6446-f504-45e0-a10f-ba17cf0bdf61")
 			(effects
 				(font
@@ -223,7 +734,7 @@
 			)
 		)
 		(pin "USART1_TX" output
-			(at 175.26 88.9 0)
+			(at 175.26 86.36 0)
 			(uuid "5ee87f95-3b40-44c5-b27b-9c5183092f87")
 			(effects
 				(font
@@ -233,7 +744,7 @@
 			)
 		)
 		(pin "USART2_RX" input
-			(at 151.13 114.3 270)
+			(at 152.4 114.3 270)
 			(uuid "ae33f5e0-700b-4298-97cc-9cddd45507dd")
 			(effects
 				(font
@@ -252,6 +763,36 @@
 				(justify left)
 			)
 		)
+		(pin "ADC1_IN6" input
+			(at 142.24 73.66 90)
+			(uuid "502f0432-dbb4-4c7e-b627-881eb9916967")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "PB14" passive
+			(at 175.26 104.14 0)
+			(uuid "645dd0f6-3185-46ee-84d0-54227ba49dca")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "PB15" passive
+			(at 175.26 100.33 0)
+			(uuid "b8156d33-460e-4e7b-8feb-57b7bdc9c022")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3"
@@ -261,7 +802,7 @@
 		)
 	)
 	(sheet
-		(at 196.85 81.28)
+		(at 198.12 81.28)
 		(size 53.34 40.64)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -277,7 +818,7 @@
 		)
 		(uuid "a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7")
 		(property "Sheetname" "LoRA"
-			(at 196.85 80.5684 0)
+			(at 198.12 80.5684 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
@@ -288,7 +829,7 @@
 			)
 		)
 		(property "Sheetfile" "LoRA.kicad_sch"
-			(at 196.85 122.5046 0)
+			(at 198.12 122.5046 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -299,7 +840,7 @@
 			)
 		)
 		(pin "LORA_RX" input
-			(at 196.85 88.9 180)
+			(at 198.12 86.36 180)
 			(uuid "45a62d7e-b03e-4805-a5fa-670d14354ea5")
 			(effects
 				(font
@@ -309,8 +850,28 @@
 			)
 		)
 		(pin "LORA_TX" output
-			(at 196.85 92.71 180)
+			(at 198.12 91.44 180)
 			(uuid "b5948df1-348b-43bd-b04b-9cdc5f73d793")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LORA_M0" input
+			(at 198.12 100.33 180)
+			(uuid "56a16a6d-5817-440e-a839-cf9103760df1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LORA_M1" input
+			(at 198.12 104.14 180)
+			(uuid "c1c06079-0a49-45f2-8b88-cefd6d66c3b5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -439,7 +1000,7 @@
 		)
 	)
 	(sheet
-		(at 121.92 123.19)
+		(at 121.92 135.89)
 		(size 53.34 40.64)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -455,7 +1016,7 @@
 		)
 		(uuid "e995d37b-7e81-489c-a8c7-4473f579a36c")
 		(property "Sheetname" "GPS"
-			(at 121.92 122.4784 0)
+			(at 121.92 135.1784 0)
 			(show_name yes)
 			(do_not_autoplace no)
 			(effects
@@ -466,7 +1027,7 @@
 			)
 		)
 		(property "Sheetfile" "GPS.kicad_sch"
-			(at 121.92 164.4146 0)
+			(at 121.92 177.1146 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -477,7 +1038,7 @@
 			)
 		)
 		(pin "GPS_RX" input
-			(at 146.05 123.19 90)
+			(at 146.05 135.89 90)
 			(uuid "a253d45f-f469-4aa8-ba08-576c1c790142")
 			(effects
 				(font
@@ -487,7 +1048,7 @@
 			)
 		)
 		(pin "GPS_TX" output
-			(at 151.13 123.19 90)
+			(at 152.4 135.89 90)
 			(uuid "fa4f0649-2de5-4dcc-8bb3-a544b8b1bb84")
 			(effects
 				(font

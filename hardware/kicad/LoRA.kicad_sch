@@ -557,184 +557,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Jumper:SolderJumper_2_Open"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom no)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "JP"
-				(at 0 2.032 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "SolderJumper_2_Open"
-				(at 0 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 -7.62 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Solder Jumper, 2-pole, open"
-				(at 0 -5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "solder jumper SPST"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "SolderJumper*Open*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "SolderJumper_2_Open_0_1"
-				(polyline
-					(pts
-						(xy -0.254 1.016) (xy -0.254 -1.016)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -0.254 -1.016)
-					(mid -1.2656 0)
-					(end -0.254 1.016)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(arc
-					(start 0.254 1.016)
-					(mid 1.2656 0)
-					(end 0.254 -1.016)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 1.016) (xy 0.254 -1.016)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SolderJumper_2_Open_1_1"
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 3.81)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "PCM_SparkFun-PowerSymbol:GND"
 			(power global)
 			(pin_names
@@ -1027,22 +849,10 @@
 		(uuid "6a99e74a-84ed-4883-90d2-35151ed99a5e")
 	)
 	(junction
-		(at 60.96 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4acf8441-399e-4e58-917a-fb6e2d2c87ab")
-	)
-	(junction
 		(at 81.28 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "577c2102-a5e9-495e-b442-b6cebdf55a4d")
-	)
-	(junction
-		(at 64.77 46.99)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "692d6031-b86d-40f1-b19d-e8d39ef06287")
 	)
 	(junction
 		(at 64.77 83.82)
@@ -1061,12 +871,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d4185e24-0bed-43ef-8f3b-a9f09e34ec52")
-	)
-	(junction
-		(at 68.58 68.58)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d534d0d6-4390-4a11-9f2e-92636358274d")
 	)
 	(junction
 		(at 142.24 52.07)
@@ -1130,16 +934,6 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 44.45) (xy 64.77 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "37b60299-5f41-4e72-8cd4-c4e836336dc0")
-	)
-	(wire
-		(pts
 			(xy 68.58 68.58) (xy 81.28 68.58)
 		)
 		(stroke
@@ -1197,26 +991,6 @@
 			(type default)
 		)
 		(uuid "5f7bdf9e-c890-458d-b2c0-e7e32520b4e5")
-	)
-	(wire
-		(pts
-			(xy 60.96 59.69) (xy 60.96 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6450233a-bb2f-4d23-aa24-a822790e0c0b")
-	)
-	(wire
-		(pts
-			(xy 64.77 46.99) (xy 60.96 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "68fe08c8-9bb5-40f3-9db7-f14458709c63")
 	)
 	(wire
 		(pts
@@ -1300,26 +1074,6 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 49.53) (xy 68.58 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9b7c3c03-abcd-4675-ad7a-567890ef5cbf")
-	)
-	(wire
-		(pts
-			(xy 68.58 59.69) (xy 68.58 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9bc1cb25-0ff9-4e72-b419-2bfb108911df")
-	)
-	(wire
-		(pts
 			(xy 68.58 80.01) (xy 68.58 83.82)
 		)
 		(stroke
@@ -1390,16 +1144,6 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 46.99) (xy 64.77 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c34e3b07-bc8e-4884-b5bd-cb199b829d33")
-	)
-	(wire
-		(pts
 			(xy 60.96 83.82) (xy 64.77 83.82)
 		)
 		(stroke
@@ -1427,16 +1171,6 @@
 			(type default)
 		)
 		(uuid "d09c5794-39f7-400e-8ad1-cde160321ea2")
-	)
-	(wire
-		(pts
-			(xy 60.96 46.99) (xy 60.96 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e666b7c2-1476-400e-83ec-855c626b0dcd")
 	)
 	(polyline
 		(pts
@@ -1651,87 +1385,6 @@
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
 					(reference "U8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:SolderJumper_2_Open")
-		(at 60.96 54.61 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "21d4e58f-4d87-4077-bc64-688c17977e01")
-		(property "Reference" "JP1"
-			(at 62.23 52.07 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "Jump"
-			(at 62.23 57.15 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 60.96 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 68.58 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Solder Jumper, 2-pole, open"
-			(at 66.04 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "cad8c475-5d68-410d-ace7-c84965525d64")
-		)
-		(pin "1"
-			(uuid "65f26a55-ad98-469d-b1a0-e27f23b27174")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
-					(reference "JP1")
 					(unit 1)
 				)
 			)
@@ -2137,87 +1790,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Jumper:SolderJumper_2_Open")
-		(at 68.58 54.61 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "913377af-fc3b-4e9f-bac0-0398e0380f71")
-		(property "Reference" "JP5"
-			(at 69.85 52.07 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "Jump"
-			(at 69.85 57.15 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 68.58 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 76.2 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Solder Jumper, 2-pole, open"
-			(at 73.66 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "1db06380-970c-4e4a-adda-9cfb4b38bc46")
-		)
-		(pin "1"
-			(uuid "1353c11b-f54f-4d99-9f3d-5f132e463d01")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
-					(reference "JP5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
 		(at 115.57 86.36 0)
 		(unit 1)
@@ -2290,84 +1862,6 @@
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
 					(reference "#PWR090")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 64.77 44.45 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c2f100a3-8647-44db-b5f1-53461e203f63")
-		(property "Reference" "#PWR092"
-			(at 64.77 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 64.77 39.37 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 64.77 44.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 64.77 44.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 64.77 44.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3f8be3da-679a-484c-b643-c1d97892c05f")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
-					(reference "#PWR092")
 					(unit 1)
 				)
 			)
