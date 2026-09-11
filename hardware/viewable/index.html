@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cryptographic Tactical Node — Schematic Verification & Audit Suite</title>
+  <title>Cryptographic Tactical Node — Schematic Verification, 5V-Tolerance Guide & Audit Suite</title>
   <style>
     :root {
       --bg-primary: #0b0f19;
@@ -24,19 +24,35 @@
       --code-bg: #030712;
       --radius: 10px;
       --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+
+      --safe-green: #2ea043;
+      --safe-green-bg: rgba(46, 160, 67, 0.15);
+      --safe-green-border: rgba(46, 160, 67, 0.4);
+      
+      --danger-red: #f85149;
+      --danger-red-bg: rgba(248, 81, 73, 0.15);
+      --danger-red-border: rgba(248, 81, 73, 0.4);
+
+      --warn-yellow: #d29922;
+      --warn-yellow-bg: rgba(210, 153, 34, 0.15);
+      --warn-yellow-border: rgba(210, 153, 34, 0.4);
+
+      --power-blue: #58a6ff;
+      --power-blue-bg: rgba(88, 166, 255, 0.15);
+      --power-blue-border: rgba(88, 166, 255, 0.4);
     }
 
     [data-theme="light"] {
-      --bg-primary: #f3f4f6;
+      --bg-primary: #f8fafc;
       --bg-secondary: #ffffff;
-      --bg-card: #ffffff;
-      --bg-card-hover: #f9fafb;
-      --text-primary: #111827;
-      --text-secondary: #4b5563;
-      --text-muted: #9ca3af;
-      --border-color: #e5e7eb;
-      --border-light: #d1d5db;
-      --code-bg: #1e293b;
+      --bg-card: #f1f5f9;
+      --bg-card-hover: #e2e8f0;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --border-color: #cbd5e1;
+      --border-light: #94a3b8;
+      --code-bg: #e2e8f0;
       --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
 
@@ -61,7 +77,7 @@
     .header-container {
       max-width: 1440px;
       margin: 0 auto;
-      padding: 1rem 1.5rem;
+      padding: 0.85rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -103,7 +119,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      padding: 0.5rem 0.9rem;
+      padding: 0.45rem 0.85rem;
       border-radius: 6px;
       font-size: 0.825rem;
       font-weight: 600;
@@ -129,7 +145,7 @@
       background-color: var(--bg-primary);
       border-bottom: 1px solid var(--border-color);
       position: sticky;
-      top: 69px;
+      top: 61px;
       z-index: 90;
     }
     .nav-tabs {
@@ -144,11 +160,14 @@
     .nav-tab {
       padding: 0.75rem 1rem;
       color: var(--text-secondary);
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       font-weight: 600;
       text-decoration: none;
       border-bottom: 2px solid transparent;
       transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
     }
     .nav-tab:hover, .nav-tab.active {
       color: var(--accent-cyan);
@@ -158,14 +177,14 @@
     /* Main Container */
     main {
       max-width: 1440px;
-      margin: 2rem auto;
+      margin: 1.5rem auto;
       padding: 0 1.5rem;
     }
 
     /* Scorecard */
     .scorecard-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1rem;
       margin-bottom: 2rem;
     }
@@ -173,11 +192,11 @@
       background-color: var(--bg-secondary);
       border: 1px solid var(--border-color);
       border-radius: var(--radius);
-      padding: 1.25rem;
+      padding: 1.15rem;
       box-shadow: var(--shadow);
     }
     .card-stat {
-      font-size: 2rem;
+      font-size: 1.85rem;
       font-weight: 800;
       line-height: 1.1;
       margin-bottom: 0.25rem;
@@ -188,8 +207,8 @@
     .stat-cyan { color: var(--accent-cyan); }
     .stat-purple { color: var(--accent-purple); }
     .card-title {
-      font-size: 0.825rem;
-      font-weight: 600;
+      font-size: 0.8rem;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--text-secondary);
@@ -197,13 +216,13 @@
     .card-desc {
       font-size: 0.75rem;
       color: var(--text-muted);
-      margin-top: 0.4rem;
+      margin-top: 0.35rem;
     }
 
     /* Section Styling */
     section {
       margin-bottom: 3rem;
-      scroll-margin-top: 130px;
+      scroll-margin-top: 120px;
     }
     .section-header {
       display: flex;
@@ -212,9 +231,11 @@
       margin-bottom: 1.25rem;
       border-bottom: 2px solid var(--border-color);
       padding-bottom: 0.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
     .section-header h2 {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 800;
       display: flex;
       align-items: center;
@@ -249,188 +270,298 @@
     .sheet-selector {
       display: flex;
       gap: 0.4rem;
-      flex-wrap: wrap;
+      overflow-x: auto;
+      white-space: nowrap;
     }
     .sheet-btn {
-      background-color: var(--bg-secondary);
-      color: var(--text-secondary);
-      border: 1px solid var(--border-color);
-      padding: 0.35rem 0.75rem;
-      border-radius: 6px;
+      padding: 0.4rem 0.8rem;
       font-size: 0.8rem;
       font-weight: 600;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-secondary);
+      color: var(--text-secondary);
       cursor: pointer;
       transition: all 0.2s;
     }
-    .sheet-btn:hover {
-      color: var(--text-primary);
-      border-color: var(--border-light);
-    }
-    .sheet-btn.active {
+    .sheet-btn:hover, .sheet-btn.active {
       background-color: var(--accent-blue);
       color: #fff;
       border-color: var(--accent-blue);
     }
-    .zoom-controls {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .zoom-btn {
-      background-color: var(--bg-secondary);
-      color: var(--text-primary);
-      border: 1px solid var(--border-color);
-      width: 32px;
-      height: 32px;
-      border-radius: 6px;
-      cursor: pointer;
+    .viewer-viewport {
+      height: 600px;
+      overflow: auto;
+      background-color: #060911;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: bold;
-    }
-    .zoom-btn:hover { background-color: var(--bg-card-hover); }
-    .viewport {
-      height: 680px;
-      overflow: hidden;
       position: relative;
-      background-color: #ffffff;
-      cursor: grab;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      user-select: none;
     }
-    .viewport:active { cursor: grabbing; }
-    .svg-wrapper {
+    .viewer-viewport img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.2s ease-out;
       transform-origin: center center;
-      transition: transform 0.1s ease-out;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .svg-wrapper object, .svg-wrapper embed {
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
     }
 
-    /* Issues List */
-    .filter-bar {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
+    /* Chip Visualizer & Inspector Layout */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
     }
-    .filter-chip {
-      padding: 0.35rem 0.85rem;
-      border-radius: 9999px;
-      font-size: 0.8rem;
+    .summary-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .summary-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+    .summary-card.danger::before { background: var(--danger-red); }
+    .summary-card.safe::before { background: var(--safe-green); }
+    .summary-card.warn::before { background: var(--warn-yellow); }
+    .summary-card h3 {
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .summary-card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    .layout-split {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 1024px) {
+      .layout-split { grid-template-columns: 1fr; }
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+      align-items: center;
+    }
+    .filter-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
       font-weight: 600;
       cursor: pointer;
-      border: 1px solid var(--border-color);
-      background-color: var(--bg-secondary);
-      color: var(--text-secondary);
       transition: all 0.2s;
     }
-    .filter-chip.active {
-      background-color: var(--accent-blue);
+    .filter-btn:hover, .filter-btn.active {
+      background: #2563eb;
+      border-color: #2563eb;
       color: #fff;
+    }
+    .search-input {
+      margin-left: auto;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 6px 12px;
+      color: var(--text-primary);
+      font-size: 0.85rem;
+      outline: none;
+      width: 220px;
+    }
+    .search-input:focus {
       border-color: var(--accent-blue);
     }
-    .issue-card {
-      background-color: var(--bg-secondary);
+
+    .chip-container {
+      background: var(--bg-secondary);
       border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      margin-bottom: 1rem;
-      overflow: hidden;
-      transition: border-color 0.2s;
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
     }
-    .issue-card:hover { border-color: var(--border-light); }
-    .issue-header {
-      padding: 1rem 1.25rem;
+    .chip-wrapper {
+      position: relative;
+      width: 540px;
+      height: 540px;
+      max-width: 100%;
+      margin: 20px 0;
+    }
+    @media (max-width: 600px) {
+      .chip-wrapper { display: none; }
+      .mobile-chip-notice { display: block !important; }
+    }
+    .mobile-chip-notice {
+      display: none;
+      padding: 12px;
+      background: rgba(88, 166, 255, 0.1);
+      border: 1px solid rgba(88, 166, 255, 0.3);
+      border-radius: 6px;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .ic-body {
+      position: absolute;
+      top: 90px;
+      left: 90px;
+      width: 360px;
+      height: 360px;
+      background: #1e293b;
+      border: 2px solid #334155;
+      border-radius: 12px;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.6), 0 8px 24px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      pointer-events: none;
+    }
+    .pin1-dot {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      width: 14px;
+      height: 14px;
+      background: #475569;
+      border-radius: 50%;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.8);
+    }
+    .ic-label-brand {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .ic-label-part {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #f8fafc;
+      letter-spacing: 1px;
+    }
+    .ic-label-sub {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+
+    .chip-pin {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.15s, background-color 0.15s, box-shadow 0.15s;
+      user-select: none;
+    }
+    .chip-pin:hover, .chip-pin.selected {
+      transform: scale(1.18);
+      z-index: 10;
+      box-shadow: 0 0 10px rgba(255,255,255,0.4);
+    }
+    .chip-pin.project-active {
+      box-shadow: 0 0 0 2px var(--accent-cyan);
+    }
+
+    .pin-not-tolerant { background: var(--danger-red); color: #fff; }
+    .pin-tolerant { background: #238636; color: #fff; }
+    .pin-warning { background: #9e6a03; color: #fff; border: 1px dashed #f0883e; }
+    .pin-power { background: #1f6feb; color: #fff; }
+    .chip-pin.dimmed { opacity: 0.2; filter: grayscale(0.8); }
+
+    .pin-side-left {
+      width: 78px; height: 24px; left: 8px; border-radius: 4px 0 0 4px; justify-content: flex-start; padding-left: 6px;
+    }
+    .pin-side-bottom {
+      width: 24px; height: 78px; bottom: 8px; border-radius: 0 0 4px 4px; writing-mode: vertical-rl; text-orientation: mixed; padding-bottom: 6px;
+    }
+    .pin-side-right {
+      width: 78px; height: 24px; right: 8px; border-radius: 0 4px 4px 0; justify-content: flex-end; padding-right: 6px;
+    }
+    .pin-side-top {
+      width: 24px; height: 78px; top: 8px; border-radius: 4px 4px 0 0; writing-mode: vertical-rl; text-orientation: mixed; padding-top: 6px;
+    }
+
+    .inspector-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      position: sticky;
+      top: 130px;
+    }
+    .inspector-header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .inspector-header h2 {
+      font-size: 1.25rem;
+      color: var(--text-primary);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      cursor: pointer;
-      background-color: var(--bg-card);
-      user-select: none;
+      flex-wrap: wrap;
     }
-    .issue-title-group {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .badge-sev {
-      font-size: 0.7rem;
-      font-weight: 800;
-      padding: 0.2rem 0.5rem;
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 8px;
       border-radius: 4px;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      margin-top: 4px;
     }
-    .badge-critical { background-color: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid #ef4444; }
-    .badge-high { background-color: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid #f59e0b; }
-    .badge-medium { background-color: rgba(139, 92, 246, 0.2); color: #a78bfa; border: 1px solid #8b5cf6; }
-    .badge-low { background-color: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #3b82f6; }
-    .issue-id {
-      font-family: monospace;
-      font-weight: 700;
-      color: var(--text-secondary);
-      font-size: 0.85rem;
+    .badge-danger { background: var(--danger-red-bg); color: var(--danger-red); border: 1px solid var(--danger-red-border); }
+    .badge-safe { background: var(--safe-green-bg); color: #3fb950; border: 1px solid var(--safe-green-border); }
+    .badge-warn { background: var(--warn-yellow-bg); color: #d29922; border: 1px solid var(--warn-yellow-border); }
+    .badge-power { background: var(--power-blue-bg); color: var(--power-blue); border: 1px solid var(--power-blue-border); }
+    .inspector-field { margin-bottom: 12px; }
+    .inspector-field label {
+      display: block; font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px; margin-bottom: 2px;
     }
-    .issue-name {
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-    .issue-location {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      font-family: monospace;
-    }
-    .issue-body {
-      padding: 1.25rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      border-top: 1px solid var(--border-color);
-    }
-    @media (max-width: 860px) {
-      .issue-body { grid-template-columns: 1fr; }
-    }
-    .issue-col h4 {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .col-problem h4 { color: var(--accent-red); }
-    .col-solution h4 { color: var(--accent-green); }
-    .issue-col p, .issue-col ul {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-    }
-    .issue-col ul {
-      padding-left: 1.2rem;
-      margin-top: 0.4rem;
-    }
-    .code-box {
-      background-color: var(--code-bg);
-      border: 1px solid var(--border-color);
+    .inspector-field .value { font-size: 0.9rem; color: var(--text-primary); }
+    .inspector-callout {
+      background: var(--bg-card);
       border-radius: 6px;
-      padding: 0.6rem 0.8rem;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 0.8rem;
-      color: #38bdf8;
-      margin-top: 0.5rem;
-      overflow-x: auto;
+      padding: 12px;
+      font-size: 0.85rem;
+      margin-top: 14px;
+      border-left: 3px solid var(--border-color);
     }
 
-    /* Intentional Decisions Table */
+    /* Tables */
     .table-container {
       background-color: var(--bg-secondary);
       border: 1px solid var(--border-color);
@@ -441,178 +572,202 @@
       width: 100%;
       border-collapse: collapse;
       text-align: left;
-      font-size: 0.875rem;
+      font-size: 0.85rem;
     }
     th {
       background-color: var(--bg-card);
-      padding: 0.85rem 1rem;
-      font-weight: 700;
       color: var(--text-secondary);
+      font-weight: 700;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
       text-transform: uppercase;
       font-size: 0.75rem;
       letter-spacing: 0.05em;
-      border-bottom: 1px solid var(--border-color);
     }
     td {
-      padding: 1rem;
+      padding: 0.75rem 1rem;
       border-bottom: 1px solid var(--border-color);
-      vertical-align: top;
+      color: var(--text-primary);
     }
     tr:last-child td { border-bottom: none; }
     tr:hover td { background-color: var(--bg-card-hover); }
-    .tag-feature {
-      background-color: rgba(16, 185, 129, 0.2);
-      color: #10b981;
-      font-weight: 700;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      display: inline-block;
-    }
+    tr.highlighted td { background-color: rgba(59, 130, 246, 0.15) !important; }
 
-    /* Calculator */
-    .calc-card {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 1.5rem;
+    .status-pill {
+      padding: 2px 8px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .status-pill.danger { background: var(--danger-red-bg); color: var(--danger-red); }
+    .status-pill.safe { background: var(--safe-green-bg); color: #3fb950; }
+    .status-pill.warn { background: var(--warn-yellow-bg); color: #d29922; }
+    .status-pill.power { background: var(--power-blue-bg); color: var(--power-blue); }
+
+    /* Simulator */
+    .sim-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      gap: 1.5rem;
     }
-    @media (max-width: 860px) {
-      .calc-card { grid-template-columns: 1fr; }
+    @media (max-width: 868px) {
+      .sim-grid { grid-template-columns: 1fr; }
     }
-    .calc-inputs {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
+    .slider-group {
+      margin-bottom: 1rem;
     }
-    .input-group label {
+    .slider-header {
       display: flex;
       justify-content: space-between;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
+      font-size: 0.825rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-secondary);
     }
-    .input-group input[type="range"] {
+    .slider-header span.val {
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+    input[type="range"] {
       width: 100%;
       accent-color: var(--accent-cyan);
     }
-    .calc-results {
-      background-color: var(--bg-card);
+
+    .telemetry-card {
+      background: linear-gradient(135deg, rgba(31, 41, 55, 0.7), rgba(17, 24, 39, 0.9));
       border: 1px solid var(--border-color);
-      border-radius: 8px;
+      border-radius: var(--radius);
       padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
     }
-    .result-box {
+    .metric-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
       text-align: center;
-      padding: 0.75rem;
-      border-radius: 6px;
-      background-color: var(--bg-secondary);
     }
-    .result-val {
-      font-size: 2.2rem;
+    .metric-val {
+      font-size: 1.5rem;
       font-weight: 800;
       color: var(--accent-cyan);
     }
-    .result-sub {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
+    .metric-lbl {
+      font-size: 0.725rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 2px;
     }
 
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border-color);
+    /* Issue Card */
+    .issue-card {
       background-color: var(--bg-secondary);
-      padding: 2rem 1.5rem;
-      text-align: center;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .issue-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .issue-title {
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .issue-fix {
+      background-color: var(--code-bg);
+      border-left: 3px solid var(--accent-blue);
+      padding: 0.75rem 1rem;
+      border-radius: 0 6px 6px 0;
+      margin-top: 0.75rem;
       font-size: 0.825rem;
-      color: var(--text-muted);
-      margin-top: 4rem;
+    }
+
+    code {
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85em;
+      color: #f59e0b;
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Header -->
+  <!-- Top Navigation Header -->
   <header>
     <div class="header-container">
       <div class="logo-area">
-        <span class="badge-tactical">SECURE HARDWARE</span>
+        <span class="badge-tactical">MIL-SPEC</span>
         <div class="title-group">
           <h1>Cryptographic Tactical Node</h1>
-          <p>KiCad 10 Comprehensive Schematic Audit & Verification Dashboard</p>
+          <p>Schematic Verification, STM32F411 Pinout 5V-Tolerance Guide & Audit Suite</p>
         </div>
       </div>
       <div class="header-actions">
-        <a href="crypto_node_schematics.pdf" target="_blank" class="btn btn-primary" download>
-          <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 2l3 3h-3V4zM6 16V4h3v5h5v7H6z"/></svg>
-          Schematic PDF
-        </a>
-        <a href="crypto_node_bom.csv" target="_blank" class="btn btn-secondary" download>
-          <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M3 3a1 1 0 011-1h12a1 1 0 011 1v14a1 1 0 01-1 1H4a1 1 0 01-1-1V3zm2 2v10h10V5H5zm2 2h6v2H7V7zm0 4h6v2H7v-2z"/></svg>
-          BOM CSV
-        </a>
-        <button id="themeToggle" class="btn btn-secondary">
-          <span id="themeIcon">☀️ Light</span>
-        </button>
+        <a href="crypto_node_schematics.pdf" target="_blank" class="btn btn-primary">📄 Download Schematic PDF</a>
+        <a href="crypto_node_bom.csv" download class="btn btn-secondary">📊 Download BOM CSV</a>
+        <button onclick="toggleTheme()" class="btn btn-secondary" id="themeBtn">🌓 Theme</button>
       </div>
     </div>
   </header>
 
-  <!-- Sticky Sub-Navigation -->
+  <!-- Navigation Sub-Bar -->
   <nav class="sub-nav">
     <div class="nav-tabs">
-      <a href="#overview" class="nav-tab active">Executive Scorecard</a>
-      <a href="#viewer" class="nav-tab">Interactive Viewer</a>
-      <a href="#issues" class="nav-tab">Issues & Solutions (13)</a>
-      <a href="#decisions" class="nav-tab">Intentional Decisions (8)</a>
-      <a href="#subsystems" class="nav-tab">Subsystem Deep-Dive</a>
-      <a href="#pinmux" class="nav-tab">STM32 Pinmux Matrix</a>
+      <a href="#overview" class="nav-tab active">Overview</a>
+      <a href="#viewer" class="nav-tab">Schematic Viewer</a>
+      <a href="#pinout-visualizer" class="nav-tab">UFQFPN48 5V Visual Guide</a>
+      <a href="#pinmux" class="nav-tab">Pinmux Matrix</a>
+      <a href="#issues" class="nav-tab">ERC & Audit Report</a>
+      <a href="#decisions" class="nav-tab">Design Authority (D-01–D-08)</a>
       <a href="#calculator" class="nav-tab">Battery Runtime Simulator</a>
-      <a href="#bom" class="nav-tab">BOM & Footprint Audit</a>
+      <a href="#bom" class="nav-tab">Bill of Materials</a>
     </div>
   </nav>
 
-  <!-- Main Body -->
   <main>
-
-    <!-- 1. Executive Scorecard -->
+    <!-- 1. Executive Summary / Scorecard -->
     <section id="overview">
-      <div class="section-header">
-        <h2>Verification Health Scorecard</h2>
-        <span class="tag" style="background: rgba(59, 130, 246, 0.2); color: #3b82f6;">AUDIT REV 1.0.0</span>
-      </div>
       <div class="scorecard-grid">
         <div class="card">
-          <div class="card-stat stat-red">5</div>
-          <div class="card-title">Critical Flaws</div>
-          <div class="card-desc">Dangling ADC/LED labels & LoRA 5V overvoltage risk</div>
+          <div class="card-stat stat-green">35 / 36</div>
+          <div class="card-title">5V-Tolerant GPIOs</div>
+          <p class="card-desc">All GPIOs except PA0 are FT (5V tolerant) in digital mode.</p>
         </div>
         <div class="card">
-          <div class="card-stat stat-amber">3</div>
-          <div class="card-title">High Priority Risks</div>
-          <div class="card-desc">Parasitic drain, switch placement & crystal mismatch</div>
+          <div class="card-stat stat-red">PA0 Only</div>
+          <div class="card-title">Strict 3.3V GPIO (TC)</div>
+          <p class="card-desc">Battery divider moved to PA6 (FT) to prevent PA0 overvoltage.</p>
         </div>
         <div class="card">
-          <div class="card-stat stat-cyan">8</div>
-          <div class="card-title">Intentional Choices</div>
-          <div class="card-desc">Validated architectural features mistaken for bugs</div>
+          <div class="card-stat stat-amber">2 Errors / 10 Warn</div>
+          <div class="card-title">KiCad 10.0.6 ERC</div>
+          <p class="card-desc">Power flag collisions (#FLG05, #FLG07) & CE/PROG2 net conflicts identified.</p>
         </div>
         <div class="card">
-          <div class="card-stat stat-purple">7</div>
-          <div class="card-title">Schematic Sheets</div>
-          <div class="card-desc">Hierarchical multi-sheet KiCad 10 project</div>
+          <div class="card-stat stat-cyan">4.94 Days</div>
+          <div class="card-title">Tactical Battery Life</div>
+          <p class="card-desc">2000 mAh Li-Po with 5% beacon duty cycle (1s TX / 19s sleep).</p>
         </div>
         <div class="card">
-          <div class="card-stat stat-green">98%</div>
-          <div class="card-title">Target Health Post-Fix</div>
-          <div class="card-desc">Ready for PCB layout upon applying prescribed fixes</div>
+          <div class="card-stat stat-purple">EAL 6+ Crypto</div>
+          <div class="card-title">Hardware Security</div>
+          <p class="card-desc">Isolated NXP SE050C1 via dedicated TLV74333 LDO (D-01 side-channel defense).</p>
         </div>
       </div>
     </section>
@@ -620,798 +775,687 @@
     <!-- 2. Interactive Schematic Viewer -->
     <section id="viewer">
       <div class="section-header">
-        <h2>Interactive High-Resolution Schematic Viewer</h2>
-        <span class="tag" style="background: rgba(16, 185, 129, 0.2); color: #10b981;">VECTOR SVG ENGINE</span>
+        <h2>Schematic Sheets Viewer</h2>
+        <span class="tag" style="background: rgba(59, 130, 246, 0.2); color: #3b82f6;">KiCad 10.0.6 Plotted SVGs</span>
       </div>
       <div class="viewer-container">
         <div class="viewer-toolbar">
-          <div class="sheet-selector" id="sheetTabs">
-            <button class="sheet-btn active" data-src="crypto_node.svg">1. Root Architecture</button>
-            <button class="sheet-btn" data-src="crypto_node-Power.svg">2. Power Management</button>
-            <button class="sheet-btn" data-src="crypto_node-STM32.svg">3. STM32 Core</button>
-            <button class="sheet-btn" data-src="crypto_node-LoRA.svg">4. LoRA Radio</button>
-            <button class="sheet-btn" data-src="crypto_node-GPS.svg">5. GPS Tracking</button>
-            <button class="sheet-btn" data-src="crypto_node-Crypt.svg">6. SE050 Crypto</button>
-            <button class="sheet-btn" data-src="crypto_node-Tampering.svg">7. Tamper Detection</button>
+          <div class="sheet-selector">
+            <button class="sheet-btn active" onclick="loadSheet('crypto_node.svg', this)">1. Root Hierarchy</button>
+            <button class="sheet-btn" onclick="loadSheet('crypto_node-Power.svg', this)">2. Power Management</button>
+            <button class="sheet-btn" onclick="loadSheet('crypto_node-STM32.svg', this)">3. STM32 MCU</button>
+            <button class="sheet-btn" onclick="loadSheet('crypto_node-GPS.svg', this)">4. GPS (NEO-M8N)</button>
+            <button class="sheet-btn" onclick="loadSheet('crypto_node-LoRA.svg', this)">5. LoRA (E32-900T20D)</button>
+            <button class="sheet-btn" onclick="loadSheet('crypto_node-Crypt.svg', this)">6. Crypto (SE050)</button>
+            <button class="sheet-btn" onclick="loadSheet('crypto_node-Tampering.svg', this)">7. Anti-Tamper</button>
           </div>
-          <div class="zoom-controls">
-            <button class="zoom-btn" id="zoomIn" title="Zoom In">+</button>
-            <button class="zoom-btn" id="zoomOut" title="Zoom Out">-</button>
-            <button class="zoom-btn" id="zoomReset" title="Reset Zoom">↺</button>
-            <a id="downloadSvgBtn" href="crypto_node.svg" target="_blank" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;" download>Save SVG</a>
+          <div style="display:flex; gap:0.5rem;">
+            <button class="btn btn-secondary" onclick="zoomIn()">➕ Zoom In</button>
+            <button class="btn btn-secondary" onclick="zoomOut()">➖ Zoom Out</button>
+            <button class="btn btn-secondary" onclick="zoomReset()">↺ Reset</button>
           </div>
         </div>
-        <div class="viewport" id="svgViewport">
-          <div class="svg-wrapper" id="svgWrapper">
-            <object id="svgObject" data="crypto_node.svg" type="image/svg+xml">
-              Your browser does not support SVG viewer.
-            </object>
+        <div class="viewer-viewport" id="viewport">
+          <img src="crypto_node.svg" id="schematicImg" alt="Schematic Diagram">
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. STM32F411CE Pinout & 5V Tolerance Visual Guide (From Downloads/temp) -->
+    <section id="pinout-visualizer">
+      <div class="section-header">
+        <h2>STM32F411CE Pinout & 5V Tolerance Visual Guide</h2>
+        <span class="tag" style="background: rgba(16, 185, 129, 0.2); color: #10b981;">UFQFPN-48 Physical Package</span>
+      </div>
+
+      <!-- Key takeaways banner -->
+      <div class="summary-grid">
+        <div class="summary-card danger">
+          <h3>🚫 Only 1 GPIO is NOT 5V Tolerant</h3>
+          <p><strong>PA0 (Pin 10)</strong> is the only GPIO with a <code>TC</code> structure. Strictly a 3.3V input (Max 3.6V). <strong>5V will permanently damage PA0!</strong></p>
+        </div>
+        <div class="summary-card safe">
+          <h3>✅ 35 GPIOs ARE 5V Tolerant</h3>
+          <p>All other GPIOs (<strong>PA1–PA15, PB0–PB15, PC13–PC15, PH0–PH1</strong>) have <code>FT</code> structure and safely accept 5V in standard digital mode.</p>
+        </div>
+        <div class="summary-card warn">
+          <h3>⚠️ ADC & Oscillator Warning</h3>
+          <p>Pins <strong>PA1–PA7</strong> & <strong>PB0–PB1</strong> lose 5V tolerance when used as ADC inputs. <strong>PH0/PH1</strong> and <strong>PC14/PC15</strong> lose it when crystals are enabled.</p>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <button class="filter-btn active" onclick="setFilter('all')">All Pins (48)</button>
+        <button class="filter-btn" onclick="setFilter('not-tolerant')">🚫 Not 5V Tolerant (13)</button>
+        <button class="filter-btn" onclick="setFilter('gpio-not-tolerant')">⚠️ Only PA0 (The 1 Non-5V GPIO)</button>
+        <button class="filter-btn" onclick="setFilter('tolerant')">✅ 5V Tolerant FT (35)</button>
+        <button class="filter-btn" onclick="setFilter('adc')">⚠️ ADC Channels (9)</button>
+        <button class="filter-btn" onclick="setFilter('project')">⚡ Used in Tactical Node (19)</button>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search pin, function, or net..." oninput="handleSearch()">
+      </div>
+
+      <div class="mobile-chip-notice">
+        📱 <em>Scroll down to view the full interactive pinmux table on smaller screens.</em>
+      </div>
+
+      <div class="layout-split">
+        <!-- Interactive Chip Body -->
+        <div class="chip-container">
+          <div class="chip-wrapper" id="chipWrapper">
+            <div class="ic-body">
+              <div class="pin1-dot"></div>
+              <div class="ic-label-brand">STMicroelectronics</div>
+              <div class="ic-label-part">STM32F411CE</div>
+              <div class="ic-label-sub">UFQFPN48 (48 Pins, 0.5mm Pitch)</div>
+            </div>
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted); display:flex; gap:16px; margin-top:8px; flex-wrap:wrap; justify-content:center;">
+            <span><span style="color:var(--danger-red);">■</span> Not 5V Tolerant</span>
+            <span><span style="color:#2ea043;">■</span> 5V Tolerant (FT)</span>
+            <span><span style="color:#d29922;">■</span> Analog/ADC Warning</span>
+            <span><span style="color:#58a6ff;">■</span> Power/Ground</span>
+            <span><span style="border:1px solid var(--accent-cyan); padding:1px 4px; border-radius:3px;">Cyan Ring</span> Routed in Tactical Node</span>
+          </div>
+        </div>
+
+        <!-- Live Pin Inspector Card -->
+        <div class="inspector-card" id="inspector">
+          <div class="inspector-header">
+            <h2>
+              <span id="inspPinName">Pin 16: PA6</span>
+              <span id="inspBadge" class="badge badge-warn">ADC WARNING</span>
+            </h2>
+          </div>
+          <div class="inspector-field">
+            <label>Physical Pin Number</label>
+            <div class="value" id="inspPinNum">Pin 16</div>
+          </div>
+          <div class="inspector-field">
+            <label>I/O Structure (Datasheet Table 8)</label>
+            <div class="value" id="inspStructure"><code>FT</code> (5V Tolerant in Digital Mode)</div>
+          </div>
+          <div class="inspector-field">
+            <label>Maximum Input Voltage</label>
+            <div class="value" id="inspMaxVolt">5.5V (3.6V in ADC mode)</div>
+          </div>
+          <div class="inspector-field">
+            <label>Tactical Node Connected Net</label>
+            <div class="value" id="inspProjectNet" style="color:var(--accent-cyan); font-weight:700;">BATTERY_PERCENTAGE (ADC1_IN6)</div>
+          </div>
+          <div class="inspector-field">
+            <label>Hardware Function & Circuit</label>
+            <div class="value" id="inspProjectDesc">Li-Po 1:1 voltage divider R34/R35 (Max 2.1V ADC input).</div>
+          </div>
+          <div class="inspector-field">
+            <label>Datasheet Alternate Functions</label>
+            <div class="value" id="inspFunctions" style="font-size:0.8rem; color:var(--text-muted);">ADC1_IN6, SPI1_MISO, TIM3_CH1, TIM1_BKIN</div>
+          </div>
+          <div class="inspector-callout callout-safe" id="inspCallout">
+            <strong>✅ Design Verification:</strong> Replaces PA0! PA6 is an FT pin. In ADC mode, input is clamped at 3.6V max. With the 33k/33k divider, 4.2V battery produces 2.1V, well within safe limits.
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. Issues & Recommended Solutions -->
-    <section id="issues">
+    <!-- 4. Complete Pinmux Table -->
+    <section id="pinmux">
       <div class="section-header">
-        <h2>Schematic Discrepancies & Solutions Roadmap</h2>
-        <div class="filter-bar" id="issueFilter">
-          <span class="filter-chip active" data-filter="all">All Issues (13)</span>
-          <span class="filter-chip" data-filter="critical">Critical (5)</span>
-          <span class="filter-chip" data-filter="high">High (3)</span>
-          <span class="filter-chip" data-filter="medium">Medium (4)</span>
-          <span class="filter-chip" data-filter="low">Low (1)</span>
-        </div>
-      </div>
-
-      <!-- ERR-01 -->
-      <div class="issue-card" data-severity="critical">
-        <div class="issue-header">
-          <div class="issue-title-group">
-            <span class="badge-sev badge-critical">CRITICAL</span>
-            <span class="issue-id">ERR-01</span>
-            <span class="issue-name">Battery Voltage Divider Disconnected from STM32 ADC</span>
-          </div>
-          <span class="issue-location">STM32.kicad_sch: (97.79, 116.84)</span>
-        </div>
-        <div class="issue-body">
-          <div class="issue-col col-problem">
-            <h4>Root Cause & Operational Risk</h4>
-            <p>The hierarchical label <code>BATTERY_PERCENTAGE</code> exists inside <code>STM32.kicad_sch</code> but is completely dangling with no wire connection. The MCU has no physical path to read the battery voltage, leaving fuel gauging inoperable.</p>
-          </div>
-          <div class="issue-col col-solution">
-            <h4>Prescribed Engineering Solution</h4>
-            <p>Route the <code>BATTERY_PERCENTAGE</code> hierarchical label directly to STM32 <strong>Pin 10 (PA0 / ADC1_IN0)</strong> with a 100nF filtering capacitor to GND.</p>
-            <div class="code-box">Net: /Power/BATTERY_PERCENTAGE &rarr; U5.10 (PA0_10)</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ERR-02 -->
-      <div class="issue-card" data-severity="critical">
-        <div class="issue-header">
-          <div class="issue-title-group">
-            <span class="badge-sev badge-critical">CRITICAL</span>
-            <span class="issue-id">ERR-02</span>
-            <span class="issue-name">Status LED (D5) Unconnected to Microcontroller</span>
-          </div>
-          <span class="issue-location">STM32.kicad_sch: R20.1</span>
-        </div>
-        <div class="issue-body">
-          <div class="issue-col col-problem">
-            <h4>Root Cause & Operational Risk</h4>
-            <p>The global label <code>STATUS_LED</code> is attached to resistor R20 and white LED D5, but does not connect to any pin on U5. The status indicator cannot be driven by firmware.</p>
-          </div>
-          <div class="issue-col col-solution">
-            <h4>Prescribed Engineering Solution</h4>
-            <p>Connect the <code>STATUS_LED</code> net to STM32 <strong>Pin 18 (PB0)</strong> or <strong>Pin 29 (PA8)</strong> configured as a push-pull GPIO.</p>
-            <div class="code-box">Net: STATUS_LED &rarr; U5.18 (PB0_18) [or U5.29 PA8]</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ERR-03 -->
-      <div class="issue-card" data-severity="critical">
-        <div class="issue-header">
-          <div class="issue-title-group">
-            <span class="badge-sev badge-critical">CRITICAL</span>
-            <span class="issue-id">ERR-03</span>
-            <span class="issue-name">WS2812B RGB Programmable LED Data Input (DIN) Floating</span>
-          </div>
-          <span class="issue-location">STM32.kicad_sch: D6 Pin 3</span>
-        </div>
-        <div class="issue-body">
-          <div class="issue-col col-problem">
-            <h4>Root Cause & Operational Risk</h4>
-            <p>Global label <code>PROG_LED</code> connects to D6 Pin 3 (WS2812B-2020 DIN) but terminates nowhere on the MCU. KiCad ERC flags: <em>"Input pin not driven by any Output pins"</em>.</p>
-          </div>
-          <div class="issue-col col-solution">
-            <h4>Prescribed Engineering Solution</h4>
-            <p>Connect <code>PROG_LED</code> to a timer PWM/DMA capable pin: <strong>Pin 17 (PA7 / TIM3_CH2)</strong> or <strong>Pin 28 (PB15 / SPI2_MOSI)</strong> for DMA WS2812B generation.</p>
-            <div class="code-box">Net: PROG_LED &rarr; U5.17 (PA7 / TIM3_CH2 / SPI1_MOSI)</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ERR-04 -->
-      <div class="issue-card" data-severity="critical">
-        <div class="issue-header">
-          <div class="issue-title-group">
-            <span class="badge-sev badge-critical">CRITICAL</span>
-            <span class="issue-id">ERR-04</span>
-            <span class="issue-name">LoRA Module M0 & M1 Jumpers Tied to +5V (Overvoltage Hazard)</span>
-          </div>
-          <span class="issue-location">LoRA.kicad_sch: JP1, JP5</span>
-        </div>
-        <div class="issue-body">
-          <div class="issue-col col-problem">
-            <h4>Root Cause & Operational Risk</h4>
-            <p>Solder jumpers JP1 and JP5 are connected to the <code>+5V</code> rail. If soldered closed, they inject 5.0V directly into Ebyte U8 pins M0 and M1. The datasheet explicitly warns: <em>"Communication level: 3.3V. For 5V TTL, it may be at risk of burning down."</em></p>
-          </div>
-          <div class="issue-col col-solution">
-            <h4>Prescribed Engineering Solution</h4>
-            <p>1. Change pull-up source on JP1.2 and JP5.2 from <code>+5V</code> to <code>+STM_3V3</code>.<br>2. <strong>Superior Fix</strong>: Connect M0 & M1 directly to STM32 GPIOs (<strong>PB4</strong> & <strong>PB6</strong>) so firmware can dynamically toggle Normal, Wake-on-Radio, and Deep Sleep modes.</p>
-            <div class="code-box">JP1.2, JP5.2 &rarr; +STM_3V3 (3.3V) [or Route to STM32 PB4, PB6]</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ERR-05 -->
-      <div class="issue-card" data-severity="critical">
-        <div class="issue-header">
-          <div class="issue-title-group">
-            <span class="badge-sev badge-critical">CRITICAL</span>
-            <span class="issue-id">ERR-05</span>
-            <span class="issue-name">LoRA Transceiver AUX Handshake Pin Unconnected</span>
-          </div>
-          <span class="issue-location">LoRA.kicad_sch: U8 Pin 5</span>
-        </div>
-        <div class="issue-body">
-          <div class="issue-col col-problem">
-            <h4>Root Cause & Operational Risk</h4>
-            <p>U8 Pin 5 (<code>AUX</code>) is left floating. In Ebyte LoRA modules, AUX signals RF packet completion, buffer busy status, and incoming packet wake-up. Without AUX, the MCU cannot synchronize packet transmission or wake up from sleep on incoming radio messages.</p>
-          </div>
-          <div class="issue-col col-solution">
-            <h4>Prescribed Engineering Solution</h4>
-            <p>Route U8 Pin 5 (AUX) to STM32 <strong>Pin 41 (PB5 / EXTI5)</strong> with an optional 10kΩ pull-up to <code>+STM_3V3</code> to support edge-triggered wake interrupts.</p>
-            <div class="code-box">U8.5 (AUX) &rarr; U5.41 (PB5 / EXTI5) with 10k pull-up to +STM_3V3</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ERR-06 -->
-      <div class="issue-card" data-severity="high">
-        <div class="issue-header">
-          <div class="issue-title-group">
-            <span class="badge-sev badge-high">HIGH</span>
-            <span class="issue-id">ERR-06</span>
-            <span class="issue-name">Continuous 210 µA Parasitic Battery Drain via Voltage Divider</span>
-          </div>
-          <span class="issue-location">Power.kicad_sch: R3 (10k), R4 (10k)</span>
-        </div>
-        <div class="issue-body">
-          <div class="issue-col col-problem">
-            <h4>Root Cause & Operational Risk</h4>
-            <p>Resistors R3 (10kΩ) and R4 (10kΩ) are connected directly across the LiPo cell (+BATT to GND) upstream of power switch SW1. They draw <code>4.2V / 20kΩ = 210 µA</code> 24/7. Over several months of storage, this parasitic load will deeply discharge the LiPo below 2.5V, permanently killing the cell.</p>
-          </div>
-          <div class="issue-col col-solution">
-            <h4>Prescribed Engineering Solution</h4>
-            <p>1. Connect R3 top to the switched battery rail (downstream of SW1).<br>2. Increase divider resistance to <strong>1 MΩ / 1 MΩ</strong> with a 10 nF filter capacitor (reduces standby drain from 210 µA to 2.1 µA).<br>3. Or gate the divider ground using a small N-channel MOSFET driven by MCU GPIO.</p>
-            <div class="code-box">R3 &rarr; 1MΩ (0603), R4 &rarr; 1MΩ (0603) + 10nF cap across R4</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ERR-07 -->
-      <div class="issue-card" data-severity="high">
-        <div class="issue-header">
-          <div class="issue-title-group">
-            <span class="badge-sev badge-high">HIGH</span>
-            <span class="issue-id">ERR-07</span>
-            <span class="issue-name">Battery Cannot Charge When Main Power Switch Is OFF</span>
-          </div>
-          <span class="issue-location">Power.kicad_sch: SW1 Placement</span>
-        </div>
-        <div class="issue-body">
-          <div class="issue-col col-problem">
-            <h4>Root Cause & Operational Risk</h4>
-            <p>SW1 is wired between the battery and the MCP73871 <code>VBAT</code> pins. When SW1 is turned OFF, the battery is physically disconnected from the charger. Plugging in USB-C powers the system (MCP73871 OUT), but the battery does NOT charge unless the switch is turned ON, forcing all components to run during charging.</p>
-          </div>
-          <div class="issue-col col-solution">
-            <h4>Prescribed Engineering Solution</h4>
-            <p>Keep the battery permanently connected to MCP73871 <code>VBAT</code>. Move the power switch SW1 to the MCP73871 <code>OUT</code> rail (between <code>+VCOM</code> and the TPS61023 boost converter input/enable). This allows USB charging while the device is switched OFF.</p>
-            <div class="code-box">Battery &rarr; Q1 PMOS &rarr; MCP73871 VBAT. SW1 placed on +VCOM &rarr; TPS61023 VIN</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ERR-08 -->
-      <div class="issue-card" data-severity="high">
-        <div class="issue-header">
-          <div class="issue-title-group">
-            <span class="badge-sev badge-high">HIGH</span>
-            <span class="issue-id">ERR-08</span>
-            <span class="issue-name">Asymmetrical Crystal Oscillator Load Capacitors</span>
-          </div>
-          <span class="issue-location">STM32.kicad_sch: Y1 & Y2 Load Caps</span>
-        </div>
-        <div class="issue-body">
-          <div class="issue-col col-problem">
-            <h4>Root Cause & Operational Risk</h4>
-            <p>HSE 25 MHz crystal has C39=22pF and C34=33pF. LSE 32.768 kHz crystal has C31=18pF and C36=11pF. Mismatched load capacitors cause DC offset bias, frequency pulling, and high risk of crystal startup failure in cold/hot environments.</p>
-          </div>
-          <div class="issue-col col-solution">
-            <h4>Prescribed Engineering Solution</h4>
-            <p>Match both load capacitors for each crystal:<br>&bull; HSE (YSX321SL-25MHz): C39 = <strong>18 pF</strong>, C34 = <strong>18 pF</strong>.<br>&bull; LSE (YXC-Y-26): C31 = <strong>12 pF</strong>, C36 = <strong>12 pF</strong>.</p>
-            <div class="code-box">Set C34=18pF, C39=18pF (HSE) | Set C31=12pF, C36=12pF (LSE)</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ERR-09 -->
-      <div class="issue-card" data-severity="medium">
-        <div class="issue-header">
-          <div class="issue-title-group">
-            <span class="badge-sev badge-medium">MEDIUM</span>
-            <span class="issue-id">ERR-09</span>
-            <span class="issue-name">Unbalanced I2C Bus Pull-Up Resistors</span>
-          </div>
-          <span class="issue-location">STM32.kicad_sch: R21 (4.7k) vs R22 (2.2k)</span>
-        </div>
-        <div class="issue-body">
-          <div class="issue-col col-problem">
-            <h4>Root Cause & Operational Risk</h4>
-            <p>I2C1 SCL has R21=4.7 kΩ while SDA has R22=2.2 kΩ. The mismatched pull-ups cause asymmetrical bus rise times ($t_r$), degrading signal integrity and causing timing violations at 400 kHz Fast-Mode.</p>
-          </div>
-          <div class="issue-col col-solution">
-            <h4>Prescribed Engineering Solution</h4>
-            <p>Standardize both I2C pull-up resistors to identical values: both <strong>4.7 kΩ</strong> (standard) or both <strong>2.2 kΩ</strong> (for high-speed mode).</p>
-            <div class="code-box">Set R21 = 4.7 kΩ and R22 = 4.7 kΩ (0603)</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ERR-10 -->
-      <div class="issue-card" data-severity="medium">
-        <div class="issue-header">
-          <div class="issue-title-group">
-            <span class="badge-sev badge-medium">MEDIUM</span>
-            <span class="issue-id">ERR-10</span>
-            <span class="issue-name">Anti-Tamper Subsystem Sheet Unpopulated</span>
-          </div>
-          <span class="issue-location">Tampering.kicad_sch</span>
-        </div>
-        <div class="issue-body">
-          <div class="issue-col col-problem">
-            <h4>Root Cause & Operational Risk</h4>
-            <p>The tactical node is specified with physical tamper detection, but the sheet <code>Tampering.kicad_sch</code> is empty (0 symbols, 0 pins). Physical intrusion will go undetected.</p>
-          </div>
-          <div class="issue-col col-solution">
-            <h4>Prescribed Engineering Solution</h4>
-            <p>Add a microswitch chassis intrusion circuit connected to STM32 <strong>Pin 2 (PC13 / RTC_TAMP1)</strong> with a 100k pull-up and 100nF filter. This triggers hardware RTC key zeroization upon breach.</p>
-            <div class="code-box">Tamper Switch &rarr; STM32 Pin 2 (PC13 / RTC_TAMP1 / WKUP2)</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ERR-11 -->
-      <div class="issue-card" data-severity="medium">
-        <div class="issue-header">
-          <div class="issue-title-group">
-            <span class="badge-sev badge-medium">MEDIUM</span>
-            <span class="issue-id">ERR-11</span>
-            <span class="issue-name">10 Phantom / Abandoned Components Stacked at Coordinate Origins</span>
-          </div>
-          <span class="issue-location">Power.kicad_sch & STM32.kicad_sch</span>
-        </div>
-        <div class="issue-body">
-          <div class="issue-col col-problem">
-            <h4>Root Cause & Operational Risk</h4>
-            <p>C1, C2, R1, R2 in Power sheet (stacked at 129.54, 120.65) and C8, C21, C35, C37, R10, R11 in STM32 sheet (stacked at 250.19, 102.87) are floating duplicate parts that clutter the BOM and generate unrouted pads on the PCB.</p>
-          </div>
-          <div class="issue-col col-solution">
-            <h4>Prescribed Engineering Solution</h4>
-            <p>Select and delete the 10 abandoned duplicate components in Eeschema to clean up the BOM and PCB netlist.</p>
-            <div class="code-box">Delete: C1, C2, R1, R2, C8, C21, C35, C37, R10, R11</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ERR-12 -->
-      <div class="issue-card" data-severity="medium">
-        <div class="issue-header">
-          <div class="issue-title-group">
-            <span class="badge-sev badge-medium">MEDIUM</span>
-            <span class="issue-id">ERR-12</span>
-            <span class="issue-name">Stray "No Connection" (X) Flags on Active Power & Capacitor Pins</span>
-          </div>
-          <span class="issue-location">Power.kicad_sch: (31.75, 184.15), (95.25, 184.15)</span>
-        </div>
-        <div class="issue-body">
-          <div class="issue-col col-problem">
-            <h4>Root Cause & Operational Risk</h4>
-            <p>Stray No-Connect flags touch #PWR023, C13 Pin 1, and C15 Pin 1 in <code>Power.kicad_sch</code>, triggering 3 KiCad ERC warnings.</p>
-          </div>
-          <div class="issue-col col-solution">
-            <h4>Prescribed Engineering Solution</h4>
-            <p>Delete the 3 stray no-connect flags at coordinates (31.75, 184.15), (95.25, 184.15), and (107.95, 184.15).</p>
-            <div class="code-box">Eeschema: Remove stray no_connect flags near LDO outputs</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ERR-13 -->
-      <div class="issue-card" data-severity="low">
-        <div class="issue-header">
-          <div class="issue-title-group">
-            <span class="badge-sev badge-low">LOW / ADVISORY</span>
-            <span class="issue-id">ERR-13</span>
-            <span class="issue-name">BOM Missing Footprints & Symbol Table Path Mismatches</span>
-          </div>
-          <span class="issue-location">Project Configuration & BOM</span>
-        </div>
-        <div class="issue-body">
-          <div class="issue-col col-problem">
-            <h4>Root Cause & Operational Risk</h4>
-            <p>Generic R and C symbols lack assigned footprints. <code>sym-lib-table</code> points to <code>custom/TPS61023DRLR/</code> instead of <code>custom/symbols/TPS61023DRLR/</code>. U9 SE050 lacks footprint <code>HX2QFN20</code>.</p>
-          </div>
-          <div class="issue-col col-solution">
-            <h4>Prescribed Engineering Solution</h4>
-            <p>Assign standard 0603 footprints (`Resistor_SMD:R_0603_1608Metric` and `Capacitor_SMD:C_0603_1608Metric`), link `custom/footprints/HX2QFN20.pretty` to U9, and update `sym-lib-table` paths.</p>
-            <div class="code-box">Fix sym-lib-table URIs: ${KIPRJMOD}/custom/symbols/[PART]/[PART].kicad_sym</div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- 4. Intentional Design Decisions -->
-    <section id="decisions">
-      <div class="section-header">
-        <h2>Intentional Design Decisions (False-Positive Guardrails)</h2>
-        <span class="tag" style="background: rgba(16, 185, 129, 0.2); color: #10b981;">GROUND TRUTH</span>
+        <h2>STM32F411CE Complete Pinmux & Interconnect Matrix (48 Pins)</h2>
+        <span class="tag" style="background: rgba(6, 182, 212, 0.2); color: #06b6d4;" id="tableCount">Showing 48 Pins</span>
       </div>
       <div class="table-container">
         <table>
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Circuit Block</th>
-              <th>Apparent Anomaly</th>
-              <th>Engineering Justification (Why It Is Intentional)</th>
-              <th>Classification</th>
+              <th style="width:60px;">Pin #</th>
+              <th style="width:110px;">Pin Name</th>
+              <th style="width:90px;">Structure</th>
+              <th style="width:160px;">5V Tolerance Status</th>
+              <th style="width:180px;">Tactical Node Net</th>
+              <th>Connected Hardware & Circuit Notes</th>
+            </tr>
+          </thead>
+          <tbody id="pinTableBody">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 5. Verification & ERC Audit -->
+    <section id="issues">
+      <div class="section-header">
+        <h2>KiCad 10.0.6 Electrical Rules Check (ERC) & Design Audit</h2>
+        <span class="tag" style="background: rgba(239, 68, 68, 0.2); color: #ef4444;">12 Findings (2 Errors, 10 Warnings)</span>
+      </div>
+
+      <div class="issue-card" style="border-left: 4px solid var(--accent-red);">
+        <div class="issue-header">
+          <div class="issue-title">
+            <span style="color:var(--accent-red);">[ERC ERROR]</span> Sheet /Power/: Power Output Pin Collision on +STM_3V3
+          </div>
+          <span class="status-pill danger">Critical KiCad Error</span>
+        </div>
+        <p><strong>Locations:</strong> <code>#FLG05 Pin 1 [Power output]</code> @ (95.25mm, 190.50mm) ↔ <code>U2 Pin 5 [OUT, Power output]</code> @ (255.27mm, 30.48mm).</p>
+        <p><strong>Root Cause:</strong> KiCad flags an error when two pins of type <em>Power output</em> are connected. TLV74333 LDO pin 5 is defined as type Power output. Placing <code>PWR_FLAG</code> (#FLG05) directly on <code>+STM_3V3</code> causes KiCad to detect duplicate power drivers.</p>
+        <div class="issue-fix">
+          <strong>Remediation:</strong> Remove <code>PWR_FLAG #FLG05</code> from net <code>+STM_3V3</code>. The TLV74333 already serves as the recognized power source for this rail.
+        </div>
+      </div>
+
+      <div class="issue-card" style="border-left: 4px solid var(--accent-red);">
+        <div class="issue-header">
+          <div class="issue-title">
+            <span style="color:var(--accent-red);">[ERC ERROR]</span> Sheet /Power/: Power Output Pin Collision on +CRYPT_3V3
+          </div>
+          <span class="status-pill danger">Critical KiCad Error</span>
+        </div>
+        <p><strong>Locations:</strong> <code>#FLG07 Pin 1 [Power output]</code> @ (107.95mm, 190.50mm) ↔ <code>U3 Pin 5 [OUT, Power output]</code> @ (255.27mm, 72.39mm).</p>
+        <p><strong>Root Cause:</strong> Identical to U2: TLV74333 LDO U3 pin 5 is defined as Power output. Connecting <code>PWR_FLAG #FLG07</code> on <code>+CRYPT_3V3</code> causes KiCad to detect two simultaneous power drivers.</p>
+        <div class="issue-fix">
+          <strong>Remediation:</strong> Remove <code>PWR_FLAG #FLG07</code> from net <code>+CRYPT_3V3</code>.
+        </div>
+      </div>
+
+      <div class="issue-card" style="border-left: 4px solid var(--accent-amber);">
+        <div class="issue-header">
+          <div class="issue-title">
+            <span style="color:var(--accent-amber);">[ERC WARNING]</span> Sheet /Power/: Net Name Conflict (CE, PROG2, SEL on VUSB Bus)
+          </div>
+          <span class="status-pill warn">Netlist Ambiguity</span>
+        </div>
+        <p><strong>Locations:</strong> Global labels <code>CE</code> @ (177.8mm, 143.51mm) and <code>PROG2</code> @ (177.8mm, 133.35mm) wired together on vertical bus line connected to <code>VUSB</code> (#PWR079).</p>
+        <p><strong>Root Cause:</strong> MCP73871 control inputs SEL, PROG2, and CE are all pulled high to VUSB. Wiring multiple global labels directly to the same conductor shorts their net names together and produces netlist confusion.</p>
+        <div class="issue-fix">
+          <strong>Remediation:</strong> Remove global labels CE and PROG2 from the bus wire, or tie each pin to +VBUS directly without conflicting global labels.
+        </div>
+      </div>
+
+      <div class="issue-card" style="border-left: 4px solid var(--accent-red);">
+        <div class="issue-header">
+          <div class="issue-title">
+            <span style="color:var(--accent-red);">[FIRMWARE / IOC BUG]</span> STM32CubeMX: PB14 (LORA_M1) Configured as GPIO_Input
+          </div>
+          <span class="status-pill danger">Firmware Lockout</span>
+        </div>
+        <p><strong>File:</strong> <code>software/stm32cube/crypt_node.ioc</code> (Line 79: <code>PB14.Signal=GPIO_Input</code>).</p>
+        <p><strong>Root Cause:</strong> In Ebyte E32-900T20D, both M0 and M1 are control <em>inputs</em>. To switch operating modes (Sleep, Power-saving, Normal), the STM32 must drive both pins. With PB14 configured as GPIO_Input, the MCU pin remains high-impedance (pulled Low by R29 10k), preventing the node from ever driving M1 High to enter LoRA Sleep Mode 3!</p>
+        <div class="issue-fix">
+          <strong>Remediation:</strong> Open <code>crypt_node.ioc</code> and change <code>PB14.Signal=GPIO_Output</code> with label <code>LORA_M1</code>.
+        </div>
+      </div>
+
+      <div class="issue-card" style="border-left: 4px solid var(--accent-purple);">
+        <div class="issue-header">
+          <div class="issue-title">
+            <span style="color:var(--accent-purple);">[HARDWARE GAP]</span> Sheet /Tampering/: Anti-Tamper Circuit Unimplemented
+          </div>
+          <span class="status-pill warn">Verification Action Item</span>
+        </div>
+        <p><strong>Location:</strong> <code>hardware/kicad/Tampering.kicad_sch</code> (Sheet is empty; STM32 Pin 2 PC13 is marked <code>no_connect</code>).</p>
+        <p><strong>Description:</strong> <code>DESIGN_DECISIONS.md</code> Section 1 specifies physical anti-tamper intrusion detection to wipe SE050 keys upon enclosure breach. Currently, Sheet 7 is empty and PC13 (RTC_TAMP1) is disconnected.</p>
+        <div class="issue-fix">
+          <strong>Remediation:</strong> Route PC13 through a microswitch with 100k pull-up and 10nF debouncing cap on Sheet Tampering.
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Intentional Architecture & Design Decisions -->
+    <section id="decisions">
+      <div class="section-header">
+        <h2>Intentional Architecture & Design Decisions (D-01 to D-08)</h2>
+        <span class="tag" style="background: rgba(16, 185, 129, 0.2); color: #10b981;">Ground-Truth Authority</span>
+      </div>
+      <p style="color:var(--text-secondary); margin-bottom:1rem; font-size:0.9rem;">
+        The following architectural choices are deliberate engineering decisions from <code>DESIGN_DECISIONS.md</code>. They must NOT be altered or flagged as anomalies during automated reviews.
+      </p>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:70px;">ID</th>
+              <th style="width:220px;">Circuit Feature</th>
+              <th>Engineering Justification & Hardware Rationale</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>D-01</strong></td>
-              <td><strong>Dual 3.3V LDO Regulators (U2, U3)</strong></td>
-              <td>Two identical 3.3V LDOs fed from the same +5V rail. Seems redundant.</td>
-              <td><strong>Cryptographic Side-Channel Isolation</strong>: Separating the MCU digital power rail (`+STM_3V3`) from the hardware secure element (`+CRYPT_3V3`) prevents Differential Power Analysis (DPA/CPA) side-channel attacks by isolating cryptographic current signatures from digital switching transients.</td>
-              <td><span class="tag-feature">SECURITY ARCHITECTURE</span></td>
+              <td><strong>Dual Isolated 3.3V LDOs</strong><br><code>U2 (STM32)</code> / <code>U3 (SE050)</code></td>
+              <td><strong>Cryptographic Side-Channel Isolation:</strong> Separate LDOs prevent Differential Power Analysis (DPA) and Correlation Power Analysis (CPA) attacks. MCU switching current noise cannot modulate the SE050 power rail.</td>
             </tr>
             <tr>
               <td><strong>D-02</strong></td>
-              <td><strong>MCP73871 Safety Timer Disabled</strong></td>
-              <td>Pin 9 (`~TE`) tied High to VBUS; ERC warns about multiple net names.</td>
-              <td><strong>Load-Sharing Operation</strong>: Because the tactical node draws active power from `OUT` during charging, the battery charges slower. Enabling the 4-6 hour safety timer would trigger false timeout aborts before the 2000 mAh battery reaches 100%. Tying `~TE` High disables the timer.</td>
-              <td><span class="tag-feature">LOAD SHARING INTENT</span></td>
+              <td><strong>MCP73871 Safety Timer Disabled</strong><br><code>~TE tied High to VBUS</code></td>
+              <td><strong>Load-Sharing Compatibility:</strong> System load (GPS + LoRA + MCU) draws power from MCP73871 OUT during charging. Under load, battery charges slower. Enabling the 4-6hr safety timer would cause false charge aborts.</td>
             </tr>
             <tr>
               <td><strong>D-03</strong></td>
-              <td><strong>MCP73871 SEL Pin Tied High</strong></td>
-              <td>SEL held permanently High, bypassing standard 500mA USB 2.0 limit.</td>
-              <td><strong>High-Current Adapter Mode</strong>: Allows drawing up to 1.65A typical / 1.8A max from modern USB-C 5V/2A sources, supporting simultaneous peak LoRA RF transmission (~120mA+) and battery charging (~300mA) without brownout.</td>
-              <td><span class="tag-feature">POWER SPECIFICATION</span></td>
+              <td><strong>MCP73871 SEL Pin Tied High</strong><br><code>Pin 3 held High</code></td>
+              <td><strong>1.8A AC Adapter Mode:</strong> Allows the node to draw up to 1.8A from modern USB-C 5V supplies to support peak LoRA RF transmit bursts (~120mA+) and simultaneous 303mA battery charging.</td>
             </tr>
             <tr>
               <td><strong>D-04</strong></td>
-              <td><strong>Boost-First Power Architecture</strong></td>
-              <td>Stepping up to 5V, then stepping down to 3.3V via linear LDOs.</td>
-              <td><strong>RF Output & Analog Noise Suppression</strong>: Ebyte LoRA requires $\ge 5.0\text{V}$ for full +20 dBm RF output power. NEO-M8N active antenna performs best on 5V. Downstream linear LDOs provide >65 dB PSRR, cleaning boost switching ripple for the MCU and crypto element.</td>
-              <td><span class="tag-feature">RF & PSRR INTENT</span></td>
+              <td><strong>Boost-First Power Architecture</strong><br><code>3.7V → 5.0V Boost → 3.3V LDOs</code></td>
+              <td><strong>RF Power & PSRR:</strong> E32-900T20D requires ≥5.0V on VCC for full +20 dBm (100mW) RF output power. Regulating 5V down to 3.3V through linear LDOs provides over 65 dB PSRR, attenuating switching ripple.</td>
             </tr>
             <tr>
               <td><strong>D-05</strong></td>
-              <td><strong>WS2812B RGB LED Powered at 3.3V</strong></td>
-              <td>VDD of D6 tied to `+STM_3V3` instead of +5V.</td>
-              <td><strong>Direct 3.3V Logic Matching</strong>: WS2812B requires $V_{IH} \ge 0.7 \times V_{DD}$. Powering at 5V would require $V_{IH} \ge 3.5\text{V}$ (incompatible with direct 3.3V STM32 GPIOs). Running at 3.3V matches logic levels, eliminating external level shifter ICs.</td>
-              <td><span class="tag-feature">LOGIC LEVEL MATCH</span></td>
+              <td><strong>WS2812B RGB LED at 3.3V</strong><br><code>VDD on +STM_3V3</code></td>
+              <td><strong>Direct 3.3V Logic Drive:</strong> WS2812B requires $V_{IH} \ge 0.7 	imes V_{DD}$. At 5V, $V_{IH} \ge 3.5	ext{V}$, causing unreliable drive from a 3.3V GPIO. Powering at 3.3V allows direct drive without level shifters.</td>
             </tr>
             <tr>
               <td><strong>D-06</strong></td>
-              <td><strong>Active P-MOSFET (Q1) Reverse Protection</strong></td>
-              <td>FDN304PZ P-MOS has Drain to battery (+) and Source to switch.</td>
-              <td><strong>Ultra-Low Dropout</strong>: Avoids the 0.3V - 0.7V drop of diodes. $R_{DS(on)}$ is only $36\text{ m}\Omega$, dropping less than 18 mV at 500mA. The internal body diode initiates conduction, and Gate (pulled to GND via R8) turns the channel fully ON. Reverse voltage cuts the MOSFET off.</td>
-              <td><span class="tag-feature">EFFICIENCY OPTIMIZATION</span></td>
+              <td><strong>Active P-MOSFET Protection</strong><br><code>FDN304PZ (Q1) on Battery</code></td>
+              <td><strong>Ultra-Low Voltage Drop:</strong> Schottky diodes drop 0.3V–0.5V, wasting battery energy. FDN304PZ $R_{DS(on)} = 36	ext{ m}\Omega$, dropping less than 18 mV at 500mA load.</td>
             </tr>
             <tr>
               <td><strong>D-07</strong></td>
-              <td><strong>SE050 Standard Power Mode</strong></td>
-              <td>Pins ENA, VIN, VCC tied to `+CRYPT_3V3`, VOUT open.</td>
-              <td><strong>Autonomous I2C Wakeup</strong>: Uses software-directed Power-down mode over T=1 APDU. State, cryptographic keys, and RAM context are preserved while consuming minimal current. The chip wakes automatically on an I2C_SDA falling edge without needing extra GPIO toggles.</td>
-              <td><span class="tag-feature">PROTOCOL OPTIMIZATION</span></td>
+              <td><strong>SE050 Autonomous I2C Wakeup</strong><br><code>ENA, VIN, VCC on +CRYPT_3V3</code></td>
+              <td><strong>APDU Sleep Control:</strong> SE050 enters low-power sleep via T=1 APDU protocol, retaining RAM and registers, and wakes automatically upon an I2C SDA falling edge without requiring extra GPIO lines.</td>
             </tr>
             <tr>
               <td><strong>D-08</strong></td>
-              <td><strong>USB-C 5V Power-Only Sink</strong></td>
-              <td>CC1/CC2 pulled down with 5.1kΩ resistors, D+/D- floating.</td>
-              <td><strong>Dedicated Power Port</strong>: Flashing is performed via the 6-pin SWD debug header (J5). The USB-C port is intentionally configured purely as a 5V power sink with standard 5.1kΩ CC resistors.</td>
-              <td><span class="tag-feature">TACTICAL DESIGN</span></td>
+              <td><strong>USB-C Universal 5V Sink</strong><br><code>5.1kΩ pull-downs on CC1/CC2</code></td>
+              <td><strong>Universal Power Sink:</strong> Pull-downs on CC1 and CC2 signal standard 5V VBUS delivery from any USB-PD source. D+/D- are unused as firmware flashing uses the SWD header (J5).</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- 5. Subsystem Deep Dive -->
-    <section id="subsystems">
-      <div class="section-header">
-        <h2>Subsystem Technical Architecture</h2>
-        <span class="tag" style="background: rgba(139, 92, 246, 0.2); color: #8b5cf6;">HARDWARE MATRIX</span>
-      </div>
-      <div class="scorecard-grid">
-        <div class="card">
-          <div class="card-title">Power Management</div>
-          <p class="card-desc"><strong>MCP73871-2CC</strong> (303mA charge, 4.55V VPCC) + <strong>TPS61023DRLR</strong> 5V boost (1µH inductor, 4.99V VOUT) + Dual <strong>TLV74333</strong> LDOs for STM32 and Crypt domains.</p>
-        </div>
-        <div class="card">
-          <div class="card-title">STM32 MCU Core</div>
-          <p class="card-desc"><strong>STM32F411CEU6</strong> (100MHz ARM Cortex-M4F, 512KB Flash, 128KB SRAM). 25MHz HSE crystal, 32.768kHz LSE watch crystal, 4.7µF VCAP core cap, SWD debug header.</p>
-        </div>
-        <div class="card">
-          <div class="card-title">LoRA Tactical Radio</div>
-          <p class="card-desc"><strong>Ebyte E32-900T20D</strong> (Semtech SX1276, 868/915MHz, +20 dBm RF output). 5V supply for maximum RF power, 3.3V UART (USART1_TX/RX), M0/M1 mode control, AUX status line.</p>
-        </div>
-        <div class="card">
-          <div class="card-title">Hardware Secure Element</div>
-          <p class="card-desc"><strong>NXP SE050C1HQ1</strong> (Common Criteria EAL 6+ certified). Isolated 3.3V power domain, dedicated I2C1 bus (PB8/PB9) with 4.7kΩ pull-ups, hardware ECC/AES/SHA accelerators.</p>
-        </div>
-        <div class="card">
-          <div class="card-title">GPS Satellite Positioning</div>
-          <p class="card-desc"><strong>u-blox NEO-M8N</strong> GNSS module breakout. 72-channel concurrent GNSS (GPS, GLONASS, BeiDou, Galileo), 3.3V UART (USART2_TX/RX), onboard ceramic patch antenna.</p>
-        </div>
-        <div class="card">
-          <div class="card-title">Tamper Detection</div>
-          <p class="card-desc">Mechanical intrusion switch tied to <strong>STM32 Pin 2 (PC13 / RTC_TAMP1)</strong>. Hardware tamper circuit automatically wipes RTC backup domain and executes zeroization sequence.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. STM32 Pinmux Matrix -->
-    <section id="pinmux">
-      <div class="section-header">
-        <h2>STM32F411CEU6 Complete Pinmux & Interconnect Matrix</h2>
-        <span class="tag" style="background: rgba(6, 182, 212, 0.2); color: #06b6d4;">UFQFPN48</span>
-      </div>
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th>Pin</th>
-              <th>Signal Name</th>
-              <th>Peripheral</th>
-              <th>Connected Destination</th>
-              <th>Status / Recommendation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td>VBAT</td><td>Power</td><td>+STM_3V3</td><td>Connected to 3.3V digital rail</td></tr>
-            <tr style="background: rgba(139, 92, 246, 0.1);"><td>2</td><td>PC13</td><td>RTC_TAMP1 / WKUP2</td><td><strong>TAMPER_DETECT</strong></td><td><strong>Connect to Tamper Intrusion Switch (ERR-10)</strong></td></tr>
-            <tr><td>3</td><td>PC14</td><td>RCC_OSC32_IN</td><td>Crystal Y2 (32.768 kHz)</td><td>Set load cap C31 to 12 pF (ERR-08)</td></tr>
-            <tr><td>4</td><td>PC15</td><td>RCC_OSC32_OUT</td><td>Crystal Y2 (32.768 kHz)</td><td>Set load cap C36 to 12 pF (ERR-08)</td></tr>
-            <tr><td>5</td><td>PH0</td><td>RCC_OSC_IN</td><td>Crystal Y1 (25.000 MHz)</td><td>Set load cap C39 to 18 pF (ERR-08)</td></tr>
-            <tr><td>6</td><td>PH1</td><td>RCC_OSC_OUT</td><td>Crystal Y1 (25.000 MHz)</td><td>Set load cap C34 to 18 pF (ERR-08)</td></tr>
-            <tr><td>7</td><td>NRST</td><td>Reset</td><td>Button S1, C38 (100nF), J5 RST</td><td>10kΩ pull-up to +STM_3V3</td></tr>
-            <tr><td>8</td><td>VSSA</td><td>Ground</td><td>GND Plane</td><td>Analog Ground</td></tr>
-            <tr><td>9</td><td>VDDA</td><td>Power</td><td>+STM_3V3_A (via FB1)</td><td>Decoupled with C29 (100nF). Recommend adding 1µF.</td></tr>
-            <tr style="background: rgba(239, 68, 68, 0.1);"><td>10</td><td>PA0</td><td>ADC1_IN0 / WKUP1</td><td><strong>BATTERY_PERCENTAGE</strong></td><td><strong>Connect to Battery Divider R3/R4 (Fixes ERR-01)</strong></td></tr>
-            <tr><td>11</td><td>PA1</td><td>ADC1_IN1 / TIM2_CH2</td><td>Unassigned</td><td>Spare ADC / Timer input</td></tr>
-            <tr><td>12</td><td>PA2</td><td>USART2_TX</td><td>GPS_RX (U7 Pin 2)</td><td>Connected (3.3V TTL)</td></tr>
-            <tr><td>13</td><td>PA3</td><td>USART2_RX</td><td>GPS_TX (U7 Pin 3)</td><td>Connected (3.3V TTL)</td></tr>
-            <tr><td>14-16</td><td>PA4 - PA6</td><td>SPI1 / GPIO</td><td>Unassigned</td><td>Spare expansion pins</td></tr>
-            <tr style="background: rgba(239, 68, 68, 0.1);"><td>17</td><td>PA7</td><td>TIM3_CH2 / SPI1_MOSI</td><td><strong>PROG_LED</strong></td><td><strong>Connect to WS2812B DIN (Fixes ERR-03)</strong></td></tr>
-            <tr style="background: rgba(239, 68, 68, 0.1);"><td>18</td><td>PB0</td><td>GPIO</td><td><strong>STATUS_LED</strong></td><td><strong>Connect to Status LED D5 via R20 (Fixes ERR-02)</strong></td></tr>
-            <tr><td>19</td><td>PB1</td><td>TIM3_CH4 / GPIO</td><td>GPS_PPS (Optional)</td><td>Optional high-precision GPS timepulse</td></tr>
-            <tr><td>20</td><td>PB2</td><td>BOOT1</td><td>R12 (10k pull-down), JP4</td><td>Boot Mode Select Jumper</td></tr>
-            <tr><td>22</td><td>VCAP_1</td><td>Core Supply</td><td>C22 (4.7 µF to GND)</td><td>Internal 1.2V core regulator cap</td></tr>
-            <tr><td>30</td><td>PA9</td><td>USART1_TX</td><td>LORA_RX (U8 Pin 3)</td><td>Connected (3.3V TTL)</td></tr>
-            <tr><td>31</td><td>PA10</td><td>USART1_RX</td><td>LORA_TX (U8 Pin 4)</td><td>Connected (3.3V TTL)</td></tr>
-            <tr><td>34</td><td>PA13</td><td>SYS_JTMS-SWDIO</td><td>Header J5 Pin 3</td><td>SWD Programming Data</td></tr>
-            <tr><td>37</td><td>PA14</td><td>SYS_JTCK-SWCLK</td><td>Header J5 Pin 5</td><td>SWD Programming Clock</td></tr>
-            <tr><td>39</td><td>PB3</td><td>SYS_JTDO-SWO</td><td>Header J5 Pin 1</td><td>Serial Wire Trace Output</td></tr>
-            <tr style="background: rgba(245, 158, 11, 0.1);"><td>40</td><td>PB4</td><td>GPIO</td><td><strong>LORA_M0</strong> (Recommended)</td><td>Dynamic LoRA Mode Control M0</td></tr>
-            <tr style="background: rgba(239, 68, 68, 0.1);"><td>41</td><td>PB5</td><td>GPIO / EXTI5</td><td><strong>LORA_AUX</strong></td><td><strong>Connect to LoRA AUX Pin 5 (Fixes ERR-05)</strong></td></tr>
-            <tr style="background: rgba(245, 158, 11, 0.1);"><td>42</td><td>PB6</td><td>GPIO</td><td><strong>LORA_M1</strong> (Recommended)</td><td>Dynamic LoRA Mode Control M1</td></tr>
-            <tr><td>44</td><td>BOOT0</td><td>Boot Control</td><td>Button S2, R14 (10k pull-down)</td><td>Press S2 to enter DFU system bootloader</td></tr>
-            <tr><td>45</td><td>PB8</td><td>I2C1_SCL</td><td>CRYPT_SCL (U9 Pin 10)</td><td>4.7kΩ pull-up R21 to +STM_3V3</td></tr>
-            <tr><td>46</td><td>PB9</td><td>I2C1_SDA</td><td>CRYPT_SDA (U9 Pin 9)</td><td>Set R22 to 4.7kΩ to match R21 (ERR-09)</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- 7. Power & Battery Runtime Simulator -->
+    <!-- 7. Interactive Power Budget & Tactical Runtime Simulator -->
     <section id="calculator">
       <div class="section-header">
-        <h2>Tactical Battery Runtime & Power Simulator</h2>
-        <span class="tag" style="background: rgba(245, 158, 11, 0.2); color: #f59e0b;">INTERACTIVE MODEL</span>
+        <h2>Power Budget & Tactical Runtime Simulator</h2>
+        <span class="tag" style="background: rgba(6, 182, 212, 0.2); color: #06b6d4;">Formula: notes/Calculation.md</span>
       </div>
-      <div class="calc-card">
-        <div class="calc-inputs">
-          <div class="input-group">
-            <label><span>Battery Capacity (Li-PO 103450):</span> <strong id="battCapVal">2000 mAh</strong></label>
-            <input type="range" id="battCap" min="500" max="4000" step="100" value="2000">
+      <div class="sim-grid">
+        <div class="card">
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>Battery Capacity</span>
+              <span class="val" id="dispBatCap">2000 mAh</span>
+            </div>
+            <input type="range" id="sliderBatCap" min="500" max="5000" step="100" value="2000" oninput="calcRuntime()">
           </div>
-          <div class="input-group">
-            <label><span>Transmission Interval:</span> <strong id="intervalVal">30 seconds</strong></label>
-            <input type="range" id="txInterval" min="5" max="300" step="5" value="30">
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>Active Duration (Transmit & GPS Fix)</span>
+              <span class="val" id="dispTActive">1.0 s</span>
+            </div>
+            <input type="range" id="sliderTActive" min="0.5" max="10.0" step="0.5" value="1.0" oninput="calcRuntime()">
           </div>
-          <div class="input-group">
-            <label><span>LoRA Transmit Power:</span> <strong id="loraPwrVal">+20 dBm (120 mA)</strong></label>
-            <input type="range" id="loraPwr" min="1" max="3" step="1" value="3">
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>Sleep Duration (Low-Power Wait)</span>
+              <span class="val" id="dispTSleep">19.0 s</span>
+            </div>
+            <input type="range" id="sliderTSleep" min="5.0" max="120.0" step="1.0" value="19.0" oninput="calcRuntime()">
           </div>
-          <div class="input-group">
-            <label><span>GPS Tracking Mode:</span> <strong id="gpsModeVal">Cyclic 1Hz Update (67 mA)</strong></label>
-            <input type="range" id="gpsMode" min="1" max="3" step="1" value="2">
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>LoRA TX Peak Current (5V)</span>
+              <span class="val" id="dispILora">120 mA</span>
+            </div>
+            <input type="range" id="sliderILora" min="50" max="250" step="5" value="120" oninput="calcRuntime()">
+          </div>
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>GPS Tracking Current (5V)</span>
+              <span class="val" id="dispIGps">67 mA</span>
+            </div>
+            <input type="range" id="sliderIGps" min="30" max="120" step="5" value="67" oninput="calcRuntime()">
+          </div>
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>Boost Efficiency (TPS61023)</span>
+              <span class="val" id="dispEff">90 %</span>
+            </div>
+            <input type="range" id="sliderEff" min="70" max="98" step="1" value="90" oninput="calcRuntime()">
           </div>
         </div>
-        <div class="calc-results">
-          <div class="result-box">
-            <div class="result-sub">Average Current Consumption</div>
-            <div class="result-val" id="avgCurrent">23.4 mA</div>
-            <div class="result-sub">Duty-Cycled Power</div>
+
+        <div class="telemetry-card">
+          <div class="metric-box">
+            <div class="metric-val" id="resDuty">5.0%</div>
+            <div class="metric-lbl">Duty Cycle</div>
           </div>
-          <div class="result-box">
-            <div class="result-sub">Estimated Tactical Battery Life</div>
-            <div class="result-val" id="batteryLife" style="color: var(--accent-green);">85.5 Hours</div>
-            <div class="result-sub" id="batteryDays">≈ 3.6 Days Continuous Field Operation</div>
+          <div class="metric-box">
+            <div class="metric-val" id="resPeakCurrent">333 mA</div>
+            <div class="metric-lbl">Peak Battery Current</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val" id="resAvgCurrent">16.9 mA</div>
+            <div class="metric-lbl">Average Battery Current</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val" id="resContHours">6.0 hrs</div>
+            <div class="metric-lbl">Continuous Run Time</div>
+          </div>
+          <div class="metric-box" style="grid-column: span 2; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3);">
+            <div class="metric-val stat-green" id="resTacticalDays" style="font-size: 2.2rem;">4.94 Days</div>
+            <div class="metric-lbl" style="color:#10b981; font-weight:700;">Tactical Field Operational Life</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 8. BOM & Footprint Audit -->
+    <!-- 8. Bill of Materials & Sourcing -->
     <section id="bom">
       <div class="section-header">
-        <h2>Bill of Materials & Footprint Readiness Audit</h2>
-        <a href="crypto_node_bom.csv" target="_blank" class="btn btn-secondary" download>Export Cleaned BOM</a>
+        <h2>Bill of Materials (BOM) & Pre-Fab Sourcing Audit</h2>
+        <span class="tag" style="background: rgba(139, 92, 246, 0.2); color: #8b5cf6;">46 BOM Items</span>
       </div>
       <div class="table-container">
         <table>
           <thead>
             <tr>
-              <th>Refs</th>
-              <th>Component Description</th>
-              <th>Schematic Value</th>
-              <th>Current Footprint</th>
-              <th>Recommended Production Footprint</th>
-              <th>Status</th>
+              <th>Ref</th>
+              <th>Qty</th>
+              <th>Value</th>
+              <th>Footprint</th>
+              <th>Sourcing Status</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>U1</td><td>Texas Instruments Synchronous Boost Converter</td><td>TPS61023DRLR</td><td>Package_TO_SOT_SMD:SOT-563</td><td>SOT-563 (DRL0006A)</td><td><span class="tag-feature">OK</span></td></tr>
-            <tr><td>U2</td><td>Texas Instruments 300mA 3.3V LDO (MCU)</td><td>TLV74333PDBVR</td><td>SOT-23-5_HandSoldering</td><td>Package_TO_SOT_SMD:SOT-23-5</td><td><span class="tag-feature">OK</span></td></tr>
-            <tr><td>U3</td><td>Texas Instruments 300mA 3.3V LDO (Crypto)</td><td>TLV74333PDBVR</td><td>SOT-23-5_HandSoldering</td><td>Package_TO_SOT_SMD:SOT-23-5</td><td><span class="tag-feature">OK</span></td></tr>
-            <tr><td>U5</td><td>STMicroelectronics ARM Cortex-M4F MCU</td><td>STM32F411CEUx</td><td>QFN-48-1EP_7x7mm_P0.5mm</td><td>QFN-48-1EP_7x7mm_P0.5mm_EP5.6x5.6mm</td><td><span class="tag-feature">OK</span></td></tr>
-            <tr><td>U6</td><td>Microchip Li-Ion Charger with Load Sharing</td><td>MCP73871-2CC</td><td>QFN-20-1EP_4x4mm_P0.5mm</td><td>QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm</td><td><span class="tag-feature">OK</span></td></tr>
-            <tr><td>U7</td><td>u-blox Concurrent GNSS Receiver Module</td><td>NEO-M8N</td><td>NEO_M8N:NEO_M8N</td><td>NEO_M8N Breakout Header / castellated</td><td><span class="tag-feature">OK</span></td></tr>
-            <tr><td>U8</td><td>Ebyte 20dBm LoRA Wireless UART Module</td><td>EBYTE_900T20D</td><td>EBYTE_900T20D:EBYTE_900T20D</td><td>custom/footprints/EBYTE_900T20D</td><td><span class="tag-feature">OK</span></td></tr>
-            <tr style="background: rgba(239, 68, 68, 0.1);"><td>U9</td><td>NXP Common Criteria EAL 6+ Secure Element</td><td>SE050</td><td><em>Empty</em></td><td>custom/footprints/HX2QFN20.pretty:HX2QFN20</td><td><span class="badge-sev badge-critical">ASSIGN FP</span></td></tr>
-            <tr><td>Q1</td><td>ON Semiconductor -20V P-MOSFET</td><td>FDN304PZ</td><td>SOT23-3</td><td>Package_TO_SOT_SMD:SOT-23</td><td><span class="tag-feature">OK</span></td></tr>
-            <tr><td>D1</td><td>5.6V 1W Zener Diode</td><td>1SMA4734A</td><td><em>Empty</em></td><td>Diode_SMD:D_SMA</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr><td>D2</td><td>Bidirectional ESD Protection Diode</td><td>SLESD5Z5C</td><td>Diode_SMD:D_SOD-523</td><td>Diode_SMD:D_SOD-523</td><td><span class="tag-feature">OK</span></td></tr>
-            <tr><td>D6</td><td>Worldsemi Addressable RGB LED</td><td>WS2812B-2020</td><td>LED_WS2812B-2020_PLCC4_2.0x2.0mm</td><td>LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm</td><td><span class="tag-feature">OK</span></td></tr>
-            <tr><td>L1</td><td>Sunlord 1.0µH 5.6A Power Inductor</td><td>1μH</td><td><em>Empty</em></td><td>Inductor_SMD:L_Sunlord_SWPA6045S</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr><td>BT1</td><td>JST-PH 2.0mm 2-Pin Battery Connector</td><td>103450 Li-PO</td><td><em>Empty</em></td><td>Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr><td>SW1</td><td>SPDT Miniature Slide Switch</td><td>SW_SPDT_321</td><td><em>Empty</em></td><td>Button_Switch_SMD:SW_SPDT_PCM12</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr><td>C3, C7, C9, C11, C12, C16, C24-C29, C33, C38, C40, C45, C47, C49</td><td>0.1µF (100nF) 50V X7R Ceramic Caps (Qty 17)</td><td>100nF</td><td><em>Empty</em></td><td>Capacitor_SMD:C_0603_1608Metric</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr><td>C4, C10, C13-C15, C23, C30, C32, C41-C44, C46, C48</td><td>10µF 16V X5R/X7R Ceramic Caps (Qty 14)</td><td>10μF</td><td><em>Empty</em></td><td>Capacitor_SMD:C_0805_2012Metric</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr><td>C5, C6</td><td>22µF 10V X5R Ceramic Boost Output Caps (Qty 2)</td><td>22μF</td><td><em>Empty</em></td><td>Capacitor_SMD:C_0805_2012Metric</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr><td>C22</td><td>4.7µF 10V X7R MCU VCAP Ceramic Cap</td><td>4μ7F</td><td><em>Empty</em></td><td>Capacitor_SMD:C_0603_1608Metric</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr><td>C31, C36</td><td>12pF 50V C0G LSE Watch Crystal Load Caps</td><td>12pF</td><td><em>Empty</em></td><td>Capacitor_SMD:C_0603_1608Metric</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr><td>C34, C39</td><td>18pF 50V C0G HSE 25MHz Crystal Load Caps</td><td>18pF</td><td><em>Empty</em></td><td>Capacitor_SMD:C_0603_1608Metric</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr><td>R3, R4, R12-R14, R24, R27, R29, R30</td><td>10kΩ 1% 0603 Resistors (Qty 9)</td><td>10KΩ</td><td><em>Empty</em></td><td>Resistor_SMD:R_0603_1608Metric</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr><td>R15, R16</td><td>5.1kΩ 1% 0603 USB-C CC Pull-Down Resistors (Qty 2)</td><td>5K1Ω</td><td><em>Empty</em></td><td>Resistor_SMD:R_0603_1608Metric</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr><td>R17-R20</td><td>470Ω 1% 0603 Indicator LED Resistors (Qty 4)</td><td>470Ω</td><td><em>Empty</em></td><td>Resistor_SMD:R_0603_1608Metric</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr><td>R21, R22</td><td>4.7kΩ 1% 0603 I2C Pull-Up Resistors (Qty 2)</td><td>4K7Ω</td><td><em>Empty</em></td><td>Resistor_SMD:R_0603_1608Metric</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr><td>R6, R7</td><td>732kΩ & 100kΩ 1% TPS61023 Boost Divider Resistors</td><td>732KΩ / 100KΩ</td><td><em>Empty</em></td><td>Resistor_SMD:R_0603_1608Metric</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr><td>R9, R23</td><td>270kΩ & 100kΩ 1% MCP73871 VPCC Divider Resistors</td><td>270KΩ / 100KΩ</td><td><em>Empty</em></td><td>Resistor_SMD:R_0603_1608Metric</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr><td>R25, R26</td><td>33kΩ & 3.3kΩ 1% MCP73871 Current Programming Resistors</td><td>33KΩ / 3K3Ω</td><td><em>Empty</em></td><td>Resistor_SMD:R_0603_1608Metric</td><td><span class="badge-sev badge-high">ASSIGN FP</span></td></tr>
-            <tr style="background: rgba(239, 68, 68, 0.15);"><td>C1, C2, R1, R2, C8, C21, C35, C37, R10, R11</td><td>Abandoned Phantom Duplicate Symbols</td><td>GND / 4K7Ω</td><td><em>None</em></td><td><strong>DELETE FROM SCHEMATIC</strong></td><td><span class="badge-sev badge-critical">PURGE (10)</span></td></tr>
+            <tr><td>U5</td><td>1</td><td>STM32F411CEUx</td><td>Package_DFN_QFN:QFN-48-1EP_7x7mm_P0.5mm</td><td><span class="status-pill safe">Available (ST / LCSC)</span></td></tr>
+            <tr><td>U8</td><td>1</td><td>EBYTE_900T20D</td><td>EBYTE_900T20D:EBYTE_900T20D</td><td><span class="status-pill safe">Available (Ebyte / AliExpress)</span></td></tr>
+            <tr><td>U7</td><td>1</td><td>NEO_M8N</td><td>NEO_M8N:NEO_M8N</td><td><span class="status-pill safe">Available (u-blox Breakout)</span></td></tr>
+            <tr><td>U9</td><td>1</td><td>SE050C1HQ1/Z015Z</td><td>HX2QFN20:HX2QFN20</td><td><span class="status-pill safe">Available (NXP / DigiKey)</span></td></tr>
+            <tr><td>U6</td><td>1</td><td>MCP73871-2CC</td><td>Package_DFN_QFN:QFN-20-1EP_4x4mm_P0.5mm</td><td><span class="status-pill safe">Available (Microchip)</span></td></tr>
+            <tr><td>U1</td><td>1</td><td>TPS61023DRLR</td><td>Package_TO_SOT_SMD:SOT-563</td><td><span class="status-pill safe">Available (TI)</span></td></tr>
+            <tr><td>U2, U3</td><td>2</td><td>TLV74333PDBVR</td><td>Package_TO_SOT_SMD:SOT-23-5</td><td><span class="status-pill safe">Available (TI / LCSC)</span></td></tr>
+            <tr><td>Q1</td><td>1</td><td>FDN304PZ</td><td>Package_TO_SOT_SMD:SOT-23</td><td><span class="status-pill safe">Available (onsemi)</span></td></tr>
+            <tr><td>D6</td><td>1</td><td>WS2812B-2020</td><td>LED_SMD:LED_WS2812B-2020</td><td><span class="status-pill safe">Available (Worldsemi)</span></td></tr>
+            <tr><td>S1, S2</td><td>2</td><td>B3F-1000</td><td>TSA017A2518B (Warning: Link)</td><td><span class="status-pill warn">Footprint Library Missing</span></td></tr>
+            <tr><td>R1–R35</td><td>35</td><td>Various (0Ω, 3.3k, 4.7k, 10k, 33k, 100k, 270k, 1M)</td><td>Resistor_SMD:R_0603_1608Metric</td><td><span class="status-pill warn">Needs MPN Assignment</span></td></tr>
+            <tr><td>C1–C49</td><td>40</td><td>Various (12pF, 18pF, 100nF, 1µF, 4.7µF, 10µF, 22µF)</td><td>Capacitor_SMD:C_0603_1608Metric</td><td><span class="status-pill warn">Needs MPN Assignment</span></td></tr>
           </tbody>
         </table>
       </div>
     </section>
-
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Cryptographic Tactical Node Team. Generated via Antigravity Automated Verification Engine.</p>
-    <p style="margin-top: 0.5rem;">Ground-truth specifications recorded in <code>DESIGN_DECISIONS.md</code>.</p>
-  </footer>
-
-  <!-- Script for Interactivity -->
   <script>
-    // Theme Toggle
-    const themeBtn = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    let currentTheme = 'dark';
+    const pinsData = [{"pin": 1, "name": "VBAT", "struct": "Power", "status": "power", "maxVolt": "3.6V", "funcs": "Backup battery supply for RTC & backup registers", "projectNet": "+STM_3V3", "projectDesc": "Tied to +3.3V digital rail", "note": "Power pin. Never connect 5V."}, {"pin": 2, "name": "PC13", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "GPIO, TAMPER-RTC, On-board LED on Black Pill", "projectNet": "TAMPER_DETECT", "projectDesc": "Targeted for anti-tamper switch (currently no_connect)", "note": "5V tolerant in digital mode. Blank sheet in KiCad."}, {"pin": 3, "name": "PC14", "struct": "FT", "status": "warn", "maxVolt": "5.5V (3.6V with Crystal)", "funcs": "OSC32_IN, RTC 32.768kHz crystal input", "projectNet": "OSC32_IN", "projectDesc": "Crystal Y2 (32.768 kHz) with C31 (12 pF)", "note": "5V tolerant ONLY if LSE crystal is disabled."}, {"pin": 4, "name": "PC15", "struct": "FT", "status": "warn", "maxVolt": "5.5V (3.6V with Crystal)", "funcs": "OSC32_OUT, RTC 32.768kHz crystal output", "projectNet": "OSC32_OUT", "projectDesc": "Crystal Y2 (32.768 kHz) with C36 (12 pF)", "note": "5V tolerant ONLY if LSE crystal is disabled."}, {"pin": 5, "name": "PH0", "struct": "FT", "status": "warn", "maxVolt": "5.5V (3.6V with Crystal)", "funcs": "OSC_IN, High-Speed External (HSE) clock", "projectNet": "OSC_IN", "projectDesc": "Crystal Y1 (25.000 MHz) with C39 (18 pF)", "note": "5V tolerant ONLY if HSE is disabled."}, {"pin": 6, "name": "PH1", "struct": "FT", "status": "warn", "maxVolt": "5.5V (3.6V with Crystal)", "funcs": "OSC_OUT, High-Speed External (HSE) clock", "projectNet": "OSC_OUT", "projectDesc": "Crystal Y1 (25.000 MHz) with C34 (18 pF)", "note": "5V tolerant ONLY if HSE is disabled."}, {"pin": 7, "name": "NRST", "struct": "RST", "status": "danger", "maxVolt": "3.6V", "funcs": "Active-low bidirectional system reset", "projectNet": "NRST", "projectDesc": "Reset button S1, J5 RST, C38 (100nF), R13 (10k pull-up)", "note": "NOT 5V tolerant. Internal pull-up to VDD."}, {"pin": 8, "name": "VSSA", "struct": "Power", "status": "power", "maxVolt": "0V", "funcs": "Analog Ground reference for ADC", "projectNet": "GND", "projectDesc": "Analog Ground tied to system GND plane", "note": "Ground pin. Must tie to VSS."}, {"pin": 9, "name": "VDDA", "struct": "Power", "status": "power", "maxVolt": "3.6V", "funcs": "Analog Power supply for ADC (1.7V - 3.6V)", "projectNet": "+STM_3V3_A", "projectDesc": "Analog 3.3V rail filtered via Ferrite Bead FB1 and C29", "note": "Power pin. Never connect 5V."}, {"pin": 10, "name": "PA0", "struct": "TC", "status": "danger", "maxVolt": "VDDA + 0.3V (Max 3.6V)", "funcs": "WKUP1, ADC1_IN0, TIM2_CH1, TIM5_CH1, USART2_CTS", "projectNet": "Unconnected / Spare", "projectDesc": "Relocated battery sensing to PA6 to avoid non-5V damage!", "note": "\ud83d\udeab ONLY NON-5V GPIO! Standard 3.3V I/O. 5V will cause damage!"}, {"pin": 11, "name": "PA1", "struct": "FT", "status": "warn", "maxVolt": "5.5V (3.6V in ADC mode)", "funcs": "ADC1_IN1, TIM2_CH2, TIM5_CH2, USART2_RTS", "projectNet": "Unassigned", "projectDesc": "Spare 5V-tolerant GPIO", "note": "5V tolerant in digital mode. Max 3.6V if using ADC."}, {"pin": 12, "name": "PA2", "struct": "FT", "status": "warn", "maxVolt": "5.5V (3.6V in ADC mode)", "funcs": "ADC1_IN2, TIM2_CH3, TIM5_CH3, USART2_TX", "projectNet": "USART2_TX", "projectDesc": "Connected to GPS RX (U7 Pin 2) via R28 (0\u03a9)", "note": "5V tolerant in digital mode. 3.3V UART output to GPS."}, {"pin": 13, "name": "PA3", "struct": "FT", "status": "warn", "maxVolt": "5.5V (3.6V in ADC mode)", "funcs": "ADC1_IN3, TIM2_CH4, TIM5_CH4, USART2_RX", "projectNet": "USART2_RX", "projectDesc": "Connected to GPS TX (U7 Pin 3) via R31 (0\u03a9)", "note": "5V tolerant in digital mode. 3.3V UART input from GPS."}, {"pin": 14, "name": "PA4", "struct": "FT", "status": "warn", "maxVolt": "5.5V (3.6V in ADC mode)", "funcs": "ADC1_IN4, SPI1_NSS, I2S3_WS, USART2_CK", "projectNet": "Unassigned", "projectDesc": "Spare 5V-tolerant GPIO", "note": "5V tolerant in digital mode."}, {"pin": 15, "name": "PA5", "struct": "FT", "status": "warn", "maxVolt": "5.5V (3.6V in ADC mode)", "funcs": "ADC1_IN5, SPI1_SCK, TIM2_CH1/ETR", "projectNet": "Unassigned", "projectDesc": "Spare 5V-tolerant GPIO", "note": "5V tolerant in digital mode."}, {"pin": 16, "name": "PA6", "struct": "FT", "status": "warn", "maxVolt": "5.5V (3.6V in ADC mode)", "funcs": "ADC1_IN6, SPI1_MISO, TIM3_CH1, TIM1_BKIN", "projectNet": "BATTERY_PERCENTAGE", "projectDesc": "ADC1_IN6 from Li-Po 1:1 divider R34/R35 (2.1V max)", "note": "5V tolerant in digital mode. In ADC mode max 3.6V (input is 2.1V: SAFE)."}, {"pin": 17, "name": "PA7", "struct": "FT", "status": "warn", "maxVolt": "5.5V (3.6V in ADC mode)", "funcs": "ADC1_IN7, SPI1_MOSI, TIM3_CH2, TIM1_CH1N", "projectNet": "Unassigned", "projectDesc": "Spare 5V-tolerant GPIO", "note": "5V tolerant in digital mode."}, {"pin": 18, "name": "PB0", "struct": "FT", "status": "warn", "maxVolt": "5.5V (3.6V in ADC mode)", "funcs": "ADC1_IN8, TIM3_CH3, TIM1_CH2N", "projectNet": "Unassigned", "projectDesc": "Spare 5V-tolerant GPIO", "note": "5V tolerant in digital mode."}, {"pin": 19, "name": "PB1", "struct": "FT", "status": "warn", "maxVolt": "5.5V (3.6V in ADC mode)", "funcs": "ADC1_IN9, TIM3_CH4, TIM1_CH3N", "projectNet": "PROG_LED", "projectDesc": "TIM3_CH4 Hardware PWM for WS2812B NeoPixel DIN", "note": "5V tolerant in digital mode. Used in TIM3 PWM mode for WS2812B."}, {"pin": 20, "name": "PB2", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "BOOT1, GPIO", "projectNet": "BOOT1", "projectDesc": "Boot mode configuration pin (R12 10k pull-down, JP4)", "note": "5V tolerant in digital mode."}, {"pin": 21, "name": "PB10", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "I2C2_SCL, SPI2_SCK, TIM2_CH3", "projectNet": "Unassigned", "projectDesc": "Spare 5V-tolerant GPIO", "note": "5V tolerant in digital mode."}, {"pin": 22, "name": "VCAP1", "struct": "Analog", "status": "danger", "maxVolt": "1.32V", "funcs": "Internal 1.2V core regulator bypass capacitor (4.7\u00b5F)", "projectNet": "VCAP1", "projectDesc": "Core regulator bypass with C22 (4.7\u00b5F ceramic to GND)", "note": "\ud83d\udeab CRITICAL: Core regulator output. Connecting 5V will fry CPU."}, {"pin": 23, "name": "VSS", "struct": "Power", "status": "power", "maxVolt": "0V", "funcs": "Digital Ground", "projectNet": "GND", "projectDesc": "Main system ground", "note": "Ground reference."}, {"pin": 24, "name": "VDD", "struct": "Power", "status": "power", "maxVolt": "3.6V", "funcs": "Main Power Supply (1.7V - 3.6V)", "projectNet": "+STM_3V3", "projectDesc": "Digital 3.3V rail from LDO U2 (TLV74333)", "note": "Power pin. Never connect 5V."}, {"pin": 25, "name": "PB12", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "SPI2_NSS, I2S2_WS, I2C2_SMBA", "projectNet": "STATUS_LED", "projectDesc": "GPIO output driving discrete status LED D5 via resistor", "note": "5V tolerant in digital mode."}, {"pin": 26, "name": "PB13", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "SPI2_SCK, I2S2_CK, TIM1_CH1N", "projectNet": "Unassigned", "projectDesc": "Spare 5V-tolerant GPIO", "note": "5V tolerant in digital mode."}, {"pin": 27, "name": "PB14", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "SPI2_MISO, TIM1_CH2N", "projectNet": "LORA_M1", "projectDesc": "LoRA Mode Control M1 (R29 10k pull-down). Must be Output!", "note": "5V tolerant FT pin. \u26a0\ufe0f Configured as Input in .ioc bug!"}, {"pin": 28, "name": "PB15", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "SPI2_MOSI, I2S2_SD, TIM1_CH3N", "projectNet": "LORA_M0", "projectDesc": "LoRA Mode Control M0 (R30 10k pull-down, GPIO Output)", "note": "5V tolerant in digital mode."}, {"pin": 29, "name": "PA8", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "MCO1, TIM1_CH1, I2C3_SCL, USART1_CK", "projectNet": "Unassigned", "projectDesc": "Spare 5V-tolerant GPIO / Master Clock Out", "note": "5V tolerant in digital mode."}, {"pin": 30, "name": "PA9", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "USART1_TX, TIM1_CH2, I2C3_SMBA", "projectNet": "USART1_TX", "projectDesc": "Connected to LoRA RX (U8 Pin 3) via R33 (0\u03a9)", "note": "5V tolerant in digital mode. 3.3V UART output to LoRA."}, {"pin": 31, "name": "PA10", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "USART1_RX, TIM1_CH3", "projectNet": "USART1_RX", "projectDesc": "Connected to LoRA TX (U8 Pin 4)", "note": "5V tolerant in digital mode. 3.3V UART input from LoRA."}, {"pin": 32, "name": "PA11", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "USB_FS_DM, USART1_CTS, TIM1_CH4", "projectNet": "Unassigned", "projectDesc": "USB D- (Reserved / Flashing done via SWD)", "note": "5V tolerant in digital mode."}, {"pin": 33, "name": "PA12", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "USB_FS_DP, USART1_RTS, TIM1_ETR", "projectNet": "Unassigned", "projectDesc": "USB D+ (Reserved / Flashing done via SWD)", "note": "5V tolerant in digital mode."}, {"pin": 34, "name": "PA13", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "SWDIO (Serial Wire Data I/O)", "projectNet": "SWDIO", "projectDesc": "SWD Debug Data tied to Header J5 Pin 3", "note": "5V tolerant in digital mode."}, {"pin": 35, "name": "VSS", "struct": "Power", "status": "power", "maxVolt": "0V", "funcs": "Digital Ground", "projectNet": "GND", "projectDesc": "Main system ground", "note": "Ground reference."}, {"pin": 36, "name": "VDD", "struct": "Power", "status": "power", "maxVolt": "3.6V", "funcs": "Main Power Supply (1.7V - 3.6V)", "projectNet": "+STM_3V3", "projectDesc": "Digital 3.3V rail from LDO U2", "note": "Power pin. Never connect 5V."}, {"pin": 37, "name": "PA14", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "SWCLK (Serial Wire Clock)", "projectNet": "SWCLK", "projectDesc": "SWD Debug Clock tied to Header J5 Pin 5", "note": "5V tolerant in digital mode."}, {"pin": 38, "name": "PA15", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "JTDI, SPI1_NSS, TIM2_CH1/ETR", "projectNet": "Unassigned", "projectDesc": "Spare 5V-tolerant GPIO", "note": "5V tolerant in digital mode."}, {"pin": 39, "name": "PB3", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "SWO, JTDO, SPI1_SCK, TIM2_CH2", "projectNet": "SWO", "projectDesc": "Serial Wire Trace Output tied to Header J5 Pin 1", "note": "5V tolerant in digital mode."}, {"pin": 40, "name": "PB4", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "NJTRST, SPI1_MISO, TIM3_CH1", "projectNet": "Unassigned", "projectDesc": "Spare 5V-tolerant GPIO", "note": "5V tolerant in digital mode."}, {"pin": 41, "name": "PB5", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "I2C1_SMBA, SPI1_MOSI, TIM3_CH2", "projectNet": "Unassigned", "projectDesc": "Candidate for LoRA AUX polling line", "note": "5V tolerant in digital mode."}, {"pin": 42, "name": "PB6", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "I2C1_SCL, TIM4_CH1, USART1_TX", "projectNet": "Unassigned", "projectDesc": "Spare 5V-tolerant GPIO", "note": "5V tolerant in digital mode."}, {"pin": 43, "name": "PB7", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "I2C1_SDA, TIM4_CH2, USART1_RX", "projectNet": "Unassigned", "projectDesc": "Spare 5V-tolerant GPIO", "note": "5V tolerant in digital mode."}, {"pin": 44, "name": "BOOT0", "struct": "B", "status": "danger", "maxVolt": "3.6V (Normal Op)", "funcs": "Boot mode selection pin", "projectNet": "BOOT0", "projectDesc": "Push-button S2 to 3.3V, R14 (10k pull-down) to GND", "note": "Normal operation: tie to GND or VDD (3.3V). Do not feed 5V."}, {"pin": 45, "name": "PB8", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "I2C1_SCL, TIM4_CH3, TIM10_CH1", "projectNet": "I2C1_SCL", "projectDesc": "SE050 Crypto SCL via R21 (4.7k\u03a9 pull-up to +STM_3V3)", "note": "5V tolerant in digital mode. 400 kHz Fast-Mode I2C."}, {"pin": 46, "name": "PB9", "struct": "FT", "status": "safe", "maxVolt": "5.5V", "funcs": "I2C1_SDA, TIM4_CH4, TIM11_CH1", "projectNet": "I2C1_SDA", "projectDesc": "SE050 Crypto SDA via R22 (4.7k\u03a9 pull-up to +STM_3V3)", "note": "5V tolerant in digital mode. 400 kHz Fast-Mode I2C."}, {"pin": 47, "name": "VSS", "struct": "Power", "status": "power", "maxVolt": "0V", "funcs": "Digital Ground", "projectNet": "GND", "projectDesc": "Main system ground", "note": "Ground reference."}, {"pin": 48, "name": "VDD", "struct": "Power", "status": "power", "maxVolt": "3.6V", "funcs": "Main Power Supply (1.7V - 3.6V)", "projectNet": "+STM_3V3", "projectDesc": "Digital 3.3V rail from LDO U2", "note": "Power pin. Never connect 5V."}];
 
-    themeBtn.addEventListener('click', () => {
-      if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        themeIcon.textContent = '🌙 Dark';
-        currentTheme = 'light';
-      } else {
-        document.documentElement.removeAttribute('data-theme');
-        themeIcon.textContent = '☀️ Light';
-        currentTheme = 'dark';
-      }
-    });
+    let activeFilter = 'all';
+    let selectedPin = 16; // Default to PA6 (BATTERY_PERCENTAGE)
 
-    // SVG Sheet Switcher & Zoom/Pan Engine
-    const sheetButtons = document.querySelectorAll('.sheet-btn');
-    const svgObject = document.getElementById('svgObject');
-    const downloadSvgBtn = document.getElementById('downloadSvgBtn');
-    const svgWrapper = document.getElementById('svgWrapper');
-    const viewport = document.getElementById('svgViewport');
+    // Render pins around UFQFPN-48 chip
+    function renderPinsOnChip() {
+      const wrapper = document.getElementById('chipWrapper');
+      const icOffset = 90;
+      const icBodySize = 360;
+      const pinStep = icBodySize / 13;
 
-    let scale = 1;
-    let pointX = 0;
-    let pointY = 0;
-    let startX = 0;
-    let startY = 0;
-    let isPanning = false;
+      pinsData.forEach(p => {
+        const pinEl = document.createElement('div');
+        pinEl.className = 'chip-pin';
+        pinEl.id = `chip-pin-${p.pin}`;
+        pinEl.innerText = `${p.pin}: ${p.name}`;
+        pinEl.title = `Pin ${p.pin} (${p.name}): ${p.projectNet || 'Unassigned'}`;
 
-    function updateTransform() {
-      svgWrapper.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+        if (p.status === 'danger') pinEl.classList.add('pin-not-tolerant');
+        else if (p.status === 'safe') pinEl.classList.add('pin-tolerant');
+        else if (p.status === 'warn') pinEl.classList.add('pin-warning');
+        else if (p.status === 'power') pinEl.classList.add('pin-power');
+
+        if (p.projectNet && p.projectNet !== 'Unassigned' && !p.projectNet.includes('Spare') && !p.projectNet.includes('Unconnected')) {
+          pinEl.classList.add('project-active');
+        }
+
+        // Position mapping (Left: 1-12, Bottom: 13-24, Right: 25-36, Top: 37-48)
+        if (p.pin >= 1 && p.pin <= 12) {
+          pinEl.classList.add('pin-side-left');
+          const idx = p.pin - 1;
+          pinEl.style.top = `${icOffset + (idx + 0.5) * pinStep - 12}px`;
+        } else if (p.pin >= 13 && p.pin <= 24) {
+          pinEl.classList.add('pin-side-bottom');
+          const idx = p.pin - 13;
+          pinEl.style.left = `${icOffset + (idx + 0.5) * pinStep - 12}px`;
+        } else if (p.pin >= 25 && p.pin <= 36) {
+          pinEl.classList.add('pin-side-right');
+          const idx = 36 - p.pin;
+          pinEl.style.top = `${icOffset + (idx + 0.5) * pinStep - 12}px`;
+        } else if (p.pin >= 37 && p.pin <= 48) {
+          pinEl.classList.add('pin-side-top');
+          const idx = 48 - p.pin;
+          pinEl.style.left = `${icOffset + (idx + 0.5) * pinStep - 12}px`;
+        }
+
+        pinEl.onclick = () => selectPin(p.pin);
+        wrapper.appendChild(pinEl);
+      });
     }
 
-    sheetButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        sheetButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const src = btn.getAttribute('data-src');
-        svgObject.data = src;
-        downloadSvgBtn.href = src;
-        // Reset view
-        scale = 1;
-        pointX = 0;
-        pointY = 0;
-        updateTransform();
+    function renderTable(dataToRender) {
+      const tbody = document.getElementById('pinTableBody');
+      tbody.innerHTML = '';
+      document.getElementById('tableCount').innerText = `Showing ${dataToRender.length} of 48 pins`;
+
+      dataToRender.forEach(p => {
+        const tr = document.createElement('tr');
+        tr.id = `tr-pin-${p.pin}`;
+        if (p.pin === selectedPin) tr.classList.add('highlighted');
+
+        let badgeClass = 'safe';
+        let statusText = '5V Safe (FT)';
+        if (p.status === 'danger') {
+          badgeClass = 'danger';
+          statusText = '🚫 NOT 5V Tolerant';
+        } else if (p.status === 'warn') {
+          badgeClass = 'warn';
+          statusText = '⚠️ 5V Safe / 3.3V Analog';
+        } else if (p.status === 'power') {
+          badgeClass = 'power';
+          statusText = '⚡ Power / Ground';
+        }
+
+        tr.innerHTML = `
+          <td><strong>${p.pin}</strong></td>
+          <td><strong>${p.name}</strong></td>
+          <td><code>${p.struct}</code></td>
+          <td><span class="status-pill ${badgeClass}">${statusText}</span></td>
+          <td><strong style="color:var(--accent-cyan);">${p.projectNet || 'Unassigned'}</strong></td>
+          <td>${p.projectDesc || p.note} <br><span style="color:var(--text-muted); font-size:0.75rem;">${p.funcs}</span></td>
+        `;
+
+        tr.onclick = () => selectPin(p.pin);
+        tbody.appendChild(tr);
       });
-    });
+    }
 
-    document.getElementById('zoomIn').addEventListener('click', () => {
-      scale = Math.min(scale * 1.25, 5);
-      updateTransform();
-    });
-    document.getElementById('zoomOut').addEventListener('click', () => {
-      scale = Math.max(scale / 1.25, 0.4);
-      updateTransform();
-    });
-    document.getElementById('zoomReset').addEventListener('click', () => {
-      scale = 1;
-      pointX = 0;
-      pointY = 0;
-      updateTransform();
-    });
+    function selectPin(pinNum) {
+      selectedPin = pinNum;
+      const p = pinsData.find(item => item.pin === pinNum);
+      if (!p) return;
 
-    viewport.addEventListener('mousedown', (e) => {
-      e.preventDefault();
-      startX = e.clientX - pointX;
-      startY = e.clientY - pointY;
-      isPanning = true;
-    });
-    window.addEventListener('mousemove', (e) => {
-      if (!isPanning) return;
-      pointX = e.clientX - startX;
-      pointY = e.clientY - startY;
-      updateTransform();
-    });
-    window.addEventListener('mouseup', () => {
-      isPanning = false;
-    });
-    viewport.addEventListener('wheel', (e) => {
-      e.preventDefault();
-      const xs = (e.clientX - pointX) / scale;
-      const ys = (e.clientY - pointY) / scale;
-      const delta = -e.deltaY;
-      if (delta > 0) {
-        scale = Math.min(scale * 1.15, 5);
-      } else {
-        scale = Math.max(scale / 1.15, 0.4);
+      document.querySelectorAll('.chip-pin').forEach(el => el.classList.remove('selected'));
+      const chipEl = document.getElementById(`chip-pin-${pinNum}`);
+      if (chipEl) chipEl.classList.add('selected');
+
+      document.querySelectorAll('#pinTableBody tr').forEach(el => el.classList.remove('highlighted'));
+      const rowEl = document.getElementById(`tr-pin-${pinNum}`);
+      if (rowEl) {
+        rowEl.classList.add('highlighted');
+        rowEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
-      pointX = e.clientX - xs * scale;
-      pointY = e.clientY - ys * scale;
-      updateTransform();
-    });
 
-    // Issue Filtering
-    const filterChips = document.querySelectorAll('.filter-chip');
-    const issueCards = document.querySelectorAll('.issue-card');
+      // Update Inspector
+      document.getElementById('inspPinName').innerText = `Pin ${p.pin}: ${p.name}`;
+      document.getElementById('inspPinNum').innerText = `Physical Pin ${p.pin}`;
+      document.getElementById('inspStructure').innerHTML = `<code>${p.struct}</code>`;
+      document.getElementById('inspMaxVolt').innerText = p.maxVolt;
+      document.getElementById('inspProjectNet').innerText = p.projectNet || 'Unassigned';
+      document.getElementById('inspProjectDesc').innerText = p.projectDesc || p.note;
+      document.getElementById('inspFunctions').innerText = p.funcs;
 
-    filterChips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        filterChips.forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        const filter = chip.getAttribute('data-filter');
+      const badge = document.getElementById('inspBadge');
+      const callout = document.getElementById('inspCallout');
 
-        issueCards.forEach(card => {
-          if (filter === 'all') {
-            card.style.display = 'block';
-          } else {
-            const sev = card.getAttribute('data-severity');
-            card.style.display = (sev === filter) ? 'block' : 'none';
-          }
-        });
+      badge.className = 'badge';
+      callout.className = 'inspector-callout';
+
+      if (p.status === 'danger') {
+        badge.classList.add('badge-danger');
+        badge.innerText = p.name === 'PA0' ? '3.3V ONLY (NON-5V)' : 'NO 5V!';
+        callout.classList.add('callout-danger');
+        callout.innerHTML = `<strong>⚠️ 5V Danger:</strong> Connecting 5V will force current through internal ESD clamp into 3.3V rail. Do not connect 5V!`;
+      } else if (p.status === 'warn') {
+        badge.classList.add('badge-warn');
+        badge.innerText = 'ADC/ANALOG WARNING';
+        callout.classList.add('callout-warn');
+        callout.innerHTML = `<strong>⚠️ Analog Mode Warning:</strong> Pin has FT structure (5V tolerant in digital mode), but max 3.6V when ADC or crystal oscillator is engaged.`;
+      } else if (p.status === 'power') {
+        badge.classList.add('badge-power');
+        badge.innerText = 'POWER RAIL';
+        callout.classList.add('callout-safe');
+        callout.innerHTML = `<strong>⚡ Power Net:</strong> Connect only to rated rail (${p.maxVolt}). Never connect 5V.`;
+      } else {
+        badge.classList.add('badge-safe');
+        badge.innerText = '5V TOLERANT (FT)';
+        callout.classList.add('callout-safe');
+        callout.innerHTML = `<strong>✅ 5V Safe:</strong> Pin has FT structure. Safely interfaces with 5V external logic in standard digital mode.`;
+      }
+    }
+
+    function setFilter(type) {
+      activeFilter = type;
+      document.querySelectorAll('.controls .filter-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.chip-pin').forEach(el => el.classList.remove('dimmed'));
+
+      let filtered = pinsData;
+      if (type === 'not-tolerant') {
+        filtered = pinsData.filter(p => p.status === 'danger');
+      } else if (type === 'gpio-not-tolerant') {
+        filtered = pinsData.filter(p => p.name === 'PA0');
+      } else if (type === 'tolerant') {
+        filtered = pinsData.filter(p => p.struct === 'FT');
+      } else if (type === 'adc') {
+        filtered = pinsData.filter(p => p.funcs.includes('ADC'));
+      } else if (type === 'project') {
+        filtered = pinsData.filter(p => p.projectNet && p.projectNet !== 'Unassigned' && !p.projectNet.includes('Spare') && !p.projectNet.includes('Unconnected'));
+      }
+
+      // Dim non-matching chip pins
+      pinsData.forEach(p => {
+        if (!filtered.some(f => f.pin === p.pin)) {
+          const el = document.getElementById(`chip-pin-${p.pin}`);
+          if (el) el.classList.add('dimmed');
+        }
       });
-    });
+
+      renderTable(filtered);
+    }
+
+    function handleSearch() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      if (!q) {
+        setFilter(activeFilter);
+        return;
+      }
+      const filtered = pinsData.filter(p =>
+        p.name.toLowerCase().includes(q) ||
+        p.pin.toString() === q ||
+        p.funcs.toLowerCase().includes(q) ||
+        (p.projectNet && p.projectNet.toLowerCase().includes(q)) ||
+        (p.projectDesc && p.projectDesc.toLowerCase().includes(q))
+      );
+
+      pinsData.forEach(p => {
+        const el = document.getElementById(`chip-pin-${p.pin}`);
+        if (el) {
+          if (filtered.some(f => f.pin === p.pin)) el.classList.remove('dimmed');
+          else el.classList.add('dimmed');
+        }
+      });
+
+      renderTable(filtered);
+    }
+
+    // Schematic Viewer
+    let currentZoom = 1.0;
+    function loadSheet(svgName, btn) {
+      document.getElementById('schematicImg').src = svgName;
+      document.querySelectorAll('.sheet-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      zoomReset();
+    }
+    function zoomIn() {
+      currentZoom += 0.2;
+      document.getElementById('schematicImg').style.transform = `scale(${currentZoom})`;
+    }
+    function zoomOut() {
+      if (currentZoom > 0.4) currentZoom -= 0.2;
+      document.getElementById('schematicImg').style.transform = `scale(${currentZoom})`;
+    }
+    function zoomReset() {
+      currentZoom = 1.0;
+      document.getElementById('schematicImg').style.transform = `scale(${currentZoom})`;
+    }
 
     // Battery Runtime Simulator
-    const battCapInput = document.getElementById('battCap');
-    const battCapVal = document.getElementById('battCapVal');
-    const txIntervalInput = document.getElementById('txInterval');
-    const intervalVal = document.getElementById('intervalVal');
-    const loraPwrInput = document.getElementById('loraPwr');
-    const loraPwrVal = document.getElementById('loraPwrVal');
-    const gpsModeInput = document.getElementById('gpsMode');
-    const gpsModeVal = document.getElementById('gpsModeVal');
-    const avgCurrentText = document.getElementById('avgCurrent');
-    const batteryLifeText = document.getElementById('batteryLife');
-    const batteryDaysText = document.getElementById('batteryDays');
+    function calcRuntime() {
+      const batCap = parseFloat(document.getElementById('sliderBatCap').value);
+      const tActive = parseFloat(document.getElementById('sliderTActive').value);
+      const tSleep = parseFloat(document.getElementById('sliderTSleep').value);
+      const iLora = parseFloat(document.getElementById('sliderILora').value);
+      const iGps = parseFloat(document.getElementById('sliderIGps').value);
+      const eff = parseFloat(document.getElementById('sliderEff').value) / 100.0;
 
-    function calculateBattery() {
-      const cap = parseFloat(battCapInput.value);
-      battCapVal.textContent = `${cap} mAh`;
+      document.getElementById('dispBatCap').innerText = `${batCap} mAh`;
+      document.getElementById('dispTActive').innerText = `${tActive.toFixed(1)} s`;
+      document.getElementById('dispTSleep').innerText = `${tSleep.toFixed(1)} s`;
+      document.getElementById('dispILora').innerText = `${iLora} mA`;
+      document.getElementById('dispIGps').innerText = `${iGps} mA`;
+      document.getElementById('dispEff').innerText = `${Math.round(eff * 100)} %`;
 
-      const interval = parseFloat(txIntervalInput.value);
-      intervalVal.textContent = `${interval} seconds`;
+      const v5 = 5.0;
+      const vBat = 3.7;
+      const iStm = 25.0;
+      const iCrypt = 10.0;
 
-      // LoRA Power
-      let loraCurrent = 120; // +20dBm
-      let loraDesc = "+20 dBm (120 mA)";
-      if (loraPwrInput.value === "1") { loraCurrent = 45; loraDesc = "+10 dBm (45 mA)"; }
-      else if (loraPwrInput.value === "2") { loraCurrent = 80; loraDesc = "+14 dBm (80 mA)"; }
-      loraPwrVal.textContent = loraDesc;
+      const totalActive5V = iStm + iCrypt + iLora + iGps; // mA
+      const pActive5V = (v5 * totalActive5V) / 1000.0; // W
+      const pBatActive = pActive5V / eff; // W
+      const iBatActive = (pBatActive / vBat) * 1000.0; // mA
 
-      // GPS Mode
-      let gpsCurrent = 67; // 1Hz
-      let gpsDesc = "Cyclic 1Hz Active (67 mA)";
-      if (gpsModeInput.value === "1") { gpsCurrent = 15; gpsDesc = "Power-Save Mode (15 mA)"; }
-      else if (gpsModeInput.value === "3") { gpsCurrent = 75; gpsDesc = "High-Dynamic 5Hz (75 mA)"; }
-      gpsModeVal.textContent = gpsDesc;
+      const iSleepTotal = (15 + 5 + 4 + 15 + 107 + 63.6) / 1000.0; // ~0.209 mA
 
-      // Energy Calculation:
-      // Active burst duration: 1.2s for GPS fix/read + SE050 sign + LoRA TX
-      const activeDuration = 1.2;
-      const sleepDuration = Math.max(0, interval - activeDuration);
+      const dutyCycle = tActive / (tActive + tSleep);
+      const iBatAvg = (dutyCycle * iBatActive) + ((1.0 - dutyCycle) * iSleepTotal);
 
-      // Active state power (Boost output 5V & 3.3V LDO):
-      // 5V rail: LoRA (loraCurrent) + GPS (gpsCurrent)
-      // 3.3V rails: STM32 active (30mA) + SE050 active (15mA) + LED (5mA) = 50mA
-      const activeCurrentBatt = ((5.0 * (loraCurrent + gpsCurrent)) + (3.3 * 50)) / (3.7 * 0.85);
+      const contHours = batCap / iBatActive;
+      const tacticalHours = batCap / iBatAvg;
+      const tacticalDays = tacticalHours / 24.0;
 
-      // Sleep state power:
-      // LoRA sleep (4µA) + GPS standby (15µA) + STM32 stop (15µA) + SE050 (5µA) + Boost/LDO Iq (60µA) ≈ 0.1 mA
-      const sleepCurrentBatt = 0.100; // mA
-
-      const avgCurrent = ((activeDuration * activeCurrentBatt) + (sleepDuration * sleepCurrentBatt)) / interval;
-      const hours = cap / avgCurrent;
-      const days = (hours / 24).toFixed(1);
-
-      avgCurrentText.textContent = `${avgCurrent.toFixed(1)} mA`;
-      batteryLifeText.textContent = `${hours.toFixed(1)} Hours`;
-      batteryDaysText.textContent = `≈ ${days} Days Continuous Field Operation`;
+      document.getElementById('resDuty').innerText = `${(dutyCycle * 100).toFixed(1)}%`;
+      document.getElementById('resPeakCurrent').innerText = `${Math.round(iBatActive)} mA`;
+      document.getElementById('resAvgCurrent').innerText = `${iBatAvg.toFixed(1)} mA`;
+      document.getElementById('resContHours').innerText = `${contHours.toFixed(1)} hrs`;
+      document.getElementById('resTacticalDays').innerText = `${tacticalDays.toFixed(2)} Days`;
     }
 
-    [battCapInput, txIntervalInput, loraPwrInput, gpsModeInput].forEach(inp => {
-      inp.addEventListener('input', calculateBattery);
-    });
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      if (current === 'light') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    }
 
-    calculateBattery();
+    window.onload = function() {
+      renderPinsOnChip();
+      renderTable(pinsData);
+      selectPin(16);
+      calcRuntime();
+    };
   </script>
 </body>
 </html>
