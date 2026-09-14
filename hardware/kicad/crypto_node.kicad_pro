@@ -661,7 +661,7 @@
         "uuid": "6c72b0cb-17b9-42a6-811c-297d0c354af3"
       }
     ],
-    "used_designators": "#FLG1-12,C1-21,C28-50,C67,Q1-2,D1-11,U1-10,L1-2,SW1-2,S1-2,R1-9,R12-37,R39,JP1-5,J1-2,J5-6,J19,BT1-2,Y1-2,#PWR1-38,#PWR46,#PWR48-83,#PWR87-88,#PWR90-95,#PWR99-101,#PWR104,#PWR113-114,#PWR121-122",
+    "used_designators": "#FLG1-12,C1-21,C28-50,C67,Q1-2,D1-11,U1-10,L1-2,SW1-2,S1-4,R1-9,R12-37,R39,JP1-6,J1-2,J5-6,J19,BT1-2,Y1-4,#PWR1-38,#PWR46,#PWR48-83,#PWR87-88,#PWR90-95,#PWR99-102,#PWR104,#PWR113-114,#PWR121-122",
     "variants": []
   },
   "sheets": [
@@ -691,7 +691,7 @@
     ],
     [
       "e87e5251-6a6f-477d-99f2-f9bb3f6c7b88",
-      "Tampering"
+      "Tamper"
     ]
   ],
   "text_variables": {},

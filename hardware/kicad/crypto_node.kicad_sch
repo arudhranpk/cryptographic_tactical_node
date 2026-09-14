@@ -152,16 +152,6 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 88.9) (xy 121.92 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "143fbe54-5242-4013-babc-57caae30029e")
-	)
-	(wire
-		(pts
 			(xy 190.5 91.44) (xy 198.12 91.44)
 		)
 		(stroke
@@ -189,6 +179,26 @@
 			(type default)
 		)
 		(uuid "354be538-c61e-4e1e-a5c7-98a11ede978a")
+	)
+	(wire
+		(pts
+			(xy 162.56 38.1) (xy 154.94 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "394b7efc-1c61-4b61-b2c2-38f18c968db2")
+	)
+	(wire
+		(pts
+			(xy 99.06 91.44) (xy 121.92 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "571c39bd-2689-4336-9a07-adae21907e96")
 	)
 	(wire
 		(pts
@@ -242,6 +252,16 @@
 	)
 	(wire
 		(pts
+			(xy 154.94 38.1) (xy 154.94 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98060e27-782a-4ba7-af6e-72a35339c436")
+	)
+	(wire
+		(pts
 			(xy 152.4 114.3) (xy 152.4 120.65)
 		)
 		(stroke
@@ -249,6 +269,16 @@
 			(type default)
 		)
 		(uuid "b1fd5ad3-885b-42b8-afc7-1613a34a5709")
+	)
+	(wire
+		(pts
+			(xy 99.06 86.36) (xy 121.92 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb2d09eb-239a-4779-8d3f-017f6617df26")
 	)
 	(wire
 		(pts
@@ -269,16 +299,6 @@
 			(type default)
 		)
 		(uuid "d9abfcdd-0f87-42d6-96e6-a95625684450")
-	)
-	(wire
-		(pts
-			(xy 99.06 92.71) (xy 121.92 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ec7c870f-2b3a-4366-82f9-f9cc68e3e391")
 	)
 	(wire
 		(pts
@@ -704,7 +724,7 @@
 			)
 		)
 		(pin "I2C1_SCL" output
-			(at 121.92 88.9 180)
+			(at 121.92 86.36 180)
 			(uuid "23a018fd-ffef-48c4-a873-c0e4f1d71a43")
 			(effects
 				(font
@@ -714,7 +734,7 @@
 			)
 		)
 		(pin "I2C1_SDA" bidirectional
-			(at 121.92 92.71 180)
+			(at 121.92 91.44 180)
 			(uuid "5cae5417-d8bc-4077-ab25-d4a955a087b6")
 			(effects
 				(font
@@ -773,7 +793,7 @@
 				(justify right)
 			)
 		)
-		(pin "PB14" passive
+		(pin "PB14" output
 			(at 175.26 104.14 0)
 			(uuid "645dd0f6-3185-46ee-84d0-54227ba49dca")
 			(effects
@@ -783,9 +803,19 @@
 				(justify right)
 			)
 		)
-		(pin "PB15" passive
+		(pin "PB15" output
 			(at 175.26 100.33 0)
 			(uuid "b8156d33-460e-4e7b-8feb-57b7bdc9c022")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "PC13" input
+			(at 154.94 73.66 90)
+			(uuid "855213dc-cc2d-4b81-85c2-ca061e39d416")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -926,7 +956,7 @@
 			)
 		)
 		(pin "CRYPT_SCL" input
-			(at 99.06 88.9 0)
+			(at 99.06 86.36 0)
 			(uuid "0dde9acd-02c2-412b-9f1b-1778c38a5beb")
 			(effects
 				(font
@@ -936,7 +966,7 @@
 			)
 		)
 		(pin "CRYPT_SDA" bidirectional
-			(at 99.06 92.71 0)
+			(at 99.06 91.44 0)
 			(uuid "6ad03841-d411-465d-9d3e-010be24cab16")
 			(effects
 				(font
@@ -969,7 +999,7 @@
 			(color 0 0 0 0)
 		)
 		(uuid "e87e5251-6a6f-477d-99f2-f9bb3f6c7b88")
-		(property "Sheetname" "Tampering"
+		(property "Sheetname" "Tamper"
 			(at 162.56 19.6084 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -989,6 +1019,16 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "TAMPER" output
+			(at 162.56 38.1 180)
+			(uuid "70667365-86e4-4faa-b9da-4963a6b28b22")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances

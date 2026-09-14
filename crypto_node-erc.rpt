@@ -1,48 +1,19 @@
-ERC report (2026-09-10T23:46:08, Encoding UTF8)
-Report includes: Errors, Warnings
+ERC report (2026-09-14T00:26:20, Encoding UTF8)
+Report includes: Errors, Warnings, Exclusions
 
 ***** Sheet /
-[lib_symbol_mismatch]: Symbol 'USB_C_Receptacle_USB2.0_16P' doesn't match copy in library 'Connector'
+[hier_label_mismatch]: Sheet pin TAMPER has no matching hierarchical label inside the sheet
+    ; error
+    @(162.56 mm, 38.10 mm): Hierarchical Sheet Pin 'TAMPER'
+[isolated_pin_label]: Label connected to only one pin
     ; warning
-    @(26.67 mm, 90.17 mm): Symbol J19 [USB_C_Receptacle_USB2.0_16P]
-[lib_symbol_issues]: The symbol library 'TLV74333PDBVR' was not found at '/home/arudhranpk/OneDrive/College/Sem7/project/cryptographic_tactical_node/hardware/kicad/custom/TLV74333PDBVR/TLV74333PDBVR.kicad_sym'
-    ; warning
-    @(245.11 mm, 33.02 mm): Symbol U2 [TLV74333PDBVR]
-[lib_symbol_issues]: The symbol library 'TLV74333PDBVR' was not found at '/home/arudhranpk/OneDrive/College/Sem7/project/cryptographic_tactical_node/hardware/kicad/custom/TLV74333PDBVR/TLV74333PDBVR.kicad_sym'
-    ; warning
-    @(245.11 mm, 74.93 mm): Symbol U3 [TLV74333PDBVR]
-[lib_symbol_mismatch]: Symbol 'Crystal_GND24' doesn't match copy in library 'Device'
-    ; warning
-    @(29.21 mm, 110.49 mm): Symbol Y1 [Crystal_GND24]
-[footprint_link_issues]: The current configuration does not include the footprint library 'TSA017A2518B'
-    ; warning
-    @(44.45 mm, 144.78 mm): Symbol S1 [B3F-1000]
-[footprint_link_issues]: The current configuration does not include the footprint library 'TSA017A2518B'
-    ; warning
-    @(50.80 mm, 172.72 mm): Symbol S2 [B3F-1000]
-[lib_symbol_mismatch]: Symbol 'SolderJumper_2_Open' doesn't match copy in library 'Jumper'
-    ; warning
-    @(247.65 mm, 22.86 mm): Symbol JP2 [SolderJumper_2_Open]
-[lib_symbol_mismatch]: Symbol 'SolderJumper_2_Open' doesn't match copy in library 'Jumper'
-    ; warning
-    @(247.65 mm, 33.02 mm): Symbol JP3 [SolderJumper_2_Open]
-[lib_symbol_mismatch]: Symbol 'SolderJumper_2_Open' doesn't match copy in library 'Jumper'
-    ; warning
-    @(250.19 mm, 123.19 mm): Symbol JP4 [SolderJumper_2_Open]
+    @(123.19 mm, 113.03 mm): Hierarchical Label 'PB13'
 
 ***** Sheet /Power/
-[pin_to_pin]: Pins of type Power output and Power output are connected
-    ; error
-    @(95.25 mm, 190.50 mm): Symbol #FLG05 Pin 1 [Power output, Line]
-    @(255.27 mm, 30.48 mm): Symbol U2 Pin 5 [OUT, Power output, Line]
-[pin_to_pin]: Pins of type Power output and Power output are connected
-    ; error
-    @(107.95 mm, 190.50 mm): Symbol #FLG07 Pin 1 [Power output, Line]
-    @(255.27 mm, 72.39 mm): Symbol U3 Pin 5 [OUT, Power output, Line]
-[multiple_net_names]: Both CE and +VUSB are attached to the same items; CE will be used in the netlist
+[multiple_net_names]: Both CE and PROG2 are attached to the same items; CE will be used in the netlist
     ; warning
-    @(109.22 mm, 111.76 mm): Global Label 'CE'
-    @(44.45 mm, 184.15 mm): Symbol #PWR070 Hidden pin 1 [VUSB, Power input, Line]
+    @(177.80 mm, 143.51 mm): Global Label 'CE'
+    @(177.80 mm, 133.35 mm): Global Label 'PROG2'
 
 ***** Sheet /STM32/
 
@@ -52,9 +23,12 @@ Report includes: Errors, Warnings
 
 ***** Sheet /LoRA/
 
-***** Sheet /Tampering/
+***** Sheet /Tamper/
+[hier_label_mismatch]: Hierarchical label TAMPER_1 has no matching sheet pin in the parent sheet
+    ; error
+    @(80.01 mm, 40.64 mm): Hierarchical Label 'TAMPER_1'
 
- ** ERC messages: 12  Errors 2  Warnings 10
+ ** ERC messages: 4  Errors 2  Warnings 2
 
  ** Ignored checks:
     - Global label only appears once in the schematic
