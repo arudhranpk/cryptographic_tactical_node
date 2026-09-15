@@ -9,7 +9,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "U"
-			(at 0 3.81 0)
+			(at 0 2.54 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18,7 +18,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "TPS61023DRLR"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26,6 +26,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-563"
@@ -71,14 +72,6 @@
 				)
 				(fill
 					(type none)
-				)
-			)
-			(text "TPS61023DRLR"
-				(at 0 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
 				)
 			)
 			(pin input line

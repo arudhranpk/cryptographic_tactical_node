@@ -192,6 +192,16 @@
 	)
 	(wire
 		(pts
+			(xy 175.26 107.95) (xy 198.12 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4903b9ce-c412-451c-9e38-9adb288a7d19")
+	)
+	(wire
+		(pts
 			(xy 99.06 91.44) (xy 121.92 91.44)
 		)
 		(stroke
@@ -321,7 +331,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "832bc2c1-275c-4698-bbbd-79b6adbeb2f9")
-		(property "Reference" "R32"
+		(property "Reference" "R3"
 			(at 186.69 86.36 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -341,7 +351,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 186.69 88.138 90)
 			(hide yes)
 			(show_name no)
@@ -383,7 +393,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3"
-					(reference "R32")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -400,7 +410,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8ce4c23c-1516-4f51-a33e-926adc481deb")
-		(property "Reference" "R33"
+		(property "Reference" "R4"
 			(at 186.69 91.44 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -420,7 +430,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 186.69 93.218 90)
 			(hide yes)
 			(show_name no)
@@ -462,7 +472,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3"
-					(reference "R33")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -479,7 +489,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9eb021b4-9838-4611-a6ec-55b40dca28cb")
-		(property "Reference" "R31"
+		(property "Reference" "R2"
 			(at 153.67 123.19 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -501,7 +511,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 150.622 124.46 90)
 			(hide yes)
 			(show_name no)
@@ -543,7 +553,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3"
-					(reference "R31")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -560,7 +570,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "fcd011a1-68b2-487e-a23f-8101a3f10749")
-		(property "Reference" "R28"
+		(property "Reference" "R1"
 			(at 147.32 123.19 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -582,7 +592,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 144.272 124.46 90)
 			(hide yes)
 			(show_name no)
@@ -624,7 +634,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3"
-					(reference "R28")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -668,9 +678,9 @@
 				(justify left top)
 			)
 		)
-		(pin "BATTERY_PERCENTAGE" output
+		(pin "POWER_VOLTAGE" output
 			(at 134.62 38.1 0)
-			(uuid "1c30eb14-c4ad-466f-866f-a1d94631b5b6")
+			(uuid "0e8f6a27-f3fa-4cfa-9513-7b653e1c114c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -823,6 +833,16 @@
 				(justify right)
 			)
 		)
+		(pin "PB5" input
+			(at 175.26 107.95 0)
+			(uuid "eec15015-812d-4325-a82a-556bab304c67")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3"
@@ -902,6 +922,16 @@
 		(pin "LORA_M1" input
 			(at 198.12 104.14 180)
 			(uuid "c1c06079-0a49-45f2-8b88-cefd6d66c3b5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "AUX" output
+			(at 198.12 107.95 180)
+			(uuid "966fe849-35fa-4bf2-995c-d4ffdca3b238")
 			(effects
 				(font
 					(size 1.27 1.27)

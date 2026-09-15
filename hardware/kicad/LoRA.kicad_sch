@@ -878,10 +878,6 @@
 		(color 0 0 0 0)
 		(uuid "e6c9cc92-7201-4047-8319-f915df13a5bc")
 	)
-	(no_connect
-		(at 110.49 71.12)
-		(uuid "6f730780-7a0c-4859-92e3-ca22a6179bfc")
-	)
 	(wire
 		(pts
 			(xy 137.16 52.07) (xy 142.24 52.07)
@@ -1154,6 +1150,16 @@
 	)
 	(wire
 		(pts
+			(xy 115.57 71.12) (xy 110.49 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c824a53a-786d-44a1-8999-efafe2f02842")
+	)
+	(wire
+		(pts
 			(xy 68.58 68.58) (xy 68.58 72.39)
 		)
 		(stroke
@@ -1274,6 +1280,17 @@
 			(justify left)
 		)
 		(uuid "68665ed4-dd32-4df1-a06e-bab19346035e")
+	)
+	(hierarchical_label "AUX"
+		(shape output)
+		(at 115.57 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "77926a56-4eb3-497a-9931-cf13d32fdae0")
 	)
 	(hierarchical_label "LORA_M1"
 		(shape input)
@@ -1402,7 +1419,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "25873c79-2905-44e5-8164-89366b9cd0b1")
-		(property "Reference" "#PWR095"
+		(property "Reference" "#PWR094"
 			(at 142.24 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -1462,7 +1479,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
-					(reference "#PWR095")
+					(reference "#PWR094")
 					(unit 1)
 				)
 			)
@@ -1480,7 +1497,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4a21628a-4305-4559-b174-58b76d3e62b3")
-		(property "Reference" "#PWR093"
+		(property "Reference" "#PWR090"
 			(at 64.77 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -1540,7 +1557,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
-					(reference "#PWR093")
+					(reference "#PWR090")
 					(unit 1)
 				)
 			)
@@ -1557,7 +1574,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "60b0a095-a403-4302-ad54-193ca654eca2")
-		(property "Reference" "R30"
+		(property "Reference" "R29"
 			(at 62.23 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1579,7 +1596,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 59.182 76.2 90)
 			(hide yes)
 			(show_name no)
@@ -1621,7 +1638,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
-					(reference "R30")
+					(reference "R29")
 					(unit 1)
 				)
 			)
@@ -1638,7 +1655,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "679ecf2a-f2a4-4722-ad0c-0657f30048e1")
-		(property "Reference" "C47"
+		(property "Reference" "C41"
 			(at 148.59 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1660,7 +1677,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 148.2852 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -1702,7 +1719,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
-					(reference "C47")
+					(reference "C41")
 					(unit 1)
 				)
 			)
@@ -1719,7 +1736,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "88011b6f-7374-462d-9468-48d77d365bdb")
-		(property "Reference" "C46"
+		(property "Reference" "C40"
 			(at 138.43 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1741,7 +1758,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 138.1252 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -1783,7 +1800,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
-					(reference "C46")
+					(reference "C40")
 					(unit 1)
 				)
 			)
@@ -1801,7 +1818,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b65ac788-d738-4a8a-8301-a366d6e7355a")
-		(property "Reference" "#PWR090"
+		(property "Reference" "#PWR092"
 			(at 115.57 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -1861,7 +1878,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
-					(reference "#PWR090")
+					(reference "#PWR092")
 					(unit 1)
 				)
 			)
@@ -1956,7 +1973,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f6121638-0857-49df-ba7e-da72cdc156f0")
-		(property "Reference" "R29"
+		(property "Reference" "R30"
 			(at 69.85 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1978,7 +1995,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 66.802 76.2 90)
 			(hide yes)
 			(show_name no)
@@ -2020,7 +2037,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
-					(reference "R29")
+					(reference "R30")
 					(unit 1)
 				)
 			)
@@ -2037,7 +2054,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f9f34ae1-81e5-4595-bda7-b61ea1d51b36")
-		(property "Reference" "#PWR094"
+		(property "Reference" "#PWR093"
 			(at 142.24 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -2097,7 +2114,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
-					(reference "#PWR094")
+					(reference "#PWR093")
 					(unit 1)
 				)
 			)

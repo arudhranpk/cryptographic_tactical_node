@@ -49,8 +49,7 @@
               "title": "To Do"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -214,7 +213,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "7f0c5c6334c7271f",
+  "active": "f8e88b34e2ebeb0f",
   "lastOpenFiles": [
     "Calculation.md",
     "To Do.md",

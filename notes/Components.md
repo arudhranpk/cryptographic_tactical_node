@@ -42,7 +42,7 @@ PH-A-2mm-2 pin Wafer Male Connector Through Hole Straight
 ### POWER
 #### Boost converter
 [TPS61023DRLR](https://robu.in/product/tps61023drlr-texas-instruments-boost-type-adjustable-2-2v5-5v-3a-500mv5-5v-sot-563-dc-dc-converters-rohs/) [Datasheet](https://www.ti.com/lit/ds/symlink/tps61023.pdf?ts=1785845464782&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTPS61023)
-[Inductor SWPA6045S1R0NT]([https://robu.in/product/swpa6045s1r0nt-sunlord-1uh-30-5-6a-100khz-6x6x4-5mm-wire-wound-power-inductor-smd/](https://robu.in/product/swpa8040s1r0nt-1uh-30-6-3a-8ohm-smd-8-0x8-0x4-0mm-power-inductors-pack-of-2/))
+[Inductor SWPA5040S1R0NT](https://sharvielectronics.com/product/swpa5040s1r0nt-1uh-4-9a-smd-inductor/))
 
 #### MOSFET
 [FDN304PZ](https://robu.in/product/fdn304pz-onsemi-power-mosfet-p-channel-20-v-2-4-a-0-036-ohm-supersot-surface-mount/)

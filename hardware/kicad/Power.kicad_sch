@@ -1414,6 +1414,148 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:NetTie_2"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "NT"
+				(at 0 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "NetTie_2"
+				(at 0 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Net tie, 2 pins"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "net tie short"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Net*Tie*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "NetTie_2_0_1"
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "NetTie_2_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -2704,7 +2846,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "U"
-				(at 0 3.81 0)
+				(at 0 2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -2713,7 +2855,7 @@
 					)
 				)
 			)
-			(property "Value" ""
+			(property "Value" "TPS61023DRLR"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -2721,6 +2863,7 @@
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 				)
 			)
 			(property "Footprint" "Package_TO_SOT_SMD:SOT-563"
@@ -2766,14 +2909,6 @@
 					)
 					(fill
 						(type none)
-					)
-				)
-				(text "TPS61023DRLR"
-					(at 0 1.27 0)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
 					)
 				)
 				(pin input line
@@ -4147,7 +4282,7 @@
 	)
 	(rectangle
 		(start 13.97 13.97)
-		(end 64.77 55.88)
+		(end 60.96 55.88)
 		(stroke
 			(width 0)
 			(type solid)
@@ -4158,8 +4293,8 @@
 		(uuid "19297e8f-3728-463b-a001-f88b19f85712")
 	)
 	(rectangle
-		(start 67.31 13.97)
-		(end 129.54 55.88)
+		(start 63.5 13.97)
+		(end 118.11 55.88)
 		(stroke
 			(width 0)
 			(type default)
@@ -4206,8 +4341,8 @@
 		(uuid "e821efc7-573d-4add-ba4e-168b2050c5fb")
 	)
 	(rectangle
-		(start 132.08 13.97)
-		(end 175.26 55.88)
+		(start 120.65 13.97)
+		(end 199.39 55.88)
 		(stroke
 			(width 0)
 			(type default)
@@ -4219,7 +4354,7 @@
 	)
 	(text "POLARITY PROTECTION"
 		(exclude_from_sim no)
-		(at 68.58 16.51 0)
+		(at 64.77 16.51 0)
 		(effects
 			(font
 				(face "JetBrainsMono NF")
@@ -4230,6 +4365,17 @@
 			(justify left top)
 		)
 		(uuid "0ee3ed6f-bc9f-408b-a777-6d7159923c32")
+	)
+	(text "1μH"
+		(exclude_from_sim no)
+		(at 62.23 140.97 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify top)
+		)
+		(uuid "1d527d44-2940-44f7-9069-7144567b7294")
 	)
 	(text "BATTERY (1S Li-Po)"
 		(exclude_from_sim no)
@@ -4245,9 +4391,9 @@
 		)
 		(uuid "214afad3-a92e-4bc4-a33a-055e3cce1a1e")
 	)
-	(text "SWITCHING"
+	(text "SWITCHING & VOLTAGE MONITORING"
 		(exclude_from_sim no)
-		(at 133.35 16.51 0)
+		(at 121.92 16.51 0)
 		(effects
 			(font
 				(face "JetBrainsMono NF")
@@ -4450,7 +4596,7 @@
 		(uuid "35310695-40ba-468f-a423-63b1b11a2917")
 	)
 	(junction
-		(at 185.42 128.27)
+		(at 191.77 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "37616ae6-4a14-45a2-b819-c66ebf645b3b")
@@ -4462,7 +4608,7 @@
 		(uuid "41fb5196-b9d4-4e3e-9efd-0ee87e6a9926")
 	)
 	(junction
-		(at 193.04 100.33)
+		(at 194.31 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "45c92f28-b9c3-4e5e-bd0e-363476f757d9")
@@ -4498,7 +4644,7 @@
 		(uuid "632045ec-f403-42f0-8511-e76746ea6878")
 	)
 	(junction
-		(at 185.42 138.43)
+		(at 191.77 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "64d9cdc0-4beb-4c7b-bf19-f12fb690248e")
@@ -4516,7 +4662,7 @@
 		(uuid "6a04ffd4-e705-407e-a74b-355dc2317bfe")
 	)
 	(junction
-		(at 185.42 133.35)
+		(at 191.77 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6d16107f-7c55-4fa7-9547-db72143c83ba")
@@ -4570,7 +4716,7 @@
 		(uuid "9a9d4ffc-88fa-4969-a597-60d57c5f907c")
 	)
 	(junction
-		(at 107.95 45.72)
+		(at 97.79 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9ca6e057-c8a8-4080-98a5-1c9e31865390")
@@ -4594,10 +4740,10 @@
 		(uuid "b00a0f3b-7495-4114-a8dd-d9f843ce8c67")
 	)
 	(junction
-		(at 40.64 36.83)
+		(at 167.64 26.67)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b8d5042e-5c39-4aaf-b8db-5f4f191051aa")
+		(uuid "b71dda3b-ec91-4415-a977-f30ddf736e20")
 	)
 	(junction
 		(at 264.16 30.48)
@@ -4606,7 +4752,7 @@
 		(uuid "bce1939b-ae07-49a5-bf27-d9aa9d373f09")
 	)
 	(junction
-		(at 193.04 106.68)
+		(at 194.31 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c323468f-9780-46c1-918b-c4f333a32472")
@@ -4642,6 +4788,12 @@
 		(uuid "dfe6e81c-834d-47c1-8a69-eaad74ea99b6")
 	)
 	(junction
+		(at 176.53 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e0d6e5bd-8bfc-4a28-82c0-d85042cdc778")
+	)
+	(junction
 		(at 273.05 30.48)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4654,64 +4806,28 @@
 		(uuid "efe3ad05-1649-47e6-b9dc-d8bc65c011ff")
 	)
 	(junction
-		(at 92.71 36.83)
+		(at 82.55 36.83)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f6d122d1-b252-4c74-853e-00a2b7117ac8")
 	)
 	(junction
-		(at 185.42 143.51)
+		(at 191.77 143.51)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f71e05cc-aea6-422e-a728-b537eaa70f40")
-	)
-	(no_connect
-		(at 31.75 184.15)
-		(uuid "0c6e43a9-359d-4991-80e0-25c54204bdd5")
 	)
 	(no_connect
 		(at 41.91 90.17)
 		(uuid "0e93c8cb-44ea-4840-ae55-09a346da1139")
 	)
 	(no_connect
-		(at 86.36 -7.62)
-		(uuid "1f903327-6095-4604-8117-38fe66ebe6fb")
-	)
-	(no_connect
 		(at 41.91 105.41)
 		(uuid "36161460-5959-4cf2-b832-f327f6b60a22")
 	)
 	(no_connect
-		(at 116.84 -7.62)
-		(uuid "40ad168e-aa98-4ee4-8660-c273fc5807d8")
-	)
-	(no_connect
-		(at 100.33 -11.43)
-		(uuid "482a0f1d-4fb3-449d-8be3-00fb6faca45f")
-	)
-	(no_connect
-		(at 100.33 -3.81)
-		(uuid "58f66116-6ee9-470b-9024-e50438cd7f6c")
-	)
-	(no_connect
-		(at 78.74 -11.43)
-		(uuid "7a7387e8-bfda-4017-90a1-aa87ea6f2d69")
-	)
-	(no_connect
 		(at 41.91 92.71)
 		(uuid "7db6c3f5-155a-461a-b49e-6e395b95019c")
-	)
-	(no_connect
-		(at 93.98 -7.62)
-		(uuid "873efe9c-09c1-4e8f-90e3-02f920a64719")
-	)
-	(no_connect
-		(at 31.75 190.5)
-		(uuid "ae34e448-8c65-49d1-bcd3-9772b248efeb")
-	)
-	(no_connect
-		(at 109.22 -7.62)
-		(uuid "cb2bf718-ee39-47b7-831a-c77403d6f9b8")
 	)
 	(no_connect
 		(at 158.75 44.45)
@@ -4730,16 +4846,12 @@
 		(uuid "e42e0c03-6356-473b-bbcc-454b99567f24")
 	)
 	(no_connect
-		(at 82.55 184.15)
+		(at 69.85 184.15)
 		(uuid "e8187c0a-5236-435c-b50c-a9561a86fe1e")
 	)
 	(no_connect
-		(at 82.55 190.5)
+		(at 69.85 190.5)
 		(uuid "f53f02e3-118d-4721-b849-a3e69df37bf5")
-	)
-	(no_connect
-		(at 78.74 -3.81)
-		(uuid "ffde93a1-887d-4830-bfef-0b45b0cb5537")
 	)
 	(wire
 		(pts
@@ -4793,7 +4905,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 106.68) (xy 167.64 106.68)
+			(xy 147.32 106.68) (xy 168.91 106.68)
 		)
 		(stroke
 			(width 0)
@@ -4813,7 +4925,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 113.03) (xy 167.64 113.03)
+			(xy 160.02 113.03) (xy 168.91 113.03)
 		)
 		(stroke
 			(width 0)
@@ -4853,7 +4965,7 @@
 	)
 	(wire
 		(pts
-			(xy 20.32 40.64) (xy 20.32 48.26)
+			(xy 30.48 40.64) (xy 30.48 48.26)
 		)
 		(stroke
 			(width 0)
@@ -4863,7 +4975,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 138.43) (xy 185.42 138.43)
+			(xy 176.53 138.43) (xy 181.61 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4873,7 +4985,7 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 106.68) (xy 179.07 106.68)
+			(xy 176.53 106.68) (xy 180.34 106.68)
 		)
 		(stroke
 			(width 0)
@@ -4913,7 +5025,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 36.83) (xy 77.47 49.53)
+			(xy 67.31 36.83) (xy 67.31 49.53)
 		)
 		(stroke
 			(width 0)
@@ -5023,7 +5135,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 133.35) (xy 185.42 138.43)
+			(xy 191.77 133.35) (xy 191.77 138.43)
 		)
 		(stroke
 			(width 0)
@@ -5043,7 +5155,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 128.27) (xy 185.42 133.35)
+			(xy 191.77 128.27) (xy 191.77 133.35)
 		)
 		(stroke
 			(width 0)
@@ -5060,6 +5172,16 @@
 			(type default)
 		)
 		(uuid "207ed23b-b462-4472-a4d1-177fb0928765")
+	)
+	(wire
+		(pts
+			(xy 181.61 143.51) (xy 176.53 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21e49fde-3bd7-4bb1-9f87-1d61cb4bd9fa")
 	)
 	(wire
 		(pts
@@ -5113,7 +5235,17 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 138.43) (xy 185.42 143.51)
+			(xy 186.69 133.35) (xy 191.77 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "275f9e59-170e-41ad-87be-85cebe1b7bce")
+	)
+	(wire
+		(pts
+			(xy 191.77 138.43) (xy 191.77 143.51)
 		)
 		(stroke
 			(width 0)
@@ -5203,7 +5335,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 100.33) (xy 175.26 100.33)
+			(xy 180.34 100.33) (xy 176.53 100.33)
 		)
 		(stroke
 			(width 0)
@@ -5303,7 +5435,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 106.68) (xy 193.04 113.03)
+			(xy 194.31 106.68) (xy 194.31 113.03)
 		)
 		(stroke
 			(width 0)
@@ -5363,16 +5495,6 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 25.4) (xy 40.64 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "448d846f-a179-41ed-9aca-205f99fc18c6")
-	)
-	(wire
-		(pts
 			(xy 21.59 162.56) (xy 21.59 166.37)
 		)
 		(stroke
@@ -5393,7 +5515,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 26.67) (xy 121.92 45.72)
+			(xy 111.76 26.67) (xy 111.76 45.72)
 		)
 		(stroke
 			(width 0)
@@ -5413,7 +5535,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 45.72) (xy 92.71 36.83)
+			(xy 82.55 45.72) (xy 82.55 36.83)
 		)
 		(stroke
 			(width 0)
@@ -5443,7 +5565,17 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 36.83) (xy 92.71 36.83)
+			(xy 186.69 128.27) (xy 191.77 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c439de8-fa2a-43f7-a94f-28295338bc10")
+	)
+	(wire
+		(pts
+			(xy 78.74 36.83) (xy 82.55 36.83)
 		)
 		(stroke
 			(width 0)
@@ -5493,6 +5625,16 @@
 	)
 	(wire
 		(pts
+			(xy 176.53 36.83) (xy 176.53 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f3fa935-56ee-4486-b0e0-25092f8f9d2c")
+	)
+	(wire
+		(pts
 			(xy 276.86 43.18) (xy 273.05 43.18)
 		)
 		(stroke
@@ -5503,7 +5645,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 41.91) (xy 107.95 45.72)
+			(xy 97.79 41.91) (xy 97.79 45.72)
 		)
 		(stroke
 			(width 0)
@@ -5513,7 +5655,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 184.15) (xy 57.15 190.5)
+			(xy 44.45 184.15) (xy 44.45 190.5)
 		)
 		(stroke
 			(width 0)
@@ -5563,7 +5705,7 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 113.03) (xy 179.07 113.03)
+			(xy 176.53 113.03) (xy 180.34 113.03)
 		)
 		(stroke
 			(width 0)
@@ -5573,7 +5715,7 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 140.97) (xy 46.99 151.13)
+			(xy 46.99 139.7) (xy 46.99 151.13)
 		)
 		(stroke
 			(width 0)
@@ -5603,7 +5745,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 133.35) (xy 185.42 133.35)
+			(xy 176.53 133.35) (xy 181.61 133.35)
 		)
 		(stroke
 			(width 0)
@@ -5623,17 +5765,7 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 45.72) (xy 40.64 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "62fd88b4-b120-42b1-81cf-21c2ccc36e36")
-	)
-	(wire
-		(pts
-			(xy 44.45 184.15) (xy 44.45 190.5)
+			(xy 31.75 184.15) (xy 31.75 190.5)
 		)
 		(stroke
 			(width 0)
@@ -5653,23 +5785,13 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 113.03) (xy 193.04 113.03)
+			(xy 187.96 113.03) (xy 194.31 113.03)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "63685fce-2401-4652-9120-57cf581e3ec1")
-	)
-	(wire
-		(pts
-			(xy 40.64 36.83) (xy 40.64 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "646a4209-bf44-4025-a349-04e01dd6a4c1")
 	)
 	(wire
 		(pts
@@ -5690,6 +5812,16 @@
 			(type default)
 		)
 		(uuid "658bcb22-9c7a-4a26-9716-555a588737fa")
+	)
+	(wire
+		(pts
+			(xy 167.64 26.67) (xy 176.53 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65dab692-44af-4516-b208-c34d615c53b7")
 	)
 	(polyline
 		(pts
@@ -5723,7 +5855,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 100.33) (xy 161.29 100.33)
+			(xy 168.91 100.33) (xy 161.29 100.33)
 		)
 		(stroke
 			(width 0)
@@ -5733,7 +5865,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 151.13) (xy 77.47 140.97)
+			(xy 77.47 151.13) (xy 77.47 139.7)
 		)
 		(stroke
 			(width 0)
@@ -5743,7 +5875,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 125.73) (xy 185.42 128.27)
+			(xy 191.77 125.73) (xy 191.77 128.27)
 		)
 		(stroke
 			(width 0)
@@ -5763,7 +5895,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 100.33) (xy 186.69 100.33)
+			(xy 194.31 100.33) (xy 187.96 100.33)
 		)
 		(stroke
 			(width 0)
@@ -5813,7 +5945,17 @@
 	)
 	(wire
 		(pts
-			(xy 20.32 25.4) (xy 20.32 33.02)
+			(xy 186.69 143.51) (xy 191.77 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74c2490c-5385-4041-83b1-3fa65acd4983")
+	)
+	(wire
+		(pts
+			(xy 30.48 25.4) (xy 30.48 33.02)
 		)
 		(stroke
 			(width 0)
@@ -5921,16 +6063,6 @@
 		)
 		(uuid "86797993-5160-4a98-b03c-0f481b9d6c4f")
 	)
-	(polyline
-		(pts
-			(xy 132.08 19.05) (xy 175.26 19.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "869cb4e9-a4ad-4691-b4c1-931f6d3f2de2")
-	)
 	(wire
 		(pts
 			(xy 147.32 147.32) (xy 147.32 151.13)
@@ -5973,7 +6105,7 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 106.68) (xy 193.04 106.68)
+			(xy 187.96 106.68) (xy 194.31 106.68)
 		)
 		(stroke
 			(width 0)
@@ -5993,7 +6125,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 100.33) (xy 193.04 106.68)
+			(xy 194.31 100.33) (xy 194.31 106.68)
 		)
 		(stroke
 			(width 0)
@@ -6013,7 +6145,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 153.67) (xy 185.42 154.94)
+			(xy 191.77 153.67) (xy 191.77 154.94)
 		)
 		(stroke
 			(width 0)
@@ -6023,7 +6155,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 45.72) (xy 92.71 45.72)
+			(xy 86.36 45.72) (xy 82.55 45.72)
 		)
 		(stroke
 			(width 0)
@@ -6043,7 +6175,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 143.51) (xy 185.42 146.05)
+			(xy 191.77 143.51) (xy 191.77 146.05)
 		)
 		(stroke
 			(width 0)
@@ -6063,7 +6195,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 128.27) (xy 185.42 128.27)
+			(xy 176.53 128.27) (xy 181.61 128.27)
 		)
 		(stroke
 			(width 0)
@@ -6123,7 +6255,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 99.06) (xy 193.04 100.33)
+			(xy 194.31 99.06) (xy 194.31 100.33)
 		)
 		(stroke
 			(width 0)
@@ -6133,7 +6265,7 @@
 	)
 	(polyline
 		(pts
-			(xy 67.31 19.05) (xy 129.54 19.05)
+			(xy 63.5 19.05) (xy 118.11 19.05)
 		)
 		(stroke
 			(width 0)
@@ -6213,7 +6345,7 @@
 	)
 	(polyline
 		(pts
-			(xy 13.97 19.05) (xy 64.77 19.05)
+			(xy 13.97 19.05) (xy 60.96 19.05)
 		)
 		(stroke
 			(width 0)
@@ -6273,7 +6405,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 45.72) (xy 107.95 45.72)
+			(xy 93.98 45.72) (xy 97.79 45.72)
 		)
 		(stroke
 			(width 0)
@@ -6293,7 +6425,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 26.67) (xy 107.95 31.75)
+			(xy 97.79 26.67) (xy 97.79 31.75)
 		)
 		(stroke
 			(width 0)
@@ -6513,16 +6645,6 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 35.56) (xy 40.64 36.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b700925e-eec6-4c7a-b551-e7400e65463b")
-	)
-	(wire
-		(pts
 			(xy 276.86 46.99) (xy 276.86 43.18)
 		)
 		(stroke
@@ -6543,7 +6665,7 @@
 	)
 	(wire
 		(pts
-			(xy 58.42 140.97) (xy 46.99 140.97)
+			(xy 58.42 139.7) (xy 46.99 139.7)
 		)
 		(stroke
 			(width 0)
@@ -6590,6 +6712,16 @@
 			(type default)
 		)
 		(uuid "bb45cc0c-caa8-4537-b39e-6a5b7ba92aa0")
+	)
+	(polyline
+		(pts
+			(xy 120.65 19.05) (xy 199.39 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb7df538-20a3-4e5f-a9b5-ba129e438a32")
 	)
 	(wire
 		(pts
@@ -6663,7 +6795,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 140.97) (xy 66.04 140.97)
+			(xy 77.47 139.7) (xy 66.04 139.7)
 		)
 		(stroke
 			(width 0)
@@ -6683,7 +6815,17 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 36.83) (xy 77.47 36.83)
+			(xy 176.53 26.67) (xy 176.53 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca510690-dc4b-48c8-8e20-ff44ea792e3f")
+	)
+	(wire
+		(pts
+			(xy 71.12 36.83) (xy 67.31 36.83)
 		)
 		(stroke
 			(width 0)
@@ -6710,6 +6852,16 @@
 			(type default)
 		)
 		(uuid "cd098277-9985-47b7-bf28-c1736233b288")
+	)
+	(wire
+		(pts
+			(xy 186.69 138.43) (xy 191.77 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d12976e3-b90a-4c86-a01f-0fd181ece66a")
 	)
 	(wire
 		(pts
@@ -6753,23 +6905,13 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 143.51) (xy 177.8 143.51)
+			(xy 167.64 25.4) (xy 167.64 39.37)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d4f955a8-a31b-4bdc-86b2-f21d46bbaca1")
-	)
-	(wire
-		(pts
-			(xy 40.64 36.83) (xy 43.18 36.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d90f1edf-c76b-4180-bd40-4e7057c7211e")
+		(uuid "d7ec2c2c-61e8-48a4-918e-c114026c461d")
 	)
 	(polyline
 		(pts
@@ -6793,7 +6935,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 184.15) (xy 69.85 190.5)
+			(xy 57.15 184.15) (xy 57.15 190.5)
 		)
 		(stroke
 			(width 0)
@@ -6853,13 +6995,13 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 30.48) (xy 167.64 39.37)
+			(xy 176.53 38.1) (xy 179.07 38.1)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "dce54721-8c51-46e0-9cd6-302798e9d101")
+		(uuid "ddb8bd6c-4338-4cca-9118-25b6c14ab0dd")
 	)
 	(wire
 		(pts
@@ -6880,6 +7022,16 @@
 			(type default)
 		)
 		(uuid "deb2bb25-390b-4eb3-aee7-490f4aa787b5")
+	)
+	(wire
+		(pts
+			(xy 176.53 46.99) (xy 176.53 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df19f0fe-82c7-49c9-aed2-62b2a5e24bf0")
 	)
 	(wire
 		(pts
@@ -6973,7 +7125,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 36.83) (xy 102.87 36.83)
+			(xy 82.55 36.83) (xy 92.71 36.83)
 		)
 		(stroke
 			(width 0)
@@ -7033,7 +7185,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 45.72) (xy 121.92 45.72)
+			(xy 97.79 45.72) (xy 111.76 45.72)
 		)
 		(stroke
 			(width 0)
@@ -7143,6 +7295,16 @@
 	)
 	(wire
 		(pts
+			(xy 176.53 38.1) (xy 176.53 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fbda2756-04bc-4ac3-aeaf-87a02f83cd4c")
+	)
+	(wire
+		(pts
 			(xy 54.61 81.28) (xy 57.15 81.28)
 		)
 		(stroke
@@ -7203,7 +7365,7 @@
 		(uuid "5d7e639a-28c4-4a03-82ca-71d9950da49f")
 	)
 	(label "PMOS_GATE"
-		(at 92.71 36.83 0)
+		(at 82.55 36.83 0)
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -7235,7 +7397,7 @@
 		(uuid "b5764cd2-4430-487e-acb0-4303d8923f84")
 	)
 	(label "TPS_SW"
-		(at 69.85 184.15 0)
+		(at 57.15 184.15 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7300,7 +7462,7 @@
 	)
 	(global_label "CE"
 		(shape output)
-		(at 177.8 143.51 180)
+		(at 176.53 143.51 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7309,7 +7471,7 @@
 		)
 		(uuid "399336bd-e985-4b28-baec-72fe1bd87c3f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 177.8 143.51 0)
+			(at 176.53 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7388,7 +7550,7 @@
 	)
 	(global_label "PROG2"
 		(shape output)
-		(at 177.8 133.35 180)
+		(at 176.53 133.35 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7397,7 +7559,7 @@
 		)
 		(uuid "966c776c-d999-4ae4-a395-bfc44414d518")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 177.8 133.35 0)
+			(at 176.53 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7432,7 +7594,7 @@
 	)
 	(global_label "SEL"
 		(shape output)
-		(at 177.8 128.27 180)
+		(at 176.53 128.27 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7441,7 +7603,7 @@
 		)
 		(uuid "baea5c92-b63e-45e2-97a1-8d5532b8ad28")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 177.8 128.27 0)
+			(at 176.53 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7498,7 +7660,7 @@
 	)
 	(global_label "~{TE}"
 		(shape output)
-		(at 177.8 138.43 180)
+		(at 176.53 138.43 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7507,7 +7669,7 @@
 		)
 		(uuid "e258bec3-729b-42da-aee5-d53ceb434738")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 177.8 138.43 0)
+			(at 176.53 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7584,19 +7746,17 @@
 			)
 		)
 	)
-	(hierarchical_label "BATTERY_PERCENTAGE"
+	(hierarchical_label "POWER_VOLTAGE"
 		(shape output)
-		(at 43.18 36.83 0)
+		(at 179.07 38.1 0)
 		(effects
 			(font
 				(size 1.27 1.27)
-				(thickness 0.254)
-				(bold yes)
-				(italic yes)
+				(thickness 0.1588)
 			)
 			(justify left)
 		)
-		(uuid "f3fb7944-83d3-406f-a916-3f7f24abe015")
+		(uuid "6d321bbe-2657-45e2-97de-dcc3ec11ed23")
 	)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
@@ -7610,7 +7770,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "061ef833-72e9-434f-9d74-146383fb1edc")
-		(property "Reference" "#PWR071"
+		(property "Reference" "#PWR025"
 			(at 129.54 127 0)
 			(hide yes)
 			(show_name no)
@@ -7670,84 +7830,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR071")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 31.75 190.5 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "065d985a-0320-4cc8-b873-b8bb15e7b7aa")
-		(property "Reference" "#FLG09"
-			(at 31.75 192.405 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 31.75 194.31 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 31.75 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 31.75 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 31.75 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "042535da-4d29-42c8-94a1-0d4875171332")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#FLG09")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -7764,7 +7847,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0c0baf66-556d-4343-80a8-1888f843b89c")
-		(property "Reference" "#PWR035"
+		(property "Reference" "#PWR047"
 			(at 276.86 30.48 0)
 			(hide yes)
 			(show_name no)
@@ -7824,84 +7907,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR035")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+BATT")
-		(at 40.64 25.4 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0f456d32-4ef1-40b1-b472-7ddc600a1b90")
-		(property "Reference" "#PWR010"
-			(at 40.64 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+BATT"
-			(at 40.64 21.59 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 40.64 25.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 40.64 25.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 40.64 25.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "cb1d28dc-09a6-4d42-b43e-0f621c1a6509")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR010")
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -7918,7 +7924,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0f872149-d5ff-460f-ac70-283a763553b0")
-		(property "Reference" "#PWR027"
+		(property "Reference" "#PWR043"
 			(at 208.28 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -7978,7 +7984,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR027")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -7995,7 +8001,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "12606116-a6ca-4368-9cba-727569741af6")
-		(property "Reference" "#FLG02"
+		(property "Reference" "#FLG01"
 			(at 19.05 192.405 0)
 			(hide yes)
 			(show_name no)
@@ -8055,7 +8061,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#FLG02")
+					(reference "#FLG01")
 					(unit 1)
 				)
 			)
@@ -8073,7 +8079,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "127242c1-c426-402a-902c-ed5839838118")
-		(property "Reference" "#PWR056"
+		(property "Reference" "#PWR09"
 			(at 48.26 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -8133,7 +8139,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR056")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -8141,7 +8147,7 @@
 	)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
-		(at 77.47 49.53 0)
+		(at 67.31 49.53 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8151,8 +8157,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "181d158e-e878-45c1-ad4c-69d826a4d657")
-		(property "Reference" "#PWR020"
-			(at 77.47 55.88 0)
+		(property "Reference" "#PWR012"
+			(at 67.31 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8163,7 +8169,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 77.47 53.34 0)
+			(at 67.31 53.34 0)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -8173,7 +8179,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 77.47 49.53 0)
+			(at 67.31 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8184,7 +8190,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 77.47 49.53 0)
+			(at 67.31 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8195,7 +8201,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 77.47 58.42 0)
+			(at 67.31 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8211,7 +8217,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR020")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -8228,7 +8234,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1c03c6fb-b374-4b47-88b4-2f8514adb8e9")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR01"
 			(at 17.78 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -8288,7 +8294,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR013")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -8306,7 +8312,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "20f41b87-546d-4808-9a06-f072490534ec")
-		(property "Reference" "#PWR058"
+		(property "Reference" "#PWR014"
 			(at 68.58 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -8366,7 +8372,85 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR058")
+					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:GND")
+		(at 176.53 49.53 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "211c49f3-ef7f-4686-9e5c-ef4dd56a11a9")
+		(property "Reference" "#PWR033"
+			(at 176.53 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 176.53 53.34 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 176.53 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 176.53 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 176.53 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6565d17b-f1da-4197-b2b9-89c7d8a166e0")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -8383,7 +8467,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "23c85f3d-7aad-4c05-92d7-2e03d455bfe8")
-		(property "Reference" "C32"
+		(property "Reference" "C3"
 			(at 66.04 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8405,7 +8489,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 65.7352 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -8447,15 +8531,15 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "C32")
+					(reference "C3")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "PCM_SparkFun-PowerSymbol:VUSB")
-		(at 185.42 125.73 0)
+		(lib_id "Device:R")
+		(at 176.53 43.18 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8463,31 +8547,31 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2ecbd024-367d-4f9c-81bf-191435638767")
-		(property "Reference" "#PWR079"
-			(at 185.42 129.54 0)
-			(hide yes)
+		(uuid "2625920f-de4d-44a3-a8fd-373ccf49c90c")
+		(property "Reference" "R20"
+			(at 177.8 41.91 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "+VUSB"
-			(at 185.42 121.92 0)
+		(property "Value" "33KΩ"
+			(at 177.8 44.45 0)
 			(show_name no)
-			(do_not_autoplace yes)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 185.42 125.73 0)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 174.752 43.18 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8498,7 +8582,88 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 185.42 125.73 0)
+			(at 176.53 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 176.53 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3283efd9-fd85-4431-bfce-e7cefc32f704")
+		)
+		(pin "2"
+			(uuid "fc973016-9bad-4fa3-b631-c32f302c60f3")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
+					(reference "R20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:VUSB")
+		(at 191.77 125.73 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2ecbd024-367d-4f9c-81bf-191435638767")
+		(property "Reference" "#PWR036"
+			(at 191.77 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+VUSB"
+			(at 191.77 121.92 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 191.77 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 191.77 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8509,7 +8674,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VUSB\""
-			(at 185.42 132.08 0)
+			(at 191.77 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8525,7 +8690,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR079")
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)
@@ -8542,7 +8707,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2f1a3b0b-7985-4152-9214-d4476745dc8d")
-		(property "Reference" "#PWR032"
+		(property "Reference" "#PWR026"
 			(at 140.97 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -8602,7 +8767,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR032")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -8619,7 +8784,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2f4eee95-0886-45f3-b8ac-2db369033b48")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR022"
 			(at 120.65 151.13 0)
 			(hide yes)
 			(show_name no)
@@ -8679,7 +8844,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR018")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -8687,7 +8852,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 62.23 140.97 90)
+		(at 62.23 139.7 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8695,7 +8860,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "2fc01b4f-9e43-4e35-9303-556a69bbb4a1")
 		(property "Reference" "L1"
 			(at 62.23 135.89 90)
@@ -8707,7 +8871,7 @@
 				)
 			)
 		)
-		(property "Value" "1μH"
+		(property "Value" "SWPA5040S1R0NT"
 			(at 62.23 138.43 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8715,10 +8879,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify top)
 			)
 		)
-		(property "Footprint" ""
-			(at 62.23 140.97 0)
+		(property "Footprint" "Inductor_SMD:L_Sunlord_SWPA5040S"
+			(at 62.23 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8729,7 +8894,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 62.23 140.97 0)
+			(at 62.23 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8740,7 +8905,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 62.23 140.97 0)
+			(at 62.23 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8767,7 +8932,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 69.85 190.5 180)
+		(at 57.15 190.5 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8776,8 +8941,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "32630108-c984-46e8-9066-1150405c37e2")
-		(property "Reference" "#FLG011"
-			(at 69.85 192.405 0)
+		(property "Reference" "#FLG04"
+			(at 57.15 192.405 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8788,7 +8953,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 69.85 194.31 0)
+			(at 57.15 194.31 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8798,7 +8963,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 69.85 190.5 0)
+			(at 57.15 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8809,7 +8974,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 69.85 190.5 0)
+			(at 57.15 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8820,7 +8985,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 69.85 190.5 0)
+			(at 57.15 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8836,7 +9001,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#FLG011")
+					(reference "#FLG04")
 					(unit 1)
 				)
 			)
@@ -8853,7 +9018,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "33838fa9-cf3b-4a74-9321-259b8cd3b72c")
-		(property "Reference" "#PWR037"
+		(property "Reference" "#PWR049"
 			(at 276.86 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -8913,7 +9078,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR037")
+					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -8930,7 +9095,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "355a5c31-cdbe-4945-b329-39598c959fa5")
-		(property "Reference" "C40"
+		(property "Reference" "C4"
 			(at 73.66 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8941,7 +9106,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nf"
+		(property "Value" "100nF"
 			(at 73.66 78.74 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8952,7 +9117,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 73.3552 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -8994,7 +9159,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "C40")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -9011,7 +9176,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3bdd2bd9-96ea-4e48-abde-31f9bddfe5b9")
-		(property "Reference" "#PWR025"
+		(property "Reference" "#PWR041"
 			(at 208.28 30.48 0)
 			(hide yes)
 			(show_name no)
@@ -9071,7 +9236,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR025")
+					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -9088,7 +9253,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3cdb5c5e-5244-4b2e-b1a7-eb2f8f0f6dbe")
-		(property "Reference" "C9"
+		(property "Reference" "C11"
 			(at 213.36 34.29 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9110,7 +9275,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 213.0552 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -9152,7 +9317,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "C9")
+					(reference "C11")
 					(unit 1)
 				)
 			)
@@ -9160,7 +9325,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 171.45 100.33 90)
+		(at 172.72 100.33 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -9170,8 +9335,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3f89a9e9-0b94-4d7c-959c-4e0f69512482")
-		(property "Reference" "R17"
-			(at 171.45 100.33 90)
+		(property "Reference" "R16"
+			(at 172.72 100.33 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9181,7 +9346,7 @@
 			)
 		)
 		(property "Value" "470Ω"
-			(at 171.45 97.79 90)
+			(at 172.72 97.79 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9190,8 +9355,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 171.45 98.552 90)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 172.72 98.552 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9202,7 +9367,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 171.45 100.33 0)
+			(at 172.72 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9213,7 +9378,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 171.45 100.33 0)
+			(at 172.72 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9232,7 +9397,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R17")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -9240,7 +9405,7 @@
 	)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:VUSB")
-		(at 44.45 184.15 0)
+		(at 31.75 184.15 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9250,8 +9415,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "41f14f94-70e9-4609-af77-56209a4701c7")
-		(property "Reference" "#PWR070"
-			(at 44.45 187.96 0)
+		(property "Reference" "#PWR07"
+			(at 31.75 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9262,7 +9427,7 @@
 			)
 		)
 		(property "Value" "+VUSB"
-			(at 44.45 180.34 0)
+			(at 31.75 180.34 0)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -9272,7 +9437,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 44.45 184.15 0)
+			(at 31.75 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9283,7 +9448,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 44.45 184.15 0)
+			(at 31.75 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9294,7 +9459,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VUSB\""
-			(at 44.45 190.5 0)
+			(at 31.75 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9310,7 +9475,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR070")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -9318,7 +9483,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 57.15 184.15 0)
+		(at 44.45 184.15 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9327,8 +9492,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "43148429-8f11-42f9-ac83-f60ba4c4ef62")
-		(property "Reference" "#PWR012"
-			(at 57.15 187.96 0)
+		(property "Reference" "#PWR08"
+			(at 44.45 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9339,7 +9504,7 @@
 			)
 		)
 		(property "Value" "+VCOM"
-			(at 57.15 180.34 0)
+			(at 44.45 180.34 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9349,7 +9514,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 57.15 184.15 0)
+			(at 44.45 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9360,7 +9525,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 184.15 0)
+			(at 44.45 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9371,7 +9536,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 57.15 184.15 0)
+			(at 44.45 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9387,15 +9552,15 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR012")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 82.55 190.5 180)
+		(lib_id "Device:R")
+		(at 191.77 149.86 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9403,30 +9568,31 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "43eaebbf-dac4-431e-bd8a-ca91c37f8e15")
-		(property "Reference" "#FLG03"
-			(at 82.55 192.405 0)
-			(hide yes)
+		(uuid "432e675f-397a-4f40-9b77-bfaa2a294fbc")
+		(property "Reference" "R21"
+			(at 193.04 148.59 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "PWR_FLAG"
-			(at 82.55 194.31 0)
+		(property "Value" "33KΩ"
+			(at 193.04 151.13 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 82.55 190.5 0)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 189.992 149.86 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9437,7 +9603,87 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 82.55 190.5 0)
+			(at 191.77 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 191.77 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "00655417-aa6b-4d9d-98e7-af721e85e644")
+		)
+		(pin "2"
+			(uuid "b04d0cf9-a274-4698-86ee-473782bee189")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
+					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 69.85 190.5 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "43eaebbf-dac4-431e-bd8a-ca91c37f8e15")
+		(property "Reference" "#FLG05"
+			(at 69.85 192.405 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 69.85 194.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9448,7 +9694,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 82.55 190.5 0)
+			(at 69.85 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9464,7 +9710,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#FLG03")
+					(reference "#FLG05")
 					(unit 1)
 				)
 			)
@@ -9503,7 +9749,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 117.8052 162.56 0)
 			(hide yes)
 			(show_name no)
@@ -9562,7 +9808,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4c517daf-abc9-4a3e-a156-cc0485b9b3b3")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR028"
 			(at 148.59 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -9622,7 +9868,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR031")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -9640,7 +9886,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4cd02bfa-ae12-4b5d-80cf-cff4d6737eb0")
-		(property "Reference" "C12"
+		(property "Reference" "C17"
 			(at 271.78 34.29 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9662,7 +9908,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 272.0848 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -9704,7 +9950,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "C12")
+					(reference "C17")
 					(unit 1)
 				)
 			)
@@ -9741,7 +9987,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 44.45 157.988 90)
 			(hide yes)
 			(show_name no)
@@ -9800,7 +10046,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5027b4e0-603a-4e66-a93a-594948b8ad04")
-		(property "Reference" "R6"
+		(property "Reference" "R9"
 			(at 85.09 154.94 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9822,7 +10068,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 82.042 156.21 90)
 			(hide yes)
 			(show_name no)
@@ -9864,7 +10110,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R6")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -9872,7 +10118,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 44.45 190.5 180)
+		(at 31.75 190.5 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9881,8 +10127,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "509f98db-293d-430a-8581-4088dba488a4")
-		(property "Reference" "#FLG010"
-			(at 44.45 192.405 0)
+		(property "Reference" "#FLG02"
+			(at 31.75 192.405 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9893,7 +10139,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 44.45 194.31 0)
+			(at 31.75 194.31 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9903,7 +10149,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 44.45 190.5 0)
+			(at 31.75 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9914,7 +10160,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 44.45 190.5 0)
+			(at 31.75 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9925,7 +10171,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 44.45 190.5 0)
+			(at 31.75 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9941,7 +10187,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#FLG010")
+					(reference "#FLG02")
 					(unit 1)
 				)
 			)
@@ -9958,7 +10204,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "50e47593-a788-41ca-b21c-f8b27d3b86db")
-		(property "Reference" "R24"
+		(property "Reference" "R15"
 			(at 157.48 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9980,7 +10226,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 154.432 143.51 90)
 			(hide yes)
 			(show_name no)
@@ -10022,7 +10268,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R24")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -10039,7 +10285,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "51173057-11fb-4a99-b2c2-f0d6c2ab735a")
-		(property "Reference" "#PWR061"
+		(property "Reference" "#PWR016"
 			(at 76.2 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -10099,7 +10345,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR061")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -10107,7 +10353,7 @@
 	)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:VUSB")
-		(at 193.04 99.06 0)
+		(at 194.31 99.06 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10117,8 +10363,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "52e81b90-adea-4c45-acf6-24e8b366fe0e")
-		(property "Reference" "#PWR062"
-			(at 193.04 102.87 0)
+		(property "Reference" "#PWR040"
+			(at 194.31 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10129,7 +10375,7 @@
 			)
 		)
 		(property "Value" "+VUSB"
-			(at 193.04 95.25 0)
+			(at 194.31 95.25 0)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -10139,7 +10385,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 193.04 99.06 0)
+			(at 194.31 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10150,7 +10396,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 193.04 99.06 0)
+			(at 194.31 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10161,7 +10407,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VUSB\""
-			(at 193.04 105.41 0)
+			(at 194.31 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10177,7 +10423,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR062")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
@@ -10185,7 +10431,7 @@
 	)
 	(symbol
 		(lib_id "Device:Battery_Cell")
-		(at 20.32 38.1 0)
+		(at 30.48 38.1 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10193,10 +10439,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "53d80b96-5fa2-4e60-a669-35c2968abdce")
 		(property "Reference" "BT1"
-			(at 24.13 34.9885 0)
+			(at 33.02 35.56 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10207,7 +10452,7 @@
 			)
 		)
 		(property "Value" "103450 Li-PO"
-			(at 24.13 37.5285 0)
+			(at 33.02 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10217,8 +10462,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 20.32 36.576 90)
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
+			(at 30.48 36.576 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10229,7 +10474,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 20.32 36.576 90)
+			(at 30.48 36.576 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10240,7 +10485,7 @@
 			)
 		)
 		(property "Description" "Single-cell battery"
-			(at 20.32 38.1 0)
+			(at 30.48 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10251,7 +10496,7 @@
 			)
 		)
 		(property "Sim.Device" "V"
-			(at 20.32 38.1 0)
+			(at 30.48 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10262,7 +10507,7 @@
 			)
 		)
 		(property "Sim.Type" "DC"
-			(at 20.32 38.1 0)
+			(at 30.48 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10273,7 +10518,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=+ 2=-"
-			(at 20.32 38.1 0)
+			(at 30.48 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10330,7 +10575,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "SS-12D10L7-XKB:SS-12D10L7-XKB"
 			(at 153.67 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -10392,7 +10637,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "56ca281f-da27-445d-8cd8-ac384de8ad87")
-		(property "Reference" "C43"
+		(property "Reference" "C10"
 			(at 194.31 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10414,7 +10659,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 194.0052 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -10456,7 +10701,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "C43")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -10474,7 +10719,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "59952e28-ac27-40a6-8b35-041ba3d81178")
-		(property "Reference" "#PWR054"
+		(property "Reference" "#PWR011"
 			(at 57.15 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -10534,7 +10779,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR054")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -10542,7 +10787,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 182.88 106.68 0)
+		(at 184.15 106.68 0)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -10552,8 +10797,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5a7d3c0b-67df-4544-b8f1-688310e1fda3")
-		(property "Reference" "D7"
-			(at 182.88 104.14 0)
+		(property "Reference" "D4"
+			(at 184.15 104.14 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10563,7 +10808,7 @@
 			)
 		)
 		(property "Value" "white"
-			(at 187.96 104.14 0)
+			(at 189.23 104.14 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10572,8 +10817,8 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
-			(at 182.88 106.68 0)
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+			(at 184.15 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10584,7 +10829,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 182.88 106.68 0)
+			(at 184.15 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10595,7 +10840,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 182.88 106.68 0)
+			(at 184.15 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10606,7 +10851,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 182.88 106.68 0)
+			(at 184.15 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10625,88 +10870,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "D7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 100.33 -7.62 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5b82673e-7364-477a-8507-95196ba4d75e")
-		(property "Reference" "C1"
-			(at 101.6 -10.16 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "μF"
-			(at 101.6 -5.08 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 101.2952 -3.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 100.33 -7.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 100.33 -7.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "d23f890d-5c00-4cf0-92ac-4faf8733c389")
-		)
-		(pin "1"
-			(uuid "f80430ed-dec8-4ef9-a7c4-68685f84ecbd")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "C1")
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -10724,7 +10888,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5cf82267-2de7-4143-ad14-22f9c8423708")
-		(property "Reference" "#PWR029"
+		(property "Reference" "#PWR046"
 			(at 245.11 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -10784,7 +10948,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR029")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -10802,7 +10966,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5d8024e0-e6a3-48cd-8013-2b010af33c1a")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR045"
 			(at 245.11 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -10862,7 +11026,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR024")
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -10880,7 +11044,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5d9177a5-8828-4147-959f-5e888aae5a1b")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR018"
 			(at 83.82 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -10940,7 +11104,88 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR017")
+					(reference "#PWR018")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 176.53 33.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5db82cd1-ba70-4c40-88f3-c7b2516701b4")
+		(property "Reference" "R19"
+			(at 177.8 31.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "33KΩ"
+			(at 177.8 34.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 174.752 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 176.53 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 176.53 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "971a5f7a-dd04-4e56-9e5c-bb0659a0d03b")
+		)
+		(pin "2"
+			(uuid "41b991b4-a0b6-45de-9fcb-35d103fd68dd")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -10957,7 +11202,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5ee03a82-37a3-4e23-80e9-da1f7d03c551")
-		(property "Reference" "R23"
+		(property "Reference" "R12"
 			(at 87.63 85.09 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10979,7 +11224,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 84.582 86.36 90)
 			(hide yes)
 			(show_name no)
@@ -11021,244 +11266,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R23")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 40.64 41.91 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5f35d6de-9639-421e-85a3-f5704d987e00")
-		(property "Reference" "R35"
-			(at 41.91 40.64 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "33KΩ"
-			(at 41.91 43.18 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 38.862 41.91 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 40.64 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 40.64 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "cdc8659d-498e-4f92-9822-b650701fa72d")
-		)
-		(pin "2"
-			(uuid "ebddc933-9d60-4511-8db0-0fe88b64588e")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R35")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 90.17 -7.62 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5f59b9d5-a538-4378-a1e3-f3deba9d755c")
-		(property "Reference" "R2"
-			(at 90.17 -7.62 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Ω"
-			(at 90.17 -5.08 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 90.17 -5.842 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 90.17 -7.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 90.17 -7.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "2989a917-4896-439f-b0fa-92ad0dffc47d")
-		)
-		(pin "2"
-			(uuid "8f9468a4-ccf3-4035-a5bc-f177aaa74567")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+BATT")
-		(at 31.75 184.15 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5f9a7041-a7da-472a-9840-5cf738b7d39c")
-		(property "Reference" "#PWR069"
-			(at 31.75 187.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+BATT_PROC"
-			(at 31.75 180.34 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 31.75 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 31.75 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 31.75 184.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3ad48805-c519-440c-8982-60c49b204a7a")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR069")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -11276,7 +11284,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "63a2d58c-59cf-414b-923f-04d7cb5fa11e")
-		(property "Reference" "#PWR060"
+		(property "Reference" "#PWR010"
 			(at 49.53 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -11336,7 +11344,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR060")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -11354,7 +11362,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "64e97718-a2a5-4f29-b0d8-7671055e2676")
-		(property "Reference" "#PWR057"
+		(property "Reference" "#PWR024"
 			(at 129.54 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -11414,7 +11422,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR057")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -11432,7 +11440,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6631b861-f743-4f12-9ce7-f00e205ec1a2")
-		(property "Reference" "#PWR055"
+		(property "Reference" "#PWR04"
 			(at 22.86 127 0)
 			(hide yes)
 			(show_name no)
@@ -11492,7 +11500,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR055")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -11500,7 +11508,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 167.64 30.48 0)
+		(at 167.64 25.4 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11509,8 +11517,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6ab60ef1-f5a7-4731-826b-1887a824752b")
-		(property "Reference" "#PWR033"
-			(at 167.64 34.29 0)
+		(property "Reference" "#PWR030"
+			(at 167.64 29.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11521,7 +11529,7 @@
 			)
 		)
 		(property "Value" "+VCOM"
-			(at 167.64 26.67 0)
+			(at 167.64 21.59 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11531,7 +11539,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 167.64 30.48 0)
+			(at 167.64 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11542,7 +11550,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 167.64 30.48 0)
+			(at 167.64 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11553,7 +11561,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 167.64 30.48 0)
+			(at 167.64 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11569,7 +11577,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR033")
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -11607,7 +11615,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-563"
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
 			(at 30.48 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -11711,7 +11719,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6d3cacf7-3a24-40d8-84c2-cf679c781a4e")
-		(property "Reference" "R16"
+		(property "Reference" "R7"
 			(at 49.53 82.55 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11731,7 +11739,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 49.53 84.328 90)
 			(hide yes)
 			(show_name no)
@@ -11773,7 +11781,87 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R16")
+					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:NetTie_2")
+		(at 184.15 128.27 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6fb6cb96-ac52-4648-a6aa-56557abfef37")
+		(property "Reference" "NT1"
+			(at 184.15 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Value" "NetTie_2"
+			(at 184.15 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "NetTie:NetTie-2_SMD_Pad0.5mm"
+			(at 184.15 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 184.15 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Net tie, 2 pins"
+			(at 184.15 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "2664b2cb-e898-43eb-899e-49434dfc006e")
+		)
+		(pin "1"
+			(uuid "e43ebb5b-12ea-4b13-9d5c-f79a9eabb5f6")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
+					(reference "NT1")
 					(unit 1)
 				)
 			)
@@ -11857,87 +11945,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 185.42 149.86 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "71ee8dd3-4104-43fd-914f-b0f288104701")
-		(property "Reference" "R27"
-			(at 186.69 148.59 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10KΩ"
-			(at 186.69 151.13 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 183.642 149.86 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 185.42 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 185.42 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e9e234ec-5f60-4bc2-8e2d-ff4117ac4fba")
-		)
-		(pin "2"
-			(uuid "5c50327e-7135-45fe-9ef7-6d84dd6362e4")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R27")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 212.09 78.74 0)
 		(unit 1)
@@ -11948,7 +11955,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7350b684-0e22-48d0-b870-6af099f1c43b")
-		(property "Reference" "C11"
+		(property "Reference" "C12"
 			(at 213.36 76.2 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11970,7 +11977,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 213.0552 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -12012,7 +12019,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "C11")
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -12029,7 +12036,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "75a990ed-b1b8-4bdb-ae9f-45fcef585a6f")
-		(property "Reference" "C3"
+		(property "Reference" "C1"
 			(at 22.86 156.21 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12051,7 +12058,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 22.5552 162.56 0)
 			(hide yes)
 			(show_name no)
@@ -12093,7 +12100,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "C3")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -12132,7 +12139,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 221.9452 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -12182,7 +12189,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 57.15 190.5 180)
+		(at 44.45 190.5 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12191,8 +12198,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7ec83f2f-08fa-4412-b213-d56210981681")
-		(property "Reference" "#FLG08"
-			(at 57.15 192.405 0)
+		(property "Reference" "#FLG03"
+			(at 44.45 192.405 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12203,7 +12210,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 57.15 194.31 0)
+			(at 44.45 194.31 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12213,7 +12220,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 57.15 190.5 0)
+			(at 44.45 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12224,7 +12231,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 190.5 0)
+			(at 44.45 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12235,7 +12242,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 57.15 190.5 0)
+			(at 44.45 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12251,7 +12258,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#FLG08")
+					(reference "#FLG03")
 					(unit 1)
 				)
 			)
@@ -12259,7 +12266,7 @@
 	)
 	(symbol
 		(lib_id "Device:D_Zener")
-		(at 100.33 45.72 180)
+		(at 90.17 45.72 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12268,8 +12275,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7f88a4b6-3f0c-4155-adc5-e18eb2769823")
-		(property "Reference" "D1"
-			(at 100.33 43.18 0)
+		(property "Reference" "D2"
+			(at 90.17 43.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12279,7 +12286,7 @@
 			)
 		)
 		(property "Value" "1SMA4734A"
-			(at 100.33 48.26 0)
+			(at 90.17 48.26 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12288,8 +12295,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 100.33 45.72 0)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 90.17 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12300,7 +12307,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 100.33 45.72 0)
+			(at 90.17 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12311,7 +12318,7 @@
 			)
 		)
 		(property "Description" "Zener diode"
-			(at 100.33 45.72 0)
+			(at 90.17 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12330,7 +12337,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "D1")
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -12349,7 +12356,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "858bb02a-805a-4529-81a4-2818cab2a8fa")
-		(property "Reference" "#PWR030"
+		(property "Reference" "#PWR050"
 			(at 276.86 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -12409,85 +12416,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR030")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_SparkFun-PowerSymbol:GND")
-		(at 40.64 48.26 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "885c0dd1-02b8-40e1-8381-790ef6c14774")
-		(property "Reference" "#PWR011"
-			(at 40.64 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 40.64 52.07 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 40.64 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 40.64 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 40.64 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "54439ef6-d20a-4fed-a852-93025ab8c78a")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR011")
+					(reference "#PWR050")
 					(unit 1)
 				)
 			)
@@ -12505,7 +12434,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8b3f3061-72f5-4458-9da3-37e1d9564cd6")
-		(property "Reference" "#PWR074"
+		(property "Reference" "#PWR039"
 			(at 193.04 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -12565,7 +12494,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR074")
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -12583,7 +12512,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8d7a2688-181a-48fb-a476-5c32f7c01575")
-		(property "Reference" "#PWR059"
+		(property "Reference" "#PWR013"
 			(at 68.58 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -12643,7 +12572,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR059")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -12651,7 +12580,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 20.32 25.4 0)
+		(at 30.48 25.4 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12660,8 +12589,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8e2c65ee-cb12-45fb-ada9-cfa95dfa71b7")
-		(property "Reference" "#PWR02"
-			(at 20.32 29.21 0)
+		(property "Reference" "#PWR05"
+			(at 30.48 29.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12672,7 +12601,7 @@
 			)
 		)
 		(property "Value" "+BATT"
-			(at 20.32 21.59 0)
+			(at 30.48 21.59 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12682,7 +12611,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 20.32 25.4 0)
+			(at 30.48 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12693,7 +12622,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 20.32 25.4 0)
+			(at 30.48 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12704,7 +12633,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 20.32 25.4 0)
+			(at 30.48 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12720,7 +12649,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR02")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -12738,7 +12667,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "96bd6062-d251-4867-be47-e7de4ef4c96c")
-		(property "Reference" "C16"
+		(property "Reference" "C18"
 			(at 271.78 76.2 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12760,7 +12689,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
 			(at 272.0848 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -12802,7 +12731,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "C16")
+					(reference "C18")
 					(unit 1)
 				)
 			)
@@ -12819,7 +12748,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "99622af2-9aef-4e83-a0e0-3a613158d977")
-		(property "Reference" "#PWR076"
+		(property "Reference" "#PWR034"
 			(at 181.61 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -12879,7 +12808,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR076")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -12895,10 +12824,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "9a3df665-4da2-42e0-8573-71ddd2dc5c20")
-		(property "Reference" "U10"
-			(at 245.11 64.77 0)
+		(property "Reference" "U4"
+			(at 245.11 66.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12908,7 +12836,7 @@
 			)
 		)
 		(property "Value" "TLV74333PDBVR"
-			(at 245.11 67.31 0)
+			(at 245.11 68.58 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12968,7 +12896,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "U10")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -12985,7 +12913,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9a49cccd-2b45-45aa-aaac-d1949a8d43c1")
-		(property "Reference" "R9"
+		(property "Reference" "R11"
 			(at 87.63 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13007,7 +12935,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 84.582 76.2 90)
 			(hide yes)
 			(show_name no)
@@ -13049,7 +12977,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R9")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -13067,7 +12995,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a2851ec7-3d67-4e29-b38a-4ba204ab57df")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR017"
 			(at 76.2 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -13127,7 +13055,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR014")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -13135,7 +13063,7 @@
 	)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
-		(at 20.32 48.26 0)
+		(at 30.48 48.26 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13145,8 +13073,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a9467af1-573a-4ec6-a07d-e44d20a8e3e9")
-		(property "Reference" "#PWR01"
-			(at 20.32 54.61 0)
+		(property "Reference" "#PWR06"
+			(at 30.48 54.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13157,7 +13085,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 20.32 52.07 0)
+			(at 30.48 52.07 0)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -13167,7 +13095,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 20.32 48.26 0)
+			(at 30.48 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13178,7 +13106,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 20.32 48.26 0)
+			(at 30.48 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13189,7 +13117,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 20.32 57.15 0)
+			(at 30.48 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13205,7 +13133,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR01")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -13223,7 +13151,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ac736784-40c9-4c39-a608-f89b69548f0d")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR042"
 			(at 208.28 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -13283,7 +13211,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR021")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -13291,7 +13219,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 107.95 26.67 0)
+		(at 97.79 26.67 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13300,8 +13228,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ad3f44ce-73c5-4d23-b1ef-6c18cbc81b7e")
-		(property "Reference" "#PWR019"
-			(at 107.95 30.48 0)
+		(property "Reference" "#PWR020"
+			(at 97.79 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13312,7 +13240,7 @@
 			)
 		)
 		(property "Value" "+BATT"
-			(at 107.95 22.86 0)
+			(at 97.79 22.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13322,7 +13250,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 107.95 26.67 0)
+			(at 97.79 26.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13333,7 +13261,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 107.95 26.67 0)
+			(at 97.79 26.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13344,7 +13272,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 107.95 26.67 0)
+			(at 97.79 26.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13360,88 +13288,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR019")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 78.74 -7.62 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ae7a98c2-ce42-4266-b3d6-ecf1717ccd62")
-		(property "Reference" "R1"
-			(at 80.01 -8.89 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Ω"
-			(at 80.01 -6.35 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 76.962 -7.62 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 78.74 -7.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 78.74 -7.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "2989a917-4896-439f-b0fa-92ad0dffc47e")
-		)
-		(pin "2"
-			(uuid "8f9468a4-ccf3-4035-a5bc-f177aaa74568")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R1")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -13458,7 +13305,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b611e603-8d10-403f-bcaf-293520287fc8")
-		(property "Reference" "C10"
+		(property "Reference" "C13"
 			(at 222.25 34.29 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13480,7 +13327,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 221.9452 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -13522,7 +13369,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "C10")
+					(reference "C13")
 					(unit 1)
 				)
 			)
@@ -13540,7 +13387,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b777afcb-e411-461c-8796-25e9b24c4b4d")
-		(property "Reference" "#PWR078"
+		(property "Reference" "#PWR019"
 			(at 86.36 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -13600,99 +13447,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR078")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "TPS61023DRLR:TPS61023DRLR")
-		(at 62.23 148.59 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ba6e9b77-e3b6-4651-ac09-963ce4c5f3e6")
-		(property "Reference" "U1"
-			(at 62.23 143.51 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 62.23 148.59 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-563"
-			(at 62.23 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 62.23 148.59 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 62.23 148.59 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "4"
-			(uuid "99d6de1a-4bba-4069-b70d-157748fc5374")
-		)
-		(pin "3"
-			(uuid "8eb84080-3223-4c4d-b768-665ef40ffdcc")
-		)
-		(pin "1"
-			(uuid "f08d87c9-082f-48cf-afe6-d5f24c104623")
-		)
-		(pin "6"
-			(uuid "1f635c87-4bb7-4156-9fc3-ad32f6762a21")
-		)
-		(pin "5"
-			(uuid "3b2987da-4a05-4dc7-aeb7-1ae151edbf6a")
-		)
-		(pin "2"
-			(uuid "b7371e78-e7ad-41d1-a750-3c4280f0f8ce")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "U1")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -13711,7 +13466,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bc107147-00d5-4afd-a1ac-1151c7ec400e")
-		(property "Reference" "#PWR026"
+		(property "Reference" "#PWR048"
 			(at 276.86 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -13771,7 +13526,87 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR026")
+					(reference "#PWR048")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:NetTie_2")
+		(at 184.15 138.43 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "beaf7333-e98b-4f5c-afd5-66c1d81e7910")
+		(property "Reference" "NT3"
+			(at 184.15 135.89 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Value" "NetTie_2"
+			(at 184.15 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "NetTie:NetTie-2_SMD_Pad0.5mm"
+			(at 184.15 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 184.15 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Net tie, 2 pins"
+			(at 184.15 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "cdc41d1b-7600-44bf-8c8d-a5ae1107e28f")
+		)
+		(pin "1"
+			(uuid "aae5e23c-5907-4331-a54e-195c468a84fe")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
+					(reference "NT3")
 					(unit 1)
 				)
 			)
@@ -13788,7 +13623,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "bf2a5998-b6f8-432a-a730-b751afab0967")
-		(property "Reference" "R26"
+		(property "Reference" "R13"
 			(at 139.7 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13810,7 +13645,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 136.652 143.51 90)
 			(hide yes)
 			(show_name no)
@@ -13852,7 +13687,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R26")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -13860,7 +13695,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 171.45 113.03 90)
+		(at 172.72 113.03 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -13870,8 +13705,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c1b421eb-b168-40bd-ae80-8ce7e972e8ca")
-		(property "Reference" "R19"
-			(at 171.45 113.03 90)
+		(property "Reference" "R18"
+			(at 172.72 113.03 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13881,7 +13716,7 @@
 			)
 		)
 		(property "Value" "470Ω"
-			(at 171.45 110.49 90)
+			(at 172.72 110.49 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13890,8 +13725,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 171.45 111.252 90)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 172.72 111.252 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13902,7 +13737,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 171.45 113.03 0)
+			(at 172.72 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13913,7 +13748,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 171.45 113.03 0)
+			(at 172.72 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13932,7 +13767,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R19")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -13949,7 +13784,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c24233e5-1526-418a-8368-0b8d79d3945f")
-		(property "Reference" "C42"
+		(property "Reference" "C9"
 			(at 182.88 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13971,7 +13806,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 182.5752 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -14013,7 +13848,259 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "C42")
+					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:NetTie_2")
+		(at 184.15 143.51 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c648807e-bf07-42ea-a828-6b96a3b26603")
+		(property "Reference" "NT4"
+			(at 184.15 140.97 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Value" "NetTie_2"
+			(at 184.15 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "NetTie:NetTie-2_SMD_Pad0.5mm"
+			(at 184.15 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 184.15 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Net tie, 2 pins"
+			(at 184.15 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "4a6d0add-85c9-4d5a-a737-619c5ca6cf4f")
+		)
+		(pin "1"
+			(uuid "07b94d9c-57fb-4c67-8b9f-7fd6f9dd3826")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
+					(reference "NT4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "TPS61023DRLR:TPS61023DRLR")
+		(at 62.23 148.59 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c6f0f0ba-2152-4974-86d6-fa9ac954fa08")
+		(property "Reference" "U1"
+			(at 62.23 146.05 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TPS61023DRLR"
+			(at 62.23 148.59 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-563"
+			(at 62.23 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 62.23 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 62.23 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "b8dd2dad-d9a9-42d8-a46f-e7beea2d712d")
+		)
+		(pin "5"
+			(uuid "75899402-b09d-48c3-a419-1394ae904d7d")
+		)
+		(pin "6"
+			(uuid "ee29a3f5-d77d-411f-87f1-2dea15636484")
+		)
+		(pin "1"
+			(uuid "479a928b-6c87-4fed-a21a-ff82ce92fecc")
+		)
+		(pin "4"
+			(uuid "a2b8b829-b3e6-46a1-9384-d3f29100a89a")
+		)
+		(pin "3"
+			(uuid "65ac9332-5fd4-4a9f-9fd9-828e30f69f01")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:NetTie_2")
+		(at 184.15 133.35 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c817e845-e015-448e-9bae-bff1ce817e90")
+		(property "Reference" "NT2"
+			(at 184.15 130.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Value" "NetTie_2"
+			(at 184.15 132.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "NetTie:NetTie-2_SMD_Pad0.5mm"
+			(at 184.15 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 184.15 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Net tie, 2 pins"
+			(at 184.15 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "9a1b7712-5092-4a34-99c1-9c09d88e955f")
+		)
+		(pin "1"
+			(uuid "d0a409d1-2ec4-4152-a5fc-259d7bc68792")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
+					(reference "NT2")
 					(unit 1)
 				)
 			)
@@ -14031,7 +14118,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cb1f7b88-14c7-4af6-8e3c-38ecf74ce3d6")
-		(property "Reference" "#PWR072"
+		(property "Reference" "#PWR032"
 			(at 170.18 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -14091,86 +14178,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR072")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 113.03 -7.62 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "cb603703-d125-40f2-b6df-b97535312c8f")
-		(property "Reference" "C2"
-			(at 113.03 -11.43 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "μF"
-			(at 113.03 -3.81 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 116.84 -8.5852 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 113.03 -7.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 113.03 -7.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "d23f890d-5c00-4cf0-92ac-4faf8733c38a")
-		)
-		(pin "1"
-			(uuid "f80430ed-dec8-4ef9-a7c4-68685f84ecbe")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "C2")
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -14188,7 +14196,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ccc22881-458c-49e2-aea8-31209e01a36e")
-		(property "Reference" "#PWR073"
+		(property "Reference" "#PWR035"
 			(at 181.61 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -14248,7 +14256,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR073")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -14266,7 +14274,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cd6da037-fb9d-4a2b-ab08-31a44b312496")
-		(property "Reference" "U6"
+		(property "Reference" "U2"
 			(at 131.9863 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14389,7 +14397,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "U6")
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -14397,7 +14405,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 121.92 26.67 0)
+		(at 111.76 26.67 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14406,8 +14414,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cded5b10-2d6e-4fda-9206-b1bfb2e0a4cc")
-		(property "Reference" "#PWR022"
-			(at 121.92 30.48 0)
+		(property "Reference" "#PWR021"
+			(at 111.76 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14418,7 +14426,7 @@
 			)
 		)
 		(property "Value" "+BATT_PROC"
-			(at 121.92 22.86 0)
+			(at 111.76 22.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14428,7 +14436,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 121.92 26.67 0)
+			(at 111.76 26.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14439,7 +14447,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 121.92 26.67 0)
+			(at 111.76 26.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14450,7 +14458,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 121.92 26.67 0)
+			(at 111.76 26.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14466,7 +14474,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR022")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -14505,7 +14513,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder"
 			(at 94.9452 162.56 0)
 			(hide yes)
 			(show_name no)
@@ -14565,7 +14573,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cf3a2e33-eb05-4f02-962c-2fdccd81f4e5")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR044"
 			(at 208.28 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -14625,7 +14633,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR028")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -14643,7 +14651,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d55b04f9-3838-41bf-9134-d73f43e319ee")
-		(property "Reference" "C13"
+		(property "Reference" "C15"
 			(at 262.89 34.29 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14665,7 +14673,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 263.1948 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -14707,7 +14715,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "C13")
+					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -14724,7 +14732,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d7249212-8245-41ac-91de-74234c516a35")
-		(property "Reference" "R25"
+		(property "Reference" "R14"
 			(at 148.59 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14746,7 +14754,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 145.542 143.51 90)
 			(hide yes)
 			(show_name no)
@@ -14788,7 +14796,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R25")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -14806,7 +14814,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d779b02a-af32-49eb-a992-ad42f590dc30")
-		(property "Reference" "R15"
+		(property "Reference" "R6"
 			(at 49.53 80.01 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14826,7 +14834,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 49.53 78.232 90)
 			(hide yes)
 			(show_name no)
@@ -14868,7 +14876,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R15")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -14876,7 +14884,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 182.88 113.03 0)
+		(at 184.15 113.03 0)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -14886,8 +14894,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d83ec5e9-b949-4fce-9c98-8d8b9b009e49")
-		(property "Reference" "D8"
-			(at 182.88 110.49 0)
+		(property "Reference" "D5"
+			(at 184.15 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14897,7 +14905,7 @@
 			)
 		)
 		(property "Value" "white"
-			(at 187.96 110.49 0)
+			(at 189.23 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14906,8 +14914,8 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
-			(at 182.88 113.03 0)
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+			(at 184.15 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14918,7 +14926,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 182.88 113.03 0)
+			(at 184.15 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14929,7 +14937,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 182.88 113.03 0)
+			(at 184.15 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14940,7 +14948,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 182.88 113.03 0)
+			(at 184.15 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14959,88 +14967,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "D8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 40.64 31.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "de5a0ee7-1110-419b-9054-d67ee801da01")
-		(property "Reference" "R34"
-			(at 41.91 30.48 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "33KΩ"
-			(at 41.91 33.02 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 38.862 31.75 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 40.64 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 40.64 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "02aa4653-1bc2-4a65-a96e-13bb6f863df3")
-		)
-		(pin "2"
-			(uuid "0c1eda1d-14e7-4765-a81d-ec48079361c8")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R34")
+					(reference "D5")
 					(unit 1)
 				)
 			)
@@ -15058,7 +14985,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e03030be-3479-46d1-a2c7-d5a066b2cf9a")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR023"
 			(at 120.65 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -15118,7 +15045,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR016")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -15126,7 +15053,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 82.55 184.15 0)
+		(at 69.85 184.15 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15135,8 +15062,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e12b9094-fb98-415d-bb85-eaf141e8d389")
-		(property "Reference" "#PWR06"
-			(at 82.55 187.96 0)
+		(property "Reference" "#PWR015"
+			(at 69.85 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15147,7 +15074,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 82.55 180.34 0)
+			(at 69.85 180.34 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15157,7 +15084,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 82.55 184.15 0)
+			(at 69.85 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15168,7 +15095,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 82.55 184.15 0)
+			(at 69.85 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15179,7 +15106,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 82.55 184.15 0)
+			(at 69.85 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15195,7 +15122,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR06")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -15203,7 +15130,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 85.09 36.83 90)
+		(at 74.93 36.83 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15213,7 +15140,7 @@
 		(dnp no)
 		(uuid "e19244fb-2ec0-4ea3-a0d2-6b2490250899")
 		(property "Reference" "R8"
-			(at 85.09 34.29 90)
+			(at 74.93 34.29 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15223,7 +15150,7 @@
 			)
 		)
 		(property "Value" "100KΩ"
-			(at 85.09 39.37 90)
+			(at 74.93 39.37 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15232,8 +15159,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 85.09 38.608 90)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 74.93 38.608 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15244,7 +15171,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 85.09 36.83 0)
+			(at 74.93 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15255,7 +15182,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 85.09 36.83 0)
+			(at 74.93 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15291,7 +15218,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e2d3b909-af64-4b0e-a7bc-b0e7d525dcab")
-		(property "Reference" "C4"
+		(property "Reference" "C2"
 			(at 31.75 156.21 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15313,7 +15240,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 31.4452 162.56 0)
 			(hide yes)
 			(show_name no)
@@ -15355,7 +15282,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "C4")
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -15363,7 +15290,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 182.88 100.33 0)
+		(at 184.15 100.33 0)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -15373,8 +15300,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e3334309-2a87-405d-bdf2-9db49e028026")
-		(property "Reference" "D9"
-			(at 182.88 97.79 0)
+		(property "Reference" "D3"
+			(at 184.15 97.79 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15384,7 +15311,7 @@
 			)
 		)
 		(property "Value" "white"
-			(at 187.96 97.79 0)
+			(at 189.23 97.79 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15393,8 +15320,8 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
-			(at 182.88 100.33 0)
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
+			(at 184.15 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15405,7 +15332,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 182.88 100.33 0)
+			(at 184.15 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15416,7 +15343,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 182.88 100.33 0)
+			(at 184.15 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15427,7 +15354,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 182.88 100.33 0)
+			(at 184.15 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15446,7 +15373,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "D9")
+					(reference "D3")
 					(unit 1)
 				)
 			)
@@ -15463,7 +15390,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e6dc4d5c-36b6-47d7-b50b-a18eadc66415")
-		(property "Reference" "R7"
+		(property "Reference" "R10"
 			(at 85.09 165.1 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15485,7 +15412,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 82.042 166.37 90)
 			(hide yes)
 			(show_name no)
@@ -15527,7 +15454,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R7")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -15545,7 +15472,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "eb309da9-3d8d-46b6-9fb6-bcca4e01aa56")
-		(property "Reference" "U4"
+		(property "Reference" "U3"
 			(at 245.11 22.86 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15616,7 +15543,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "U4")
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -15633,7 +15560,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ee071f6c-9108-4b20-9dd7-c2559d054f70")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR029"
 			(at 160.02 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -15693,7 +15620,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR023")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -15711,7 +15638,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ee1a93eb-146d-4856-bd23-0982152985fe")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR02"
 			(at 17.78 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -15771,7 +15698,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR015")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -15788,7 +15715,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ee21d27d-a1f7-4972-932d-4ca38887e5e7")
-		(property "Reference" "#PWR034"
+		(property "Reference" "#PWR038"
 			(at 193.04 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -15848,7 +15775,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR034")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -15887,7 +15814,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder"
 			(at 106.3752 162.56 0)
 			(hide yes)
 			(show_name no)
@@ -15946,7 +15873,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f0f18b83-ce02-4ed6-845b-d3a21cd9d180")
-		(property "Reference" "D2"
+		(property "Reference" "D1"
 			(at 63.5 107.95 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16008,7 +15935,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "D2")
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -16016,7 +15943,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 171.45 106.68 90)
+		(at 172.72 106.68 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -16026,8 +15953,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f3249978-7104-4b89-9932-b28a4f3b7fe1")
-		(property "Reference" "R18"
-			(at 171.45 106.68 90)
+		(property "Reference" "R17"
+			(at 172.72 106.68 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16037,7 +15964,7 @@
 			)
 		)
 		(property "Value" "470Ω"
-			(at 171.45 104.14 90)
+			(at 172.72 104.14 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16046,8 +15973,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 171.45 104.902 90)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 172.72 104.902 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16058,7 +15985,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 171.45 106.68 0)
+			(at 172.72 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16069,7 +15996,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 171.45 106.68 0)
+			(at 172.72 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16088,7 +16015,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "R18")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -16107,7 +16034,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f44e895b-2bdf-43af-a8fd-629e8f91ab46")
-		(property "Reference" "#PWR081"
+		(property "Reference" "#PWR027"
 			(at 147.32 161.29 0)
 			(hide yes)
 			(show_name no)
@@ -16167,7 +16094,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR081")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -16184,7 +16111,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f877bb44-4bbc-4a03-9d1e-b75980ad4e1f")
-		(property "Reference" "C41"
+		(property "Reference" "C8"
 			(at 171.45 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16206,7 +16133,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 171.1452 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -16248,7 +16175,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "C41")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -16256,7 +16183,7 @@
 	)
 	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
-		(at 185.42 154.94 0)
+		(at 191.77 154.94 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -16267,8 +16194,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f91e5fc8-9efe-445c-884e-c7874c3b5fed")
-		(property "Reference" "#PWR083"
-			(at 185.42 161.29 0)
+		(property "Reference" "#PWR037"
+			(at 191.77 161.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16279,7 +16206,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 185.42 158.75 0)
+			(at 191.77 158.75 0)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -16289,7 +16216,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 185.42 154.94 0)
+			(at 191.77 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16300,7 +16227,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 185.42 154.94 0)
+			(at 191.77 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16311,7 +16238,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 185.42 163.83 0)
+			(at 191.77 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16327,7 +16254,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR083")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -16345,7 +16272,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f9bc375c-1e05-4876-b6b0-319f41e78c82")
-		(property "Reference" "C15"
+		(property "Reference" "C16"
 			(at 262.89 76.2 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16367,7 +16294,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 263.1948 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -16409,7 +16336,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "C15")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -16417,7 +16344,7 @@
 	)
 	(symbol
 		(lib_id "PCM_SparkFun-DiscreteSemi:Q_PMOS_4.2A_20V")
-		(at 105.41 36.83 0)
+		(at 95.25 36.83 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -16427,7 +16354,7 @@
 		(dnp no)
 		(uuid "fae4290a-f8fb-4fba-b364-482ed2cc9932")
 		(property "Reference" "Q1"
-			(at 111.76 36.83 0)
+			(at 101.6 36.83 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16437,7 +16364,7 @@
 			)
 		)
 		(property "Value" "FDN304PZ"
-			(at 113.03 33.02 0)
+			(at 102.87 33.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16446,8 +16373,8 @@
 				)
 			)
 		)
-		(property "Footprint" "PCM_SparkFun-Semiconductor-Standard:SOT23-3"
-			(at 105.41 45.974 0)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 95.25 45.974 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16458,7 +16385,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMG2305UX.pdf"
-			(at 105.41 48.26 0)
+			(at 95.25 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16469,7 +16396,7 @@
 			)
 		)
 		(property "Description" "P-MOSFET transistor, drain/gate/source"
-			(at 105.41 53.34 0)
+			(at 95.25 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16480,7 +16407,7 @@
 			)
 		)
 		(property "PROD_ID" "TRANS-14388"
-			(at 105.41 50.8 0)
+			(at 95.25 50.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16491,7 +16418,7 @@
 			)
 		)
 		(property "IMax" "4.2A"
-			(at 114.3 36.83 90)
+			(at 104.14 36.83 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16502,7 +16429,7 @@
 			)
 		)
 		(property "VMax" "20V"
-			(at 111.76 36.83 90)
+			(at 101.6 36.83 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16542,7 +16469,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fc980156-bb4f-4d89-982a-cedd7ca1a819")
-		(property "Reference" "#PWR068"
+		(property "Reference" "#PWR031"
 			(at 170.18 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -16602,7 +16529,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "#PWR068")
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
