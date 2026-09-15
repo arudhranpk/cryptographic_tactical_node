@@ -10558,7 +10558,7 @@
 				)
 			)
 		)
-		(property "Value" "YXC-Y-26"
+		(property "Value" "YST310S"
 			(at 57.15 106.68 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10568,7 +10568,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Crystal:Crystal_DS26_D2.0mm_L6.0mm_Horizontal"
+		(property "Footprint" "Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm"
 			(at 57.15 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -12038,7 +12038,7 @@
 				)
 			)
 		)
-		(property "Value" "Crystal_GND24"
+		(property "Value" "YSX321SL"
 			(at 29.21 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13079,91 +13079,6 @@
 					(unit 1)
 				)
 			)
-		)
-	)
-	(group ""
-		(uuid "002c9d61-cada-45a5-aeac-5ca0b7483237")
-		(members "0af27c98-53d6-4dd7-97ab-83d67ceb9ae7" "1abd658a-25f1-41a5-a825-8d9e4151692a"
-			"23efd371-966c-4da8-8cfa-ff9e12367358" "263df225-39b4-439a-83ec-af25d9350ee0"
-			"32d92de4-8bbb-4043-9ddf-c00800cc1dc7" "4028dadc-3de0-4ee2-9123-376b616747e1"
-			"406f95b3-de8f-4e4f-9885-4696db3c5a96" "41e44965-719e-44a7-8067-d4f363499bf5"
-			"684dfe04-414b-4bf7-ab3f-996a4f7a1272" "903d4bee-9238-4f64-b2a9-37da136706f6"
-			"93eb9348-a6f0-4cca-88d3-a2c0d8434860" "ad2f5af8-6aa2-428d-826f-8197d62647b6"
-			"c41ad114-47a4-4fa6-a0ea-b320e4760a69" "c9ee1b52-67a0-4b45-8743-843445a7fadf"
-			"cf333c71-07e8-4f2f-a2e7-000a41665e10" "e4c83e2e-51b8-465b-b23e-9cfd735fff09"
-		)
-	)
-	(group ""
-		(uuid "0231ab2c-e999-42a1-889d-72c7471404ea")
-		(members "116eb96b-7e3b-42d0-b5f2-5e39cdd19331" "161e7c61-3cac-4bb5-9e30-4326fef67ece"
-			"182cafd3-2eb3-418d-8802-483ef7121534" "19471f9f-caf5-4454-b940-da7c2fc387de"
-			"211b27f7-1613-4797-8444-bc6b766e29fe" "23e1b050-7649-42f7-9a68-ad773fe6247c"
-			"2887c71e-3a4e-4079-bf92-d8e7b99aa821" "28c5bd13-226e-4d7d-84a7-0e62a160734f"
-			"32b2a22b-9a93-475e-a6dd-e3853d2fca98" "399cab6b-8838-4c0b-8c30-e2cbe967ff94"
-			"3ce65ba1-2a96-4cd6-b4ac-4a602d17666a" "526de933-1ac6-46ed-b997-0642b1f0169e"
-			"533a3b38-c124-4a00-8709-2e9f2b2a22aa" "64566d05-d51b-4197-9a30-5eea1f546428"
-			"657b777b-63db-4ef6-8346-55aa6fb4a1e6" "657e2a14-6000-4849-9330-8a602a9ef762"
-			"6a07439f-50f9-44fe-8fc6-754428290501" "738e5c4d-e87e-439e-a247-5ecef41af8f1"
-			"84649392-2c69-479e-8f3d-b9514b3f544e" "8817ddf1-0d24-4404-bbb9-7b5d8f8d038d"
-			"89007542-0309-486a-a024-95098a304b46" "928a1cff-f509-42b3-a323-3ac6ce2ea033"
-			"9362b5cd-10b9-40c1-906c-af856f7cabad" "94b6158e-188d-4fd1-bd3f-bcc1a2901315"
-			"982479ec-b96a-4b2b-b606-bea4cb6a1ad5" "9f373651-eb58-4515-bfd1-beaa3e70b191"
-			"a2497e9a-44a6-4983-8d9a-5dd73ceb75d2" "a8347aa1-7f88-471d-9db8-dc8e61695a00"
-			"b132d6fe-c2f4-44b9-ba8b-dd748d42d056" "b8d0ed68-1c43-441e-80d1-c0cccc6897b3"
-			"d165934c-7a0f-4753-8dce-84572e5adf2d" "df38b10d-ef9b-4cc3-b729-22d6346c31f6"
-			"e0e76e5a-b261-4ee9-9aa2-7654dc094ad3" "e92b8c21-5fc5-467e-b395-08585c7ba284"
-			"f2fee2c6-b691-45a5-9ff0-8d2aef5135cb" "f3d22b9f-b1ee-4ee1-8469-933ed8e22351"
-			"fe0d2d48-68cc-49e6-b7ac-24cd6a66e282"
-		)
-	)
-	(group ""
-		(uuid "4c6ec89c-6234-4b05-9e0e-66d3f3f15d77")
-		(members "019968c3-a939-494c-a7db-02a0ee9fce78" "03cca3a1-605f-4ac4-8aa9-95cd9857d214"
-			"05b8e2bc-bdc0-4edc-b756-bc6d5c41e17b" "1fabb93b-4baf-418b-8042-692b4931f778"
-			"21b33e0a-6f77-4c3a-9bf4-ff85e334d535" "24ccf2c2-5f19-4978-940f-98eb598d2474"
-			"290e4a32-0011-4070-af13-0b22f86b10f7" "32ad97d6-a39c-435c-a7e9-360ea7fd2d3a"
-			"3fc264c0-537c-46e4-9dd5-77cfb07503a2" "4199c866-24ac-4f44-9426-5c92b0521b37"
-			"46a0664d-807f-4e22-9bc1-3241f4b926da" "4826441e-85c1-4b17-90b8-a25f4cbf396b"
-			"4910f3ec-88f2-4725-bd76-ec62cde4fdab" "5e0ce231-d36b-46d6-9366-33b06d8b3cc7"
-			"665a8170-91c7-4a87-b6fb-401acaba1458" "6881fd60-0eff-4af4-b346-88480f4c812f"
-			"6ecc3398-5260-4c99-9a9e-d5627ec6f0e1" "749628be-5aa1-4280-98e6-1595ad096441"
-			"9c98a366-1145-45be-9b5b-8b87427bbe2a" "9f0f3f49-bf87-418a-936b-11af4d52c42c"
-			"ac371088-5ff4-420f-846c-68937f06c6f2" "b81b0d01-72f7-411e-b000-3309c25a03f5"
-			"c80b12bf-ea78-4fb9-ad2c-1c1f777d8cd3" "cf5fce77-d9f4-437b-98ad-68c8a235feee"
-			"e0ac7780-58cb-4931-966e-cf51783aa078" "f0f44351-b53e-4b3f-90b2-6930e3f3f339"
-			"f543e436-f211-4936-9902-fdb15fee05cc" "f6a7300f-1806-427b-8e66-a18d89dae570"
-			"fed86a29-199b-467f-b402-ee84673653d8"
-		)
-	)
-	(group ""
-		(uuid "72fb8fb6-9a39-4e92-bdfe-9dbf66bbb5f2")
-		(members "0912e73c-272b-4ff5-9908-f47402ce7820" "2ca799b8-8cde-4214-902a-a0cc6e8aae5c"
-			"2e4d22b1-9c90-46ff-b5b5-067086059e3b" "3078b53c-f44f-432c-b612-939932e5c4df"
-			"4244ec6c-1cf1-4dda-bb82-45ec8f564574" "4499d93e-9598-4b95-896c-5d097666f11e"
-			"45b212f7-031d-4d08-9fcb-06e7348ef846" "47bc8edb-b1ba-4be5-a2d0-2b8eac8f2590"
-			"51831065-9d83-49d0-a4d8-e25f039ac740" "5ee63311-1c0f-4469-b7ae-a57380224091"
-			"5f8edc5a-a811-4c39-9116-aceba1df3eb0" "6580867c-db1e-4a84-bed4-fe3eb5962224"
-			"684646e0-621c-45cc-9323-bb8fb370aed8" "7a7f3096-f366-4cbe-ab84-c728077cf3e7"
-			"7ac3790d-9254-4e37-b829-52f9a7b1d3b4" "7e9ed2ca-3873-41c3-ac09-b81897ccb7bb"
-			"8e1039ff-b138-4a48-a76e-5da51f5648f9" "99b7789f-7e44-4a35-b7c7-340d738a1940"
-			"acde33b3-a824-40bb-ab49-e97cfa98c049" "b0ba3aee-ffbb-4d42-89f3-2bfd7182a71b"
-			"b3102f68-be6f-4a7d-8e3d-2911287aa6e5" "b699a520-fd5b-477f-99e0-316bf6e48bf5"
-			"d4291e0f-6a94-4ca7-a1da-240fc1ad4ea4" "e4631012-8f65-4c41-82eb-affe7ef3a39d"
-			"e90f5753-5217-4bc5-aea8-08d6d04949b6" "feeca705-764f-4f76-9013-f582650daa4c"
-			"ff295c04-3095-43ff-9db2-7971b81d9ec9"
-		)
-	)
-	(group ""
-		(uuid "d4f9bc29-6a52-40ca-a748-cececc0ba2c3")
-		(members "0eeecbae-d947-4c70-a23c-a29aff29ea11" "1a0237ca-6584-497c-a634-1eb40bdcadf4"
-			"2a1f7c13-c194-4637-8063-489a736e57a7" "2f1d5032-b9f8-42f4-8a79-c085c6d0cef7"
-			"3deac820-e0e4-49be-be7d-51548a818948" "573929e8-b0bd-41b5-90ef-f908a64042a5"
-			"6f20a9db-b158-42d2-ad6c-7867a383acdb" "730cc222-5b68-4d19-a4ea-7e545dee2e41"
-			"7affabd4-55ad-4041-9dd2-70e4caae201c" "7b49134f-dfae-4a96-a338-ddd729268ddd"
-			"88db7da6-e472-467f-968a-fee0ea869f37" "a6cb2fb3-5614-40d4-b71a-9d1e40530d40"
-			"bc2f3001-1925-43d2-98c7-b3debf2cc45a" "c5cb9f9b-e9f5-45fd-a7c6-fc144fdddfad"
-			"d6f8657c-4b03-42d2-beab-e457105dc614" "deb2468b-58c0-4c86-a669-69836496ccc7"
-			"edc70b2b-e47c-44ba-96c1-23aff64b0abc"
 		)
 	)
 )

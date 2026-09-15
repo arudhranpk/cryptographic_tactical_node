@@ -187,7 +187,7 @@
 				)
 			)
 			(property "Footprint" "NEO_M8N:NEO_M8N"
-				(at 0 0 0)
+				(at 0 -21.59 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -899,93 +899,6 @@
 		(uuid "fdfa84bc-9bf5-4427-bd06-90242c8863d5")
 	)
 	(symbol
-		(lib_id "NEO_M8N:NEO_M8N")
-		(at 110.49 72.39 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "26486e14-68f0-44b3-bb2c-19429ce6029a")
-		(property "Reference" "U6"
-			(at 95.25 53.34 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NEO-M8N"
-			(at 106.68 91.44 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "NEO_M8N:NEO_M8N"
-			(at 110.49 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 110.49 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 110.49 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "d4b167b7-6b31-46f2-8092-c027983f9324")
-		)
-		(pin "1"
-			(uuid "3ad611e8-4637-43de-be8a-87ea2ee13acd")
-		)
-		(pin "4"
-			(uuid "e85a608e-1732-46ca-ae3f-bec20d23328d")
-		)
-		(pin "3"
-			(uuid "af7580c7-13dd-42c1-848b-2ea389b8c992")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/e995d37b-7e81-489c-a8c7-4473f579a36c"
-					(reference "U6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 64.77 69.85 0)
 		(unit 1)
@@ -1375,6 +1288,94 @@
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/e995d37b-7e81-489c-a8c7-4473f579a36c"
 					(reference "#PWR084")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "NEO_M8N:NEO_M8N")
+		(at 110.49 72.39 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dfb054bc-b53f-425d-abb7-39daa249fe81")
+		(property "Reference" "U6"
+			(at 127 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "NEO-M8N"
+			(at 127 73.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "NEO_M8N:NEO_M8N"
+			(at 110.49 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 110.49 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 110.49 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9ab04ea6-7699-4f7e-bd31-5e44b330db00")
+		)
+		(pin "4"
+			(uuid "d65d4fb1-11eb-42d6-83a8-3ef8ac70300a")
+		)
+		(pin "3"
+			(uuid "b321839e-e583-46ef-bc08-9b1ef8777078")
+		)
+		(pin "2"
+			(uuid "5e06168e-2de3-4161-bccd-9137340e0b66")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/e995d37b-7e81-489c-a8c7-4473f579a36c"
+					(reference "U6")
 					(unit 1)
 				)
 			)

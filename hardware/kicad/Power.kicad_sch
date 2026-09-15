@@ -13062,6 +13062,94 @@
 		)
 	)
 	(symbol
+		(lib_id "TLV74333PDBVR:TLV74333PDBVR")
+		(at 245.11 33.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a661a45e-85b4-47b6-87f4-cfae3473fd74")
+		(property "Reference" "U3"
+			(at 245.11 24.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TLV74333PDBVR"
+			(at 245.11 26.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5_HandSoldering"
+			(at 246.38 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 245.11 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 245.11 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "2e66a442-cfe3-4811-8f7e-430220bd00a6")
+		)
+		(pin "5"
+			(uuid "6bdeb2ed-530c-4b1a-bd72-3f2a126acc87")
+		)
+		(pin "4"
+			(uuid "9c3d6394-43c2-4bbd-a83d-2d9619cf802f")
+		)
+		(pin "1"
+			(uuid "37f79766-c9f6-4600-a185-7544e639212c")
+		)
+		(pin "3"
+			(uuid "58bd3699-80e2-4b5e-8443-92bc2bb47526")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:GND")
 		(at 30.48 48.26 0)
 		(unit 1)
@@ -14296,7 +14384,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DFN_QFN:QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm"
+		(property "Footprint" "Package_DFN_QFN:QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm_ThermalVias"
 			(at 134.62 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -15455,95 +15543,6 @@
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
 					(reference "R10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "TLV74333PDBVR:TLV74333PDBVR")
-		(at 245.11 33.02 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "eb309da9-3d8d-46b6-9fb6-bcca4e01aa56")
-		(property "Reference" "U3"
-			(at 245.11 22.86 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TLV74333PDBVR"
-			(at 245.11 25.4 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5_HandSoldering"
-			(at 246.38 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 245.11 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 245.11 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "7c2adf74-40b4-415c-8658-1db6d6e59e02")
-		)
-		(pin "5"
-			(uuid "72190247-bb9a-4b4c-b1fd-1ae3cba9e128")
-		)
-		(pin "4"
-			(uuid "0db08e8b-908e-42f4-b9f8-e894d34c3319")
-		)
-		(pin "1"
-			(uuid "8bbce47a-5eb4-434a-b90c-928678b8ff2c")
-		)
-		(pin "3"
-			(uuid "ba3fe454-ce44-4c07-9899-f2d879413dd6")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "U3")
 					(unit 1)
 				)
 			)
