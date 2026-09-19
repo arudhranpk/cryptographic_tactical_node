@@ -23,49 +23,60 @@ This document serves as the **ground-truth design authority**. It records archit
 
 ### High-Level Block Diagram
 ```
-                           +------------------------+
-                           | USB-C Connector (J19)  |
-                           | 5V VBUS (Charge Power) |
-                           +-----------+------------+
-                                       |
-                                       v
-                             +--------------------+
-                             |  MCP73871-2CC      | <----+ 3.7V 2000mAh Li-PO (BT1)
-                             |  Load Sharing &    |      | (via Q1 P-MOS Reverse Protection)
-                             |  Li-Ion Charger    |
-                             +---------+----------+
-                                       |
-                                  +VCOM Rail (3.0V - 5.0V)
-                                       |
-                                       v
-                             +--------------------+
-                             |  TPS61023DRLR      |
-                             |  Synchronous Boost |
-                             |  Converter to +5V  |
-                             +---------+----------+
-                                       |
-                   +-------------------+-------------------+
-                   |                   |                   |
-                   v                   v                   v
-            +--------------+    +--------------+    +--------------+
-            |  NEO-M8N     |    |  E32-900T20D |    | Dual LDOs    |
-            |  GPS Module  |    |  LoRA Radio  |    | TLV74333     |
-            |  (+5V VCC)   |    |  (+5V VCC)   |    +-------+------+
-            +--------------+    +--------------+            |
-                                               +------------+------------+
-                                               |                         |
-                                               v                         v
-                                       +---------------+         +---------------+
-                                       | U2: TLV74333  |         | U3: TLV74333  |
-                                       | -> +STM_3V3   |         | -> +CRYPT_3V3 |
-                                       +-------+-------+         +-------+-------+
-                                               |                         |
-                                               v                         v
-                                       +---------------+         +---------------+
-                                       | STM32F411CEU6 |         | NXP SE050C1   |
-                                       | Microctlr &   |         | Secure Elem.  |
-                                       | WS2812B LED   |         | (Isolated)    |
-                                       +---------------+         +---------------+
+  2S 18650 Li-Ion (BT1 + BT2 in series: 6.8V - 8.4V)
+            |
+            v
+     [Q1 P-FET Reverse Polarity Protection + D2 Zener Gate Clamp]
+            |
+            v
+     [F1 Resettable PPTC Fuse: 1.85A Hold / 3.7A Trip]
+            |
+            +------------+
+                         | (Pin 2)
+                         v
+                +-------------------+
+                | SW1 Slide Switch  | <--- Direct SPDT Mechanical Isolation
+                | (SS-12D10L7-XKB)  |      (3A @ 125VAC / 3A @ 24VDC)
+                +---------+---------+
+                          | (Pin 3: ON state)
+                          v
+                     +VCOM Rail (6.8V - 8.4V)
+                          |
+                          v
+                +--------------------+
+                |  TPS563201         |
+                |  Synchronous Buck  |
+                |  Converter to +5V  |
+                +---------+----------+
+                          |
+                          +<--- [D3: SS24B Schottky Diode Direct 5V Bypass] <--- USB-C 5V VBUS (J1)
+                          |
+                +---------+---------+
+                |   +5V Power Rail  |
+                +---------+---------+
+                          |
+              +-----------+-----------+
+              |                       |
+              v                       v
+         +--------------+      +--------------+      +-------------------+
+         |  NEO-M8N     |      |  E32-900T20D |      | Dual LDOs         |
+         |  GPS Module  |      |  LoRA Radio  |      | TLV74333 (U2, U3) |
+         |  (+5V VCC)   |      |  (+5V VCC)   |      +---------+---------+
+         +--------------+      +--------------+                |
+                                                   +-----------+-----------+
+                                                   |                       |
+                                                   v                       v
+                                           +---------------+       +---------------+
+                                           | U2: TLV74333  |       | U3: TLV74333  |
+                                           | -> +STM_3V3   |       | -> +CRYPT_3V3 |
+                                           +-------+-------+       +-------+-------+
+                                                   |                       |
+                                                   v                       v
+                                           +---------------+       +---------------+
+                                           | STM32F411CEU6 |       | NXP SE050C1   |
+                                           | Microctlr &   |       | Secure Elem.  |
+                                           | WS2812B LED   |       | (Isolated)    |
+                                           +---------------+       +---------------+
 ```
 
 ---
@@ -75,21 +86,21 @@ This document serves as the **ground-truth design authority**. It records archit
 
 | # | Circuit Feature | Schematic Appearance | Engineering Justification (Why It Is Intentional) |
 |---|---|---|---|
-| **D-01** | **Dual Isolated 3.3V LDO Regulators** | U2 and U3 are identical TLV74333 LDOs fed from the same +5V boost rail. | **Cryptographic Side-Channel Isolation**: High-security hardware security guidelines dictate that the cryptographic element (`+CRYPT_3V3`) must have power isolation from the main MCU (`+STM_3V3`). This prevents Differential Power Analysis (DPA) and Correlation Power Analysis (CPA) attacks, where MCU execution noise or external probes could correlate crypto current transients. |
-| **D-02** | **MCP73871 Safety Timer Disabled (`~TE` tied High to VBUS)** | KiCad ERC warns: `Both CE and ~{TE} are attached to the same items`. Pin 9 (`~TE`) is pulled high to VBUS. | **Load-Sharing Compatibility**: The system load (GPS + LoRA + MCU) draws power from the MCP73871 `OUT` pin while charging. Under heavy load, the battery charges slower. Enabling the internal 4-6 hour safety timer would cause false timeout faults and abort charging before reaching 100%. Tying `~TE` high disables the timer, allowing continuous charging under variable system loads. |
-| **D-03** | **MCP73871 `SEL` Pin Tied High to VBUS** | Pin 3 (`SEL`) is held permanently High. | **High Input Current Selection**: When SEL is Low, the MCP73871 enforces USB 2.0 500mA limits. When SEL is High, it operates in AC-adapter mode, permitting up to 1.65A typical / 1.8A max input current. This allows the node to draw sufficient power from modern USB-C 5V/2A sources to run peak LoRA RF transmit bursts (~120mA+) and charge the battery at ~300mA simultaneously. |
-| **D-04** | **Boost-First Power Architecture (Boost to 5V, then LDO to 3.3V)** | Stepping up 3.7V to 5.0V, then stepping down to 3.3V via linear LDOs. | **RF Power & Noise Suppression**: <br>1. The Ebyte E32-900T20D LoRA module explicitly requires $\ge 5.0\text{V}$ on VCC to achieve full +20 dBm (100mW) RF output power.<br>2. The standard NEO-M8N breakout board includes an onboard 3.3V LDO and active antenna bias that perform best with 5V input.<br>3. Regulating 5V down to 3.3V through linear LDOs provides over 65 dB PSRR, attenuating switching ripple from the boost converter for the MCU ADC and the SE050 crypto engine. |
+| **D-01** | **Dual Isolated 3.3V LDO Regulators** | U2 and U3 are identical TLV74333 LDOs fed from the same +5V rail. | **Cryptographic Side-Channel Isolation**: High-security hardware guidelines dictate that the cryptographic element (`+CRYPT_3V3`) must have power isolation from the main MCU (`+STM_3V3`). This prevents Differential Power Analysis (DPA) and Correlation Power Analysis (CPA) attacks, where MCU execution noise or external probes could correlate crypto current transients. |
+| **D-02** | **2S 18650 Battery Pack & Mechanical SPDT Switch (SW1)** | SW1 Pin 2 to battery, Pin 3 to `+VCOM`, Pin 1 NC. | **No PMIC / External Manual Charging**: The system replaces complex onboard single-cell PMIC chargers with a high-capacity 2S Li-ion battery pack (2x 18650 in series). Cells are swapped and charged in an external smart charger. SW1 (rated 3A @ 24VDC) completely breaks the battery circuit when OFF (0.0 µA standby drain). |
+| **D-03** | **Direct USB-to-5V Schottky Diode Bypass (D3 / SS24B)** | D3 cathode to `+5V`, anode to `+VUSB`. | **Zero-Battery Bench / Field Powering**: A 2A Schottky diode (`SS24B`, SMA) connects USB 5V VBUS directly to the `+5V` rail, completely bypassing the buck converter. In USB mode with SW1 OFF, the `+5V` rail sits at $\approx 4.60\text{V}$, providing $1.30\text{V}$ headroom over the 3.3V LDOs ($125\text{mV}$ dropout). |
+| **D-04** | **Synchronous Buck-First Power Architecture (Buck to 5V, then LDO to 3.3V)** | Stepping down 6.8V–8.4V to 5.0V via TPS563201, then to 3.3V via linear LDOs. | **RF Power & High Efficiency Step-Down**: <br>1. E32-900T20D LoRA requires $\ge 5.0\text{V}$ on VCC for full +20 dBm (100mW) RF output power.<br>2. Stepping down 2S (7.4V nominal) via synchronous buck achieves >92% efficiency, cutting battery draw to ~195 mA.<br>3. Regulating 5V down to 3.3V through linear LDOs provides over 65 dB PSRR, attenuating switching ripple for the MCU ADC and SE050 crypto engine. |
 | **D-05** | **WS2812B-2020 Addressable RGB LED Powered at 3.3V (`+STM_3V3`)** | VDD of D6 is tied to `+STM_3V3`, not +5V. | **Direct 3.3V Logic Drive**: WS2812B requires $V_{IH} \ge 0.7 \times V_{DD}$. If powered at 5V, $V_{IH} \ge 3.5\text{V}$, making direct driving from a 3.3V STM32 GPIO unreliable without a level shifter. Powering the WS2812B-2020 at 3.3V aligns the input threshold with STM32 GPIO levels, eliminating level shifter ICs. Modern WS2812B-2020 diodes function reliably down to 3.0V. |
-| **D-06** | **Active P-MOSFET (Q1) Reverse Polarity Protection** | FDN304PZ P-channel MOSFET with Drain to `+BATT` and Source to `+BATT_POLA`. | **Ultra-Low Voltage Drop**: A standard silicon or Schottky diode drops 0.3V - 0.7V, which would waste significant energy from a 3.7V LiPo and cause premature low-voltage cutoffs. The FDN304PZ P-MOS has an $R_{DS(on)}$ of only $36\text{ m}\Omega$, dropping less than $18\text{ mV}$ at 500mA. The internal body diode initiates conduction, after which Gate (pulled to GND via R8 100k) fully enhances the channel. |
+| **D-06** | **Active P-MOSFET (Q1) Reverse Polarity Protection & Fuse (F1)** | FDN304PZ P-FET with D2 (1SMA4734A 5.6V Zener) and F1 (1.85A PPTC). | **Rugged Reverse Battery & Overcurrent Protection**: Protects against inverted cell insertion in holders BT1/BT2. The 5.6V Zener clamp D2 ensures $V_{GS}$ does not exceed the -8.0V maximum rating under an 8.4V pack. The FDN304PZ drops $< 10\text{ mV}$ ($R_{DS(on)} = 36\text{ m}\Omega$). F1 PPTC trips at 3.7A to protect wiring and traces. |
 | **D-07** | **SE050 Standard Power Mode (Autonomous I2C Wakeup)** | SE050 pins `ENA`, `VIN`, and `VCC` are connected to `+CRYPT_3V3`, with `VOUT` left open. | **Firmware APDU Sleep Control**: In this configuration, the SE050 utilizes software-controlled Power-down mode (via T=1 APDU protocol). It retains full cryptographic RAM and register state while consuming only idle current, and wakes up automatically upon an I2C_SDA falling edge. Deep power-down (which requires toggling ENA) is bypassed to save GPIO lines. |
-| **D-08** | **USB-C Configured as Universal 5V Sink (UFP)** | J19 CC1 and CC2 pins pulled to GND via 5.1kΩ resistors (R15, R16), D+/D- floating. | **Power-Only Sink**: J19 functions purely as a 5V power sink. 5.1kΩ pull-downs on CC1 and CC2 signal to any standard USB-C / PD power source to deliver 5V VBUS. Data lines (D+, D-) are intentionally unconnected because all firmware flashing is conducted via the dedicated SWD header (J5). |
+| **D-08** | **USB-C Configured as Universal 5V Sink (UFP)** | J1 CC1 and CC2 pins pulled to GND via 5.1kΩ resistors (R6, R7), D+/D- floating. | **Power-Only Sink**: J1 functions purely as a 5V power sink. 5.1kΩ pull-downs on CC1 and CC2 signal to any standard USB-C / PD power source to deliver 5V VBUS. Data lines (D+, D-) are intentionally unconnected because all firmware flashing is conducted via the dedicated SWD header (J2). |
 | **D-09** | **Crystal Load Capacitors BOM Procurement Range** | HSE has C19 (33pF) / C25 (22pF); LSE has C28 (18pF) / C33 (11pF); adjacent procurement caps C22 (27pF) and C31 (15pF) set to `on_board no`. | **Bring-Up Laboratory Tuning Flexibility**: Six distinct 0402 C0G capacitor values (11, 15, 18, 22, 27, 33 pF) are included in the project BOM. This guarantees that during bench bring-up, the engineer has immediate access to an assortment of load capacitors to empirically tune Pierce oscillator crystal load capacitance ($C_L$) against real PCB stray capacitance ($C_s$). |
 | **D-10** | **Dual I2C Pull-Up Values in BOM for Bus Speed Tuning** | R24 is 4.7kΩ on `I2C1_SCL`; R25 is 2.2kΩ on `I2C1_SDA`. Both pulled to `+STM_3V3`. | **Assembly Kit Flexibility**: Including both 4.7kΩ (Standard-mode 100 kHz) and 2.2kΩ (Fast-mode 400 kHz) in the BOM ensures both resistor values are procured in the assembly kit. Lab qualification can swap values to achieve optimal rise times ($t_r < 300\text{ ns}$) under actual PCB parasitic bus capacitance. |
 | **D-11** | **100nF Decoupling for STM32 Internal VREF+/VDDA Reference** | Dedicated 100nF ceramic capacitor C30 connects Pin 9 (`VDDA` / `VREF+`) directly to GND. | **Sufficient for Low-Frequency Battery Telemetry**: External VREF+ is internally bonded to VDDA on the UFQFPN48 package. ADC1 is utilized solely for periodic DC battery state-of-charge sampling (once every 20s). The internal sampling capacitor ($C_{ADC} \approx 4\text{ pF}$) is over 25,000× smaller than C30, eliminating the need for an additional 1.0µF bulk capacitor. |
-| **D-12** | **Pinmux Mapping Finalization (PA6, PB12/PB13, PB1, PB14/PB15, PB5)** | Finalized pin assignments in schematic: PA6=Battery ADC, PB12/13=Status LEDs, PB1=WS2812B, PB14/15=LoRA M1/M0, PB5=LoRA AUX. | **Optimized Peripheral Routing**: Synchronizes CubeMX pin assignments with physical layout. Direct DMA TIM3_CH4 drive for WS2812B timing on PB1, hardware EXTI5 on PB5 for LoRA wake/TX-done, and dedicated ADC1_IN6 on PA6. |
-| **D-13** | **100nF Decoupling on `+STM_3V3_A` with Ferrite Bead Isolation** | Pin 9 (`VDDA`) fed from `+STM_3V3` via BLM18AG121SN1D ferrite bead (FB1) and decoupled by C30 (100nF 0603). | **Analog Noise Isolation**: Forms a low-pass Pi filter with a cutoff frequency of $f_c \approx 460\text{ kHz}$, providing $>30\text{ dB}$ attenuation against TPS61023 boost switching noise (1.0 MHz / 2.0 MHz) without requiring excessive bulk capacitance. |
-| **D-14** | **33kΩ Anti-Tamper Pull-Up Resistor (R31) with 100nF Filter (C42)** | R31 is 33kΩ to `+STM_3V3`; C42 is 100nF to GND. S3 is tactile intrusion switch. | **RF Immunity & Current Optimization**: The $3.3\text{ ms}$ RC time constant filters out high-frequency RF rectification from the adjacent +20 dBm LoRA burst transmitter. Closed-switch quiescent current is reduced to $100\text{ }\mu\text{A}$ while reusing the existing 33kΩ BOM reel (matching R19, R20, R28). |
-| **D-15** | **Battery Pack Internal Thermal PCM & MCP73871 10kΩ Fixed Resistor** | R15 is a fixed 10kΩ resistor connected between MCP73871 Pin 5 (`THERM`) and GND. | **Datasheet-Compliant Thermal Bypass**: The tactical Li-PO pack incorporates an internal Protection Circuit Module (PCM) with built-in thermal and short-circuit cutoffs. Per Microchip MCP73871 Datasheet Section 5.1.1, a fixed 10kΩ resistor biases $V_{THERM} = 0.50\text{V}$ (safely within the 0.35V–1.25V window), eliminating external NTC wiring complexity. |
+| **D-12** | **Battery Voltage Telemetry Divider Scaled for 2S Pack (R11=33kΩ, R12=5.1kΩ)** | R11 is 33kΩ to `+VCOM`, R12 is 5.1kΩ to GND, C32 is 100nF filter cap. | **Safe ADC Range & Zero Standby Bleed**: Connected downstream of SW1 to `+VCOM`. At 8.40V full charge, $V_{ADC} = 8.40\text{V} \times \frac{5.1}{38.1} = 1.124\text{V}$, safely below 3.3V VDDA. Standby shelf bleed when SW1 is OFF is 0.0 µA. |
+| **D-13** | **100nF Decoupling on `+STM_3V3_A` with Ferrite Bead Isolation** | Pin 9 (`VDDA`) fed from `+STM_3V3` via BLM18AG121SN1D ferrite bead (FB1) and decoupled by C30 (100nF 0603). | **Analog Noise Isolation**: Forms a low-pass Pi filter with a cutoff frequency of $f_c \approx 460\text{ kHz}$, providing $>30\text{ dB}$ attenuation against buck switching noise without requiring excessive bulk capacitance. |
+| **D-14** | **33kΩ Anti-Tamper Pull-Up Resistor (R31) with 100nF Filter (C42)** | R31 is 33kΩ to `+STM_3V3`; C42 is 100nF to GND. S3 is tactile intrusion switch. | **RF Immunity & Current Optimization**: The $3.3\text{ ms}$ RC time constant filters out high-frequency RF rectification from the adjacent +20 dBm LoRA burst transmitter. Closed-switch quiescent current is reduced to $100\text{ }\mu\text{A}$ while reusing the existing 33kΩ BOM reel. |
+| **D-15** | **Modular 2S 18650 Battery Holders & Protected Cell Safety Practice** | Keystone 1042 battery holders (BT1, BT2). Replaces onboard BMS with protected cells. | **Zero-Friction Battery Safety**: Uses commercial **Protected Button-Top 18650 Cells** (e.g. KeepPower 18650 with integrated Seiko/Ricoh protection IC + dual MOSFETs). Provides autonomous hardware over-discharge cutoff ($< 2.5\text{V}$), over-charge cutoff ($> 4.25\text{V}$), and short-circuit protection at the cell level without adding complex PCB multi-cell BMS circuitry. |
 | **D-16** | **Hardware Key Storage in SE050 & Omission of RTC Backup Coin Cell** | STM32 Pin 1 (`VBAT`) tied to `+STM_3V3`. No external coin-cell battery holder. | **Root-of-Trust Architecture**: All cryptographic root keys, certificates, and asymmetric credentials reside inside the tamper-resistant NXP SE050 Common Criteria EAL 6+ secure element. MCU RTC backup registers (`RTC_BKPxR`) are not used for persistent key storage, and UTC time is restored from GPS on boot, eliminating ~400 mm² of board space and coin cell failure modes. |
 | **D-17** | **I2C Pull-Up Resistors (R24, R25) Located on STM32 Master Domain** | Pull-ups R24 (4.7kΩ) and R25 (2.2kΩ) placed on STM32 sheet tied to `+STM_3V3`. | **Routing Density & Power-Down Isolation**: Pulling up to `+STM_3V3` avoids routing congestion around the ultra-compact HX2QFN20 SE050 package and prevents back-powering `+CRYPT_3V3` during MCU deep sleep modes. Cryptographic transactions are protected by SCP03 encrypted APDUs and SE050 internal side-channel countermeasures. |
 | **D-18** | **LoRA Transceiver Shielding & Pins 8, 9, 10 Unrouted (NC)** | Ebyte E32-900T20D Pins 8, 9, 10 left unrouted with `no_connect` flags. | **Datasheet Adherence & Ground Loop Elimination**: Ebyte official datasheet designates Pins 8, 9, 10 as "NC (No Connection)". The RF transceiver is housed under an integrated metal shield can, and the SMA outer shell is internally bonded to module GND (Pin 7). Leaving pins 8–10 unrouted avoids creating carrier board ground loop antennas. |
@@ -100,24 +111,34 @@ This document serves as the **ground-truth design authority**. It records archit
 ## 4. Subsystem Breakdown & Design Rationale
 
 ### 4.1 Power Subsystem (`Power.kicad_sch`)
-*   **Battery**: Single-cell Li-PO 103450 (3.7V nominal, 4.2V fully charged, 2000 mAh capacity).
-*   **Reverse Polarity Protection**: Q1 (FDN304PZ P-MOSFET), D1 (1SMA4734A 5.6V Zener diode across Gate-Source for ESD/overvoltage protection), and R8 (100kΩ pull-down).
-*   **Battery Charger & Load Sharing (U2: MCP73871-2CC)**:
-    *   `PROG1` (R13 = 3.3kΩ): Sets fast charge current to $I_{CHG} = \frac{1000\text{V}}{3300\Omega} \approx 303\text{ mA}$.
-    *   `PROG3` (R14 = 33kΩ): Sets charge termination current to $I_{TERM} = \frac{1000\text{V}}{33000\Omega} \approx 30.3\text{ mA}$ (10% of $I_{CHG}$).
-    *   `VPCC` (R9 = 270kΩ, R10 = 100kΩ): Sets voltage-proportional charge control threshold to $V_{TH} = 1.23\text{V} \times (1 + \frac{270}{100}) = 4.55\text{V}$. Prevents weak USB supplies from collapsing.
-    *   `THERM` (R15 = 10kΩ to GND): Qualifies charge controller temperature per D-15.
-    *   `Status Indicators`: White LEDs D3 (`STAT1`), D4 (`STAT2`), D5 (`~PG`) with 470Ω current-limiting resistors (R16, R17, R18) pulling down from VBUS.
-*   **Power Switch (SW1: SS-12D10L7-XKB)**: Positioned between MCP73871 `OUT` (`+MCP_OUT`) and `+VCOM`. Allows the battery to charge from USB when the system is switched OFF.
-*   **Battery Voltage Divider (R19 = 33kΩ, R20 = 33kΩ)**: Connected to `+VCOM` downstream of SW1. Generates `POWER_VOLTAGE` for STM32 PA6 with 0.0 µA standby shelf discharge when SW1 is OFF.
-*   **Boost Converter (U1: TPS61023DRLR)**:
-    *   Inductor: L1 = 1.0 µH (SWPA5040S1R0NT, 4.9A saturation).
-    *   Feedback network: $R_{top} = 732\text{ k}\Omega$ (R11), $R_{bottom} = 100\text{ k}\Omega$ (R12).
-    *   $V_{OUT} = 0.6\text{V} \times (1 + \frac{732}{100}) = 4.992\text{V} \approx 5.0\text{V}$.
-    *   Decoupling: Input capacitors C1 (100nF), C2 (10µF), C3 (10µF); Output capacitors C4 (22µF), C5 (22µF), C6 (10µF), C7 (10µF).
+*   **Battery**: 2S Li-ion battery pack using two 18650 cells in series (BT1, BT2 in Keystone 1042 holders; 7.4V nominal, 8.4V fully charged, 6.8V buck dropout cutoff, 2600 mAh capacity).
+*   **Protection Circuitry**:
+    *   **Overcurrent / Short-Circuit**: F1 resettable PPTC fuse (Bel Fuse 0ZCF0185FF2C, 1.85A hold, 3.7A trip) in series with the battery output.
+    *   **Reverse Polarity**: Q1 (FDN304PZ P-MOSFET, $R_{DS(on)} = 36\text{ m}\Omega$), D2 (1SMA4734A 5.6V Zener diode clamp across Gate-Source protecting against over-voltage up to 8.4V pack voltage), and R8 (100kΩ pull-down).
+*   **Power Switch (SW1: SS-12D10L7-XKB)**:
+    *   Direct SPDT slide switch rated at 3A @ 125VAC / 3A @ 24VDC (10,000 cycles).
+    *   Pin 2 connects to the fused/protected battery output, Pin 3 connects to `+VCOM`, Pin 1 is unconnected (marked NC).
+    *   Completely disconnects the battery when switched OFF (0.0 µA standby shelf bleed).
+*   **USB Power & Bypass**:
+    *   USB-C Receptacle (J1) with 5.1kΩ pull-down resistors (R6, R7) on CC1 and CC2.
+    *   Direct 5V Bypass Diode D3: SS24B (2A, 40V SMA Schottky diode) connects `+VUSB` directly to the `+5V` rail.
+    *   Allows running the system entirely on USB power ($\approx 4.60\text{V}$ rail) when the battery switch is OFF.
+*   **Battery Voltage Divider (R11 = 33kΩ, R12 = 5.1kΩ, C32 = 100nF)**:
+    *   Connected to `+VCOM` downstream of SW1.
+    *   Division ratio: $\frac{5.1}{33 + 5.1} = 0.13386$.
+    *   Full charge (8.40V) produces $V_{ADC} = 1.124\text{V}$; nominal (7.40V) produces $V_{ADC} = 0.991\text{V}$; buck dropout limit (6.80V) produces $V_{ADC} = 0.910\text{V}$.
+    *   Safely within the STM32 3.3V ADC range (`ADC1_IN6` on PA6). C32 suppresses switching ripple.
+*   **Buck Converter (U1: TPS563201)**:
+    *   High-efficiency synchronous step-down converter (4.5V–17V input range, 3A continuous output, 580 kHz switching frequency, SOT-23-6 package).
+    *   Inductor: L1 = 2.2 µH (SWPA5040S2R2NT, 4.2A saturation current).
+    *   Feedback network: $R_{top} = 56\text{ k}\Omega$ (R9), $R_{bottom} = 10\text{ k}\Omega$ (R10).
+    *   $V_{OUT} = 0.768\text{V} \times (1 + \frac{56}{10}) = 5.068\text{V} \approx 5.0\text{V}$.
+    *   Bootstrap Capacitor: C6 = 100 nF ceramic between BST and SW.
+    *   Decoupling: Input capacitors C9 (10µF), C10 (10µF), C1 (100nF); Output capacitors C7 (22µF), C8 (22µF), C14 (10µF), C15 (10µF).
 *   **Dual 3.3V LDO Regulators**:
-    *   U3: TLV74333PDBVR (Fixed 3.3V, 300mA) generating `+STM_3V3` for MCU, status LEDs, and WS2812B.
-    *   U4: TLV74333PDBVR (Fixed 3.3V, 300mA) generating `+CRYPT_3V3` for SE050 crypto element.
+    *   U2: TLV74333PDBVR (Fixed 3.3V, 300mA, 125mV dropout) generating `+STM_3V3` for MCU, status LEDs, and WS2812B.
+    *   U3: TLV74333PDBVR (Fixed 3.3V, 300mA, 125mV dropout) generating `+CRYPT_3V3` for SE050 crypto element.
+
 
 ### 4.2 Microcontroller Subsystem (`STM32.kicad_sch`)
 *   **MCU**: STM32F411CEU6 (ARM Cortex-M4F, 100 MHz, 512 KB Flash, 128 KB SRAM, UFQFPN48 package).
@@ -200,7 +221,7 @@ This document serves as the **ground-truth design authority**. It records archit
 | 13 | PA3 | USART2_RX | `GPS_TX` | NEO-M8N GPS UART TX | 3.3V TTL via inline 0Ω R2 |
 | 14 | PA4 | GPIO | Unassigned / Spare | Expansion Pad | Spare analog / SPI1_NSS |
 | 15 | PA5 | GPIO | Unassigned / Spare | Expansion Pad | Spare SPI1_SCK |
-| 16 | PA6 | ADC1_IN6 | `POWER_VOLTAGE` | Battery Divider R19/R20 | 0–3.3V state-of-charge ADC (D-12) |
+| 16 | PA6 | ADC1_IN6 | `POWER_VOLTAGE` | Battery Divider R11/R12 | 0–1.124V 2S battery telemetry (D-12) |
 | 17 | PA7 | GPIO | Unassigned / Spare | Expansion Pad | Spare SPI1_MOSI |
 | 18 | PB0 | GPIO | Unassigned / Spare | Expansion Pad | Spare GPIO |
 | 19 | PB1 | TIM3_CH4 | `PROG_LED` | WS2812B-2020 DIN (D6 Pin 3) | Hardware DMA pulse timing (D-12) |
@@ -246,10 +267,65 @@ This document serves as the **ground-truth design authority**. It records archit
 *   LoRA E32-900T20D Transmit (+20 dBm): ~120 mA @ 5V.
 *   WS2812B RGB LED (Full White): ~45 mA @ 3.3V.
 
-Total peak equivalent current from 3.7V battery (through boost converter with 85% efficiency):
-$$P_{total} = (5.0\text{V} \times 0.187\text{A}) + (3.3\text{V} \times 0.120\text{A}) = 0.935\text{W} + 0.396\text{W} = 1.331\text{W}$$
-$$I_{battery} = \frac{1.331\text{W}}{3.7\text{V} \times 0.85} \approx 423\text{ mA}$$
-**Continuous Active Runtime on 2000 mAh LiPo**: $\approx 4.7\text{ hours}$.
+Total peak equivalent current from 2S battery pack (7.4V nominal through TPS563201 buck converter with 92% efficiency):
+$$P_{5V\_load} = (5.0\text{V} \times 0.187\text{A}) + (5.0\text{V} \times 0.080\text{A}) = 1.335\text{W}$$
+$$I_{battery\_nominal} = \frac{1.335\text{W}}{7.4\text{V} \times 0.92} \approx 196\text{ mA}$$
+$$I_{battery\_cutoff} = \frac{1.335\text{W}}{6.8\text{V} \times 0.92} \approx 213\text{ mA}$$
+
+Accounting for the TPS563201 buck converter dropout limit of $6.80\text{V}$ ($3.40\text{V}$/cell), approximately 75% of total 2600 mAh capacity is usable ($1950\text{ mAh}$):
+$$\text{Continuous Active Runtime} = \frac{1950\text{ mAh}}{196\text{ mA}} \approx \mathbf{10.0\text{ hours}}.$$
+
+### Mathematical Verification Block (`math` Format)
+```math
+volt3 = 3.3V
+volt5 = 5V
+
+# Active currents
+stm32 = 25mA
+crypt = 10mA
+lora = 120mA
+gps = 67mA
+
+total_5v_current = lora + gps + stm32 + crypt
+power_5v = volt5 * total_5v_current to W
+
+# 2S 18650 Battery Pack Parameters
+battery_capacity = 2600mAh
+bat_nom_volt = 7.4V
+bat_min_volt = 6.8V
+
+# TPS563201 synchronous buck converter efficiency (~92%)
+buck_eff = 0.92
+bat_active_power = power_5v / buck_eff to W
+
+# Battery active currents across discharge curve
+bat_nom_current = bat_active_power / bat_nom_volt to mA
+bat_min_current = bat_active_power / bat_min_volt to mA
+
+# Usable capacity factor (75% usable due to 6.8V buck dropout threshold)
+usable_capacity = battery_capacity * 0.75 to mAh
+
+# Sleep currents
+stm32_sleep = 15uA
+crypt_sleep = 5uA
+lora_sleep = 4uA
+gps_sleep = 15uA
+quiescent = 250uA
+bat_sleep_current = stm32_sleep + crypt_sleep + lora_sleep + gps_sleep + quiescent to mA
+
+# Tactical duty cycle (1s active every 20s = 5% duty cycle)
+t_active = 1s
+t_sleep = 19s
+duty_cycle = t_active / (t_active + t_sleep)
+
+# Average battery current
+bat_avg_current = (duty_cycle * bat_nom_current) + ((1 - duty_cycle) * bat_sleep_current) to mA
+
+# Lifetimes
+continuous_runtime = usable_capacity / bat_nom_current to hr
+tactical_runtime = usable_capacity / bat_avg_current to hr
+tactical_days = tactical_runtime to day
+```
 
 ### Duty-Cycled Tactical Operation (Recommended Profile)
 *   **Sleep Interval (95% of time)**:
@@ -257,10 +333,11 @@ $$I_{battery} = \frac{1.331\text{W}}{3.7\text{V} \times 0.85} \approx 423\text{ 
     *   SE050 in Standby: ~5 µA
     *   GPS in Periodic Low-Power / Backup: ~15 µA
     *   LoRA in Sleep Mode (Mode 3, M0=1, M1=1): ~4 µA
-    *   Boost Converter & LDO Quiescent Current: ~60 µA
-    *   Total Sleep Current: $\approx 100\text{ }\mu\text{A}$
+    *   Buck Converter, LDOs & Divider Bleed: ~250 µA
+    *   Total Sleep Current: $\approx 289\text{ }\mu\text{A} \approx 0.29\text{ mA}$
 *   **Active Interval (5% of time: 1-second burst every 20 seconds)**:
-    *   GPS fix acquisition + ECC-256 signing + LoRA packet transmit: ~423 mA average
+    *   GPS fix acquisition + ECC-256 signing + LoRA packet transmit: ~196 mA average
 *   **Average Current Consumption**:
-    $$I_{avg} = (0.95 \times 0.100\text{ mA}) + (0.05 \times 423\text{ mA}) \approx 21.2\text{ mA}$$
-**Duty-Cycled Battery Lifetime**: $\frac{2000\text{ mAh}}{21.2\text{ mA}} \approx \mathbf{94\text{ hours (approx. 4 days)}}$.
+    $$I_{avg} = (0.95 \times 0.29\text{ mA}) + (0.05 \times 196\text{ mA}) \approx 10.08\text{ mA}$$
+**Duty-Cycled Battery Lifetime**: $\frac{1950\text{ mAh}}{10.08\text{ mA}} \approx \mathbf{193\text{ hours (approx. 8 days)}}$.
+

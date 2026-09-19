@@ -2,106 +2,81 @@
 ### <u>Battery calculation</u>
 power required for 4 hours of use
 
-#### Battery -> Buck
+#### 2S Battery -> Buck (TPS563201) -> Dual LDO (Hardware Power Budget & Duty Cycle)
 ```math
 volt3 = 3.3V
 volt5 = 5V
 
-#current
-stm32 = 250mA
-gps = 70mA
-lora = 110mA
-crypt = 50mA
-
-power = (volt5 * lora) + (volt3 * (stm32 + gps + crypt))
-
-#required watt hours
-operating_time = 4hr
-
-energy = power * operating_time to Wh
-
-#required battery mah
-li_typ_volt = 3.7V
-
-mah = round((energy / li_typ_volt) to mAh, mAh) to mAh
-peak_current = power / 3.7V
-
-
-
-```
-
-### Battery -> Buck -> LDO
-```math
-volt5 = 5V
-
-#current
-stm32 = 250mA
-gps = 70mA
-lora = 110mA
-crypt = 50mA
-
-total_current = stm32 + gps + lora + crypt
-
-power = volt5 * total_current in W
-
-#required energy
-operating_time = 4hr
-
-energy = power * operating_time in Wh
-
-#required Battery
-li_typ_volt = 3.7V
-
-mah = round((energy / li_typ_volt) to mAh, mAh) to mAh
-peak_current = power / 3.7V
-
-
-```
-
-### Battery -> Boost -> LDO (Hardware Power Budget & Duty Cycle)
-```math
-volt5 = 5V
-li_typ_volt = 3.7V
-boost_eff = 0.90
-
-#active currents (datasheet parameters)
+# Active currents (datasheet parameters)
 stm32 = 25mA
 crypt = 10mA
 lora = 120mA
 gps = 67mA
 
-total_active_current = stm32 + crypt + lora + gps
-power_5v = volt5 * total_active_current to W
+# 5V rail total active current (LoRA, GPS, plus STM32 and Crypto through 3.3V LDOs)
+total_5v_current = lora + gps + stm32 + crypt
+power_5v = volt5 * total_5v_current to W
 
-#battery active power & current through boost
-bat_active_power = power_5v / boost_eff to W
-bat_active_current = bat_active_power / li_typ_volt to mA
+# 2S Li-ion battery pack specifications (2x 18650 in series)
+# Nominal: 7.4V (2x 3.7V), Full charge: 8.4V (2x 4.2V), Buck dropout cutoff: 6.8V (2x 3.4V)
+cell_capacity = 2600mAh
+battery_capacity = 2600mAh
+bat_nom_volt = 7.4V
+bat_max_volt = 8.4V
+bat_min_volt = 6.8V
 
-#4 hours continuous active calculation
+# TPS563201 synchronous buck converter efficiency (~92%)
+buck_eff = 0.92
+bat_active_power = power_5v / buck_eff to W
+
+# Battery active currents across discharge curve
+bat_nom_current = bat_active_power / bat_nom_volt to mA
+bat_min_current = bat_active_power / bat_min_volt to mA
+bat_max_current = bat_active_power / bat_max_volt to mA
+peak_current = bat_min_current
+
+# 4 hours continuous active calculation
 operating_time = 4hr
 energy_4hr = bat_active_power * operating_time to Wh
-mah_4hr = energy_4hr / li_typ_volt to mAh
-peak_current = bat_active_current
+mah_4hr = energy_4hr / bat_nom_volt to mAh
 
-#sleep currents
+# Sleep currents
 stm32_sleep = 15uA
 crypt_sleep = 5uA
 lora_sleep = 4uA
 gps_sleep = 15uA
-quiescent = 107uA
+# Buck quiescent + LDO quiescent + divider bleed (R11+R12 = 38.1k: 7.4V/38.1k = 194uA)
+quiescent = 250uA
 bat_sleep_current = stm32_sleep + crypt_sleep + lora_sleep + gps_sleep + quiescent to mA
 
-#tactical duty cycle (1s active every 20s = 5% duty cycle)
+# Tactical duty cycle (1s active every 20s = 5% duty cycle)
 t_active = 1s
 t_sleep = 19s
 duty_cycle = t_active / (t_active + t_sleep)
 
-#average battery current
-bat_avg_current = (duty_cycle * bat_active_current) + ((1 - duty_cycle) * bat_sleep_current) to mA
+# Average battery current
+bat_avg_current = (duty_cycle * bat_nom_current) + ((1 - duty_cycle) * bat_sleep_current) to mA
 
-#battery lifetime with 2000 mAh Li-Po
-battery_capacity = 2000mAh
-continuous_runtime = battery_capacity / bat_active_current to hr
-tactical_runtime = battery_capacity / bat_avg_current to hr
+# Usable capacity factor due to 6.8V buck dropout (approx 75% usable capacity)
+usable_capacity = battery_capacity * 0.75 to mAh
+
+# Battery lifetime with 2S 2600mAh 18650
+continuous_runtime = usable_capacity / bat_nom_current to hr
+tactical_runtime = usable_capacity / bat_avg_current to hr
 tactical_days = tactical_runtime to day
 ```
+
+#### USB Power Bypass Mode (Direct 5V via D3 Schottky)
+```math
+volt_usb = 5.0V
+v_schottky_drop = 0.40V
+volt_5v_rail = volt_usb - v_schottky_drop to V
+
+# Total 5V load current remains the same
+usb_active_current = total_5v_current to mA
+usb_active_power = volt_usb * usb_active_current to W
+
+# LDO headroom: 4.60V rail - 3.3V out = 1.30V (TLV74333 dropout is only 125mV at 300mA)
+ldo_headroom = volt_5v_rail - 3.3V to V
+```
+

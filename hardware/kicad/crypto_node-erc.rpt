@@ -1,7 +1,10 @@
-ERC report (2026-09-19T22:28:14, Encoding UTF8)
-Report includes: Errors, Warnings
+ERC report (2026-09-19T07:26:42, Encoding UTF8)
+Report includes: Errors, Warnings, Exclusions
 
 ***** Sheet /
+[lib_symbol_issues]: The current configuration does not include the symbol library 'VECTRON_V1'
+    ; warning
+    @(68.58 mm, 140.97 mm): Symbol U9 [TPS563201]
 
 ***** Sheet /Power/
 
@@ -15,7 +18,7 @@ Report includes: Errors, Warnings
 
 ***** Sheet /Tamper/
 
- ** ERC messages: 0  Errors 0  Warnings 0
+ ** ERC messages: 1  Errors 0  Warnings 1
 
  ** Ignored checks:
     - Global label only appears once in the schematic
