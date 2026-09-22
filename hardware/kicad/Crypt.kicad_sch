@@ -5,6 +5,129 @@
 	(uuid "90b3ac0b-d5bb-456c-bc54-7a80a7bef503")
 	(paper "A5")
 	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -1252,6 +1375,16 @@
 	)
 	(wire
 		(pts
+			(xy 105.41 88.9) (xy 105.41 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42f00c35-49c5-454e-a0d2-8692baa218ae")
+	)
+	(wire
+		(pts
 			(xy 104.14 57.15) (xy 104.14 59.69)
 		)
 		(stroke
@@ -1289,6 +1422,16 @@
 			(type default)
 		)
 		(uuid "60f934a6-c5ad-484c-90a7-145f0c12a108")
+	)
+	(wire
+		(pts
+			(xy 115.57 88.9) (xy 105.41 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70a5be67-4464-4dd5-a42c-8487eaaeef7d")
 	)
 	(wire
 		(pts
@@ -1392,6 +1535,16 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 86.36) (xy 115.57 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9730318b-a8ee-4f86-9011-a33263a66ace")
+	)
+	(wire
+		(pts
 			(xy 107.95 57.15) (xy 104.14 57.15)
 		)
 		(stroke
@@ -1399,6 +1552,16 @@
 			(type default)
 		)
 		(uuid "9b07e7c7-0e53-46a2-baba-a6df0fcdc226")
+	)
+	(wire
+		(pts
+			(xy 111.76 83.82) (xy 115.57 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c5b3b13-07eb-4e48-9bd4-1ccfdfa5bb9a")
 	)
 	(wire
 		(pts
@@ -1582,6 +1745,263 @@
 		)
 		(uuid "5fdf30f2-080e-4aee-949e-8a4fe8fb2fe6")
 	)
+	(hierarchical_label "CRYPT_SDA"
+		(shape bidirectional)
+		(at 111.76 86.36 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6f4d834d-40f3-4906-93ff-d57dbf35f906")
+	)
+	(hierarchical_label "CRYPT_SCL"
+		(shape input)
+		(at 111.76 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b1e07970-5d2e-4640-9c07-4f90ef27abf3")
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 115.57 88.9 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "13df1f47-fbf9-4e9e-82c6-2bf0db1277c8")
+		(property "Reference" "TP3"
+			(at 120.65 88.9 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 124.46 88.9 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 115.57 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 115.57 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 115.57 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "22cd7ec1-4439-40f2-b7aa-2085ba02561a")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/b388d7dd-e85d-4888-b4a4-ed6170d89183"
+					(reference "TP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:GND")
+		(at 105.41 90.17 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "19e5b41b-53e6-4a02-a2f5-51a218ea6e02")
+		(property "Reference" "#PWR088"
+			(at 105.41 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 105.41 93.98 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 105.41 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 105.41 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 105.41 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "feccd1b6-93e0-47d9-ae3f-4ce6d066666f")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/b388d7dd-e85d-4888-b4a4-ed6170d89183"
+					(reference "#PWR088")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 115.57 83.82 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1f36aa41-4706-4349-8736-25650e832b71")
+		(property "Reference" "TP1"
+			(at 120.65 83.82 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 124.46 83.82 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 115.57 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 115.57 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 115.57 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ab09b351-6528-4c5c-8768-35f47d4abf55")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/b388d7dd-e85d-4888-b4a4-ed6170d89183"
+					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "power:VPP")
 		(at 104.14 53.34 0)
@@ -1593,7 +2013,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "48e5d03f-8f83-4b9c-a69e-96ebd9f53afd")
-		(property "Reference" "#PWR076"
+		(property "Reference" "#PWR077"
 			(at 104.14 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -1653,7 +2073,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/b388d7dd-e85d-4888-b4a4-ed6170d89183"
-					(reference "#PWR076")
+					(reference "#PWR077")
 					(unit 1)
 				)
 			)
@@ -1832,7 +2252,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5fca77e5-c9ca-4578-9f8e-b0fc6f4c95d6")
-		(property "Reference" "#PWR077"
+		(property "Reference" "#PWR078"
 			(at 147.32 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -1892,7 +2312,85 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/b388d7dd-e85d-4888-b4a4-ed6170d89183"
-					(reference "#PWR077")
+					(reference "#PWR078")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 115.57 86.36 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5fdd6477-4db6-4aaf-af81-5437d75fa603")
+		(property "Reference" "TP2"
+			(at 120.65 86.36 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 124.46 86.36 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 115.57 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 115.57 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 115.57 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ab09b351-6528-4c5c-8768-35f47d4abf55")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/b388d7dd-e85d-4888-b4a4-ed6170d89183"
+					(reference "TP2")
 					(unit 1)
 				)
 			)
@@ -1910,7 +2408,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9d84ca59-1bce-44a0-9aff-65ceff1fd0ef")
-		(property "Reference" "#PWR075"
+		(property "Reference" "#PWR076"
 			(at 86.36 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -1970,7 +2468,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/b388d7dd-e85d-4888-b4a4-ed6170d89183"
-					(reference "#PWR075")
+					(reference "#PWR076")
 					(unit 1)
 				)
 			)
@@ -2069,7 +2567,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b3651617-1f97-49f5-9554-694af5790aac")
-		(property "Reference" "#PWR074"
+		(property "Reference" "#PWR075"
 			(at 66.04 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -2129,7 +2627,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/b388d7dd-e85d-4888-b4a4-ed6170d89183"
-					(reference "#PWR074")
+					(reference "#PWR075")
 					(unit 1)
 				)
 			)
@@ -2147,7 +2645,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c44e4d8e-6302-41a0-9758-9854c4036066")
-		(property "Reference" "#PWR078"
+		(property "Reference" "#PWR079"
 			(at 147.32 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -2207,7 +2705,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/b388d7dd-e85d-4888-b4a4-ed6170d89183"
-					(reference "#PWR078")
+					(reference "#PWR079")
 					(unit 1)
 				)
 			)

@@ -1,0 +1,244 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-22T19:38:16",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "crypto_node.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Silkscreen clearance (board setup constraints silk clearance 0.1500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Segment of J3 on F.Silkscreen",
+                    "pos": {
+                        "x": 126.94,
+                        "y": 120.32
+                    },
+                    "uuid": "5df3a9b6-2c4f-42fc-b077-93053a7a6026"
+                },
+                {
+                    "description": "PCB text '+3V3' on F.Silkscreen",
+                    "pos": {
+                        "x": 127.9,
+                        "y": 120.2
+                    },
+                    "uuid": "6f624399-eabd-4068-a9ee-d8e5caf6799e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance (board setup constraints silk clearance 0.1500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Segment of J3 on F.Silkscreen",
+                    "pos": {
+                        "x": 139.75,
+                        "y": 120.32
+                    },
+                    "uuid": "182d3c63-6b72-4a22-bcb9-1bca4c1a66f7"
+                },
+                {
+                    "description": "PCB text '+3V3' on F.Silkscreen",
+                    "pos": {
+                        "x": 127.9,
+                        "y": 120.2
+                    },
+                    "uuid": "6f624399-eabd-4068-a9ee-d8e5caf6799e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance (board setup constraints silk clearance 0.1500 mm; actual 0.0173 mm)",
+            "items": [
+                {
+                    "description": "Segment of J3 on F.Silkscreen",
+                    "pos": {
+                        "x": 139.75,
+                        "y": 120.32
+                    },
+                    "uuid": "182d3c63-6b72-4a22-bcb9-1bca4c1a66f7"
+                },
+                {
+                    "description": "PCB text 'SWCLK' on F.Silkscreen",
+                    "pos": {
+                        "x": 131.1,
+                        "y": 119.2
+                    },
+                    "uuid": "dc4ef3d3-b384-4062-b69a-3d56a5fc9e5c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance (board setup constraints silk clearance 0.1500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Segment of J3 on F.Silkscreen",
+                    "pos": {
+                        "x": 139.75,
+                        "y": 120.32
+                    },
+                    "uuid": "182d3c63-6b72-4a22-bcb9-1bca4c1a66f7"
+                },
+                {
+                    "description": "PCB text 'NRST' on F.Silkscreen",
+                    "pos": {
+                        "x": 138.3,
+                        "y": 120.1
+                    },
+                    "uuid": "b7ff54dd-b123-4386-bf81-0c42488b8b16"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance (board setup constraints silk clearance 0.1500 mm; actual 0.0730 mm)",
+            "items": [
+                {
+                    "description": "Segment of J3 on F.Silkscreen",
+                    "pos": {
+                        "x": 139.75,
+                        "y": 120.32
+                    },
+                    "uuid": "182d3c63-6b72-4a22-bcb9-1bca4c1a66f7"
+                },
+                {
+                    "description": "PCB text 'GND' on F.Silkscreen",
+                    "pos": {
+                        "x": 133.2,
+                        "y": 119.7
+                    },
+                    "uuid": "9519d349-9c31-4a4a-b8f0-0be3c2c8c8d2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance (board setup constraints silk clearance 0.1500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Segment of J3 on F.Silkscreen",
+                    "pos": {
+                        "x": 139.75,
+                        "y": 120.32
+                    },
+                    "uuid": "182d3c63-6b72-4a22-bcb9-1bca4c1a66f7"
+                },
+                {
+                    "description": "PCB text 'SWDIO' on F.Silkscreen",
+                    "pos": {
+                        "x": 135.9,
+                        "y": 119.2
+                    },
+                    "uuid": "647b5320-838b-414c-8518-b730b26719dd"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance (board setup constraints silk clearance 0.1500 mm; actual 0.1425 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'SWO' on F.Silkscreen",
+                    "pos": {
+                        "x": 141.0,
+                        "y": 119.6
+                    },
+                    "uuid": "c01859e6-da0b-49f1-99fa-7e54c1d3f974"
+                },
+                {
+                    "description": "Segment of J3 on F.Silkscreen",
+                    "pos": {
+                        "x": 141.02,
+                        "y": 120.32
+                    },
+                    "uuid": "ee87580c-6999-41d0-b491-676262add222"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance (board setup constraints silk clearance 0.1500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'SWITCH\n<- ON / OFF ->' on F.Silkscreen",
+                    "pos": {
+                        "x": 186.7,
+                        "y": 122.0
+                    },
+                    "uuid": "953914c2-9a68-41ca-8e19-642496eed2ac"
+                },
+                {
+                    "description": "Rectangle of SW1 on F.Silkscreen",
+                    "pos": {
+                        "x": 193.2,
+                        "y": 120.4
+                    },
+                    "uuid": "f1407419-f531-427d-81e2-e629cb8a2ff2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance (board setup constraints silk clearance 0.1500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Rectangle of U5 on B.Silkscreen",
+                    "pos": {
+                        "x": 109.75,
+                        "y": 110.2
+                    },
+                    "uuid": "291c0458-e5fe-46b5-a0dc-558ce2ed42fb"
+                },
+                {
+                    "description": "PCB text 'GPS NEO - M8N' on B.Silkscreen",
+                    "pos": {
+                        "x": 103.5,
+                        "y": 102.2
+                    },
+                    "uuid": "54fd227d-a0a5-4a62-b0bb-9c412686fff1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        }
+    ]
+}

@@ -5,6 +5,187 @@
 	(uuid "7e5e306d-f91f-47a0-9aef-c91b0bb7eb49")
 	(paper "A5")
 	(lib_symbols
+		(symbol "Connector:Conn_01x02_Pin"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02_Pin"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x02_Pin_1_1"
+				(rectangle
+					(start 0.8636 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 0.8636 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.54) (xy 0.8636 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -900,6 +1081,16 @@
 	)
 	(wire
 		(pts
+			(xy 134.62 87.63) (xy 142.24 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "147e51ae-3aa1-4803-8707-94a73ddf4dbf")
+	)
+	(wire
+		(pts
 			(xy 60.96 63.5) (xy 60.96 72.39)
 		)
 		(stroke
@@ -957,6 +1148,16 @@
 			(type default)
 		)
 		(uuid "5955a73a-a237-4831-b8e4-e1c50e7c52de")
+	)
+	(wire
+		(pts
+			(xy 134.62 85.09) (xy 142.24 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5dac8127-d37b-40f8-bdd0-3a2003ee456a")
 	)
 	(wire
 		(pts
@@ -1248,6 +1449,28 @@
 		)
 		(uuid "fd9ca171-a552-4f2a-b6a4-1212751b8701")
 	)
+	(hierarchical_label "LORA_RX"
+		(shape input)
+		(at 142.24 87.63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "341326fb-2711-4164-8312-9da468835f2b")
+	)
+	(hierarchical_label "LORA_TX"
+		(shape output)
+		(at 142.24 85.09 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "44e33e4b-ee64-4f09-b087-e9793ba1208c")
+	)
 	(hierarchical_label "LORA_M0"
 		(shape input)
 		(at 78.74 60.96 180)
@@ -1419,7 +1642,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "25873c79-2905-44e5-8164-89366b9cd0b1")
-		(property "Reference" "#PWR083"
+		(property "Reference" "#PWR084"
 			(at 142.24 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -1479,7 +1702,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
-					(reference "#PWR083")
+					(reference "#PWR084")
 					(unit 1)
 				)
 			)
@@ -1497,7 +1720,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4a21628a-4305-4559-b174-58b76d3e62b3")
-		(property "Reference" "#PWR079"
+		(property "Reference" "#PWR080"
 			(at 64.77 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -1557,7 +1780,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
-					(reference "#PWR079")
+					(reference "#PWR080")
 					(unit 1)
 				)
 			)
@@ -1818,7 +2041,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b65ac788-d738-4a8a-8301-a366d6e7355a")
-		(property "Reference" "#PWR081"
+		(property "Reference" "#PWR082"
 			(at 115.57 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -1878,7 +2101,87 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
-					(reference "#PWR081")
+					(reference "#PWR082")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x02_Pin")
+		(at 129.54 85.09 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c442ddf6-46a9-40c9-aeda-43d61aa24002")
+		(property "Reference" "J6"
+			(at 130.175 80.01 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02_Pin"
+			(at 130.175 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 129.54 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 129.54 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 129.54 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b42883da-fe6c-49d1-bf33-40e80cf21d3d")
+		)
+		(pin "2"
+			(uuid "74cdeaf7-747d-43f4-b62e-697023b28f36")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
+					(reference "J6")
 					(unit 1)
 				)
 			)
@@ -1896,7 +2199,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c9005789-f385-442b-bf76-95c23f4e0e6c")
-		(property "Reference" "#PWR080"
+		(property "Reference" "#PWR081"
 			(at 115.57 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -1956,7 +2259,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
-					(reference "#PWR080")
+					(reference "#PWR081")
 					(unit 1)
 				)
 			)
@@ -2054,7 +2357,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f9f34ae1-81e5-4595-bda7-b61ea1d51b36")
-		(property "Reference" "#PWR082"
+		(property "Reference" "#PWR083"
 			(at 142.24 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -2114,7 +2417,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/a6d9426e-b53a-46eb-ac04-bfb7b6f1fcf7"
-					(reference "#PWR082")
+					(reference "#PWR083")
 					(unit 1)
 				)
 			)

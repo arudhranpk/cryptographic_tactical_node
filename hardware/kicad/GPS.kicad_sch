@@ -5,6 +5,187 @@
 	(uuid "483ecf5e-6fb1-4ee0-8759-466e66445de2")
 	(paper "A5")
 	(lib_symbols
+		(symbol "Connector:Conn_01x02_Pin"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02_Pin"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x02_Pin_1_1"
+				(rectangle
+					(start 0.8636 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 0.8636 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.54) (xy 0.8636 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -726,6 +907,16 @@
 		)
 		(uuid "6d13ea82-15d9-457c-8594-0c54bc1ec96a")
 	)
+	(wire
+		(pts
+			(xy 81.28 39.37) (xy 74.93 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8da42b82-9c3a-49a9-97ba-c2474ea7e23c")
+	)
 	(polyline
 		(pts
 			(xy 57.15 27.94) (xy 138.43 27.94)
@@ -838,6 +1029,16 @@
 	)
 	(wire
 		(pts
+			(xy 81.28 41.91) (xy 74.93 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0e93ef5-3307-455a-81f6-0c8bbdd6efa7")
+	)
+	(wire
+		(pts
 			(xy 64.77 73.66) (xy 64.77 76.2)
 		)
 		(stroke
@@ -875,6 +1076,28 @@
 			(type default)
 		)
 		(uuid "ff7540a8-fb7d-49b2-93ab-8e1c2219ecd4")
+	)
+	(hierarchical_label "GPS_TX"
+		(shape output)
+		(at 81.28 39.37 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0894861c-fb88-43a6-82ec-7b6d0cc857b6")
+	)
+	(hierarchical_label "GPS_RX"
+		(shape input)
+		(at 81.28 41.91 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "24d6bd7b-1406-4f4f-af4e-3dd3627adcc2")
 	)
 	(hierarchical_label "GPS_RX"
 		(shape input)
@@ -991,7 +1214,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "31a50467-0666-4c99-9f4e-3bc160cff5a5")
-		(property "Reference" "#PWR071"
+		(property "Reference" "#PWR072"
 			(at 69.85 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -1051,7 +1274,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/e995d37b-7e81-489c-a8c7-4473f579a36c"
-					(reference "#PWR071")
+					(reference "#PWR072")
 					(unit 1)
 				)
 			)
@@ -1149,7 +1372,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "83ba2fdd-bfbf-44a5-895a-bebf94b9aee1")
-		(property "Reference" "#PWR070"
+		(property "Reference" "#PWR071"
 			(at 69.85 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -1209,7 +1432,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/e995d37b-7e81-489c-a8c7-4473f579a36c"
-					(reference "#PWR070")
+					(reference "#PWR071")
 					(unit 1)
 				)
 			)
@@ -1227,7 +1450,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c15c0a71-29b5-43a0-93a7-ca19e89bf91f")
-		(property "Reference" "#PWR073"
+		(property "Reference" "#PWR074"
 			(at 130.81 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -1287,7 +1510,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/e995d37b-7e81-489c-a8c7-4473f579a36c"
-					(reference "#PWR073")
+					(reference "#PWR074")
 					(unit 1)
 				)
 			)
@@ -1392,7 +1615,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e43fc583-6f9d-48c7-9089-4456483f34d0")
-		(property "Reference" "#PWR072"
+		(property "Reference" "#PWR073"
 			(at 102.87 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -1452,7 +1675,87 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/e995d37b-7e81-489c-a8c7-4473f579a36c"
-					(reference "#PWR072")
+					(reference "#PWR073")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x02_Pin")
+		(at 69.85 39.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f25addfe-350d-44e4-a09a-61e34af5b12c")
+		(property "Reference" "J4"
+			(at 70.485 34.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02_Pin"
+			(at 70.485 36.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 69.85 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 69.85 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ce019ed9-2ebb-442e-8df1-542946bf6fac")
+		)
+		(pin "2"
+			(uuid "2dca467d-cb62-49d9-9b80-98f87f48ad3d")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/e995d37b-7e81-489c-a8c7-4473f579a36c"
+					(reference "J4")
 					(unit 1)
 				)
 			)

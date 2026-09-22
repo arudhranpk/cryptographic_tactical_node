@@ -5237,16 +5237,6 @@
 	)
 	(wire
 		(pts
-			(xy 254 33.02) (xy 273.05 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7279ec29-4915-4b66-8453-d1c8ee674ec5")
-	)
-	(wire
-		(pts
 			(xy 148.59 133.35) (xy 148.59 130.81)
 		)
 		(stroke
@@ -6124,6 +6114,16 @@
 			(type default)
 		)
 		(uuid "ee69435d-db06-400b-bcb5-64adaa584299")
+	)
+	(wire
+		(pts
+			(xy 254 33.02) (xy 273.05 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eee92cbb-bb5d-42f6-b223-4d388098b8e4")
 	)
 	(polyline
 		(pts
@@ -7214,7 +7214,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "03cca3a1-605f-4ac4-8aa9-95cd9857d214")
-		(property "Reference" "#PWR051"
+		(property "Reference" "#PWR052"
 			(at 58.42 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -7274,7 +7274,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR051")
+					(reference "#PWR052")
 					(unit 1)
 				)
 			)
@@ -7449,7 +7449,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "13cbb5ef-4dd5-4d62-8d44-f5896cc6ce5d")
-		(property "Reference" "#PWR054"
+		(property "Reference" "#PWR055"
 			(at 63.5 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -7509,7 +7509,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR054")
+					(reference "#PWR055")
 					(unit 1)
 				)
 			)
@@ -7768,7 +7768,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "211b27f7-1613-4797-8444-bc6b766e29fe")
-		(property "Reference" "#PWR042"
+		(property "Reference" "#PWR043"
 			(at 19.05 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -7828,7 +7828,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR042")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -7845,7 +7845,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2887c71e-3a4e-4079-bf92-d8e7b99aa821")
-		(property "Reference" "#PWR041"
+		(property "Reference" "#PWR042"
 			(at 19.05 24.13 0)
 			(hide yes)
 			(show_name no)
@@ -7905,7 +7905,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR041")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -7922,7 +7922,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2a1f7c13-c194-4637-8063-489a736e57a7")
-		(property "Reference" "#PWR044"
+		(property "Reference" "#PWR045"
 			(at 20.32 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -7982,7 +7982,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR044")
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -7999,7 +7999,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2d374da7-a0f1-4306-a73f-1d8e525ee3d5")
-		(property "Reference" "#PWR045"
+		(property "Reference" "#PWR046"
 			(at 29.21 127 0)
 			(hide yes)
 			(show_name no)
@@ -8059,7 +8059,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR045")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -8076,7 +8076,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "32d92de4-8bbb-4043-9ddf-c00800cc1dc7")
-		(property "Reference" "#PWR066"
+		(property "Reference" "#PWR067"
 			(at 255.27 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -8136,7 +8136,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR066")
+					(reference "#PWR067")
 					(unit 1)
 				)
 			)
@@ -8153,7 +8153,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "342730c7-bd2d-4de9-8322-2251692be203")
-		(property "Reference" "#PWR062"
+		(property "Reference" "#PWR063"
 			(at 233.68 24.13 0)
 			(hide yes)
 			(show_name no)
@@ -8213,7 +8213,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR062")
+					(reference "#PWR063")
 					(unit 1)
 				)
 			)
@@ -8392,7 +8392,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "39be85b7-c0ce-4601-9e72-8265df3707b5")
-		(property "Reference" "#PWR061"
+		(property "Reference" "#PWR062"
 			(at 201.93 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -8452,7 +8452,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR061")
+					(reference "#PWR062")
 					(unit 1)
 				)
 			)
@@ -8469,7 +8469,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3deac820-e0e4-49be-be7d-51548a818948")
-		(property "Reference" "#PWR053"
+		(property "Reference" "#PWR054"
 			(at 63.5 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -8529,7 +8529,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR053")
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)
@@ -8820,7 +8820,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "48a3de1f-6ab9-4bf7-9a86-5ecd2dc86035")
-		(property "Reference" "#PWR068"
+		(property "Reference" "#PWR069"
 			(at 276.86 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -8880,7 +8880,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR068")
+					(reference "#PWR069")
 					(unit 1)
 				)
 			)
@@ -9474,7 +9474,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6c42fb88-46f0-4b72-9e51-f045cc6e1102")
-		(property "Reference" "#PWR067"
+		(property "Reference" "#PWR068"
 			(at 257.81 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -9534,7 +9534,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR067")
+					(reference "#PWR068")
 					(unit 1)
 				)
 			)
@@ -9551,7 +9551,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "720cc069-0e3f-41b3-a6d4-3e10476732f9")
-		(property "Reference" "#PWR050"
+		(property "Reference" "#PWR051"
 			(at 49.53 127 0)
 			(hide yes)
 			(show_name no)
@@ -9611,7 +9611,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR050")
+					(reference "#PWR051")
 					(unit 1)
 				)
 			)
@@ -9628,7 +9628,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "78a1704b-e1dd-4c69-8708-a3cdab578382")
-		(property "Reference" "#PWR064"
+		(property "Reference" "#PWR065"
 			(at 242.57 118.11 0)
 			(hide yes)
 			(show_name no)
@@ -9688,7 +9688,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR064")
+					(reference "#PWR065")
 					(unit 1)
 				)
 			)
@@ -9705,7 +9705,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "79bd3b3e-5fc7-413f-905a-8274be3b2e5c")
-		(property "Reference" "#PWR055"
+		(property "Reference" "#PWR056"
 			(at 64.77 127 0)
 			(hide yes)
 			(show_name no)
@@ -9765,7 +9765,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR055")
+					(reference "#PWR056")
 					(unit 1)
 				)
 			)
@@ -9782,7 +9782,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7a7f3096-f366-4cbe-ab84-c728077cf3e7")
-		(property "Reference" "#PWR049"
+		(property "Reference" "#PWR050"
 			(at 39.37 189.23 0)
 			(hide yes)
 			(show_name no)
@@ -9842,7 +9842,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR049")
+					(reference "#PWR050")
 					(unit 1)
 				)
 			)
@@ -9859,7 +9859,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7affabd4-55ad-4041-9dd2-70e4caae201c")
-		(property "Reference" "#PWR052"
+		(property "Reference" "#PWR053"
 			(at 63.5 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -9919,7 +9919,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR052")
+					(reference "#PWR053")
 					(unit 1)
 				)
 			)
@@ -10340,7 +10340,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "93431506-ace1-450c-a750-d987bc68540b")
-		(property "Reference" "#PWR059"
+		(property "Reference" "#PWR060"
 			(at 156.21 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -10400,7 +10400,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR059")
+					(reference "#PWR060")
 					(unit 1)
 				)
 			)
@@ -10497,7 +10497,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9a9b7813-f0cf-4ee4-8c52-bbfdd65d4737")
-		(property "Reference" "#PWR043"
+		(property "Reference" "#PWR044"
 			(at 19.05 127 0)
 			(hide yes)
 			(show_name no)
@@ -10557,7 +10557,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR043")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -10655,7 +10655,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9cbe8309-8853-4e3b-be8a-f9f2984ca0a3")
-		(property "Reference" "#PWR065"
+		(property "Reference" "#PWR066"
 			(at 255.27 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -10715,7 +10715,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR065")
+					(reference "#PWR066")
 					(unit 1)
 				)
 			)
@@ -11051,7 +11051,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ae122120-8e8b-4ba5-96ab-eb6c7671e8b7")
-		(property "Reference" "#PWR069"
+		(property "Reference" "#PWR070"
 			(at 276.86 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -11111,7 +11111,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR069")
+					(reference "#PWR070")
 					(unit 1)
 				)
 			)
@@ -11128,7 +11128,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b007fd61-6e04-4891-9b02-c6798b04c37d")
-		(property "Reference" "J2"
+		(property "Reference" "J3"
 			(at 275.59 37.465 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11148,7 +11148,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Horizontal"
 			(at 278.13 30.48 0)
 			(hide yes)
 			(show_name no)
@@ -11202,7 +11202,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "J2")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -11382,7 +11382,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bd9ca610-3493-42c1-a4e9-220830cae92c")
-		(property "Reference" "#PWR056"
+		(property "Reference" "#PWR057"
 			(at 123.19 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -11442,7 +11442,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR056")
+					(reference "#PWR057")
 					(unit 1)
 				)
 			)
@@ -11459,7 +11459,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c001dad4-ac12-4379-b3bd-e2e7c262d6be")
-		(property "Reference" "#PWR048"
+		(property "Reference" "#PWR049"
 			(at 39.37 127 0)
 			(hide yes)
 			(show_name no)
@@ -11519,7 +11519,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR048")
+					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -11536,7 +11536,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c5d2a47f-bd6d-40b0-8eb3-74171a1db59f")
-		(property "Reference" "#PWR057"
+		(property "Reference" "#PWR058"
 			(at 140.97 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -11596,7 +11596,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR057")
+					(reference "#PWR058")
 					(unit 1)
 				)
 			)
@@ -12005,7 +12005,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cdfa45be-cc9d-488e-bcea-15537a153269")
-		(property "Reference" "#PWR060"
+		(property "Reference" "#PWR061"
 			(at 168.91 189.23 0)
 			(hide yes)
 			(show_name no)
@@ -12065,7 +12065,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR060")
+					(reference "#PWR061")
 					(unit 1)
 				)
 			)
@@ -12082,7 +12082,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d28b6f02-b857-44f7-80dd-5067b31ef2ea")
-		(property "Reference" "#PWR046"
+		(property "Reference" "#PWR047"
 			(at 30.48 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -12142,7 +12142,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR046")
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -12241,7 +12241,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e37a8a5a-f6ef-4ad0-8240-4f068f805c37")
-		(property "Reference" "#PWR058"
+		(property "Reference" "#PWR059"
 			(at 149.86 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -12301,7 +12301,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR058")
+					(reference "#PWR059")
 					(unit 1)
 				)
 			)
@@ -12318,7 +12318,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e4631012-8f65-4c41-82eb-affe7ef3a39d")
-		(property "Reference" "#PWR047"
+		(property "Reference" "#PWR048"
 			(at 30.48 189.23 0)
 			(hide yes)
 			(show_name no)
@@ -12378,7 +12378,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR047")
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -12476,7 +12476,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f09c68a9-2cf1-497c-83c5-2e8d62596165")
-		(property "Reference" "#PWR063"
+		(property "Reference" "#PWR064"
 			(at 233.68 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -12536,7 +12536,7 @@
 		(instances
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/488b74a6-31ba-4017-bdff-d918575fe489"
-					(reference "#PWR063")
+					(reference "#PWR064")
 					(unit 1)
 				)
 			)
