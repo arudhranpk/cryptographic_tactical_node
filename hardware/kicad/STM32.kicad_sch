@@ -4314,7 +4314,7 @@
 		(uuid "15b8cbbf-c43b-45fc-910e-a956ad17aba7")
 	)
 	(no_connect
-		(at 27.94 86.36)
+		(at 27.94 87.63)
 		(uuid "1f75c4c9-e267-4e2c-bb33-75ce6a27d317")
 	)
 	(no_connect
@@ -4322,7 +4322,7 @@
 		(uuid "2f3e0781-c74c-4655-a416-76eb014a0018")
 	)
 	(no_connect
-		(at 57.15 93.98)
+		(at 57.15 95.25)
 		(uuid "4171cc57-21fb-451a-8743-0f617bc8aad6")
 	)
 	(no_connect
@@ -4330,11 +4330,11 @@
 		(uuid "4dfa3281-63e1-45ab-8f72-ae6f018912bb")
 	)
 	(no_connect
-		(at 27.94 93.98)
+		(at 27.94 95.25)
 		(uuid "577670d3-c0b8-48b9-925a-2b545d8184f7")
 	)
 	(no_connect
-		(at 57.15 86.36)
+		(at 57.15 87.63)
 		(uuid "6a608b3b-f58e-4e9d-a8d7-288e9a20f701")
 	)
 	(no_connect
@@ -4669,7 +4669,7 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 97.79) (xy 49.53 109.22)
+			(xy 49.53 99.06) (xy 49.53 109.22)
 		)
 		(stroke
 			(width 0)
@@ -4689,7 +4689,7 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 97.79) (xy 64.77 109.22)
+			(xy 64.77 99.06) (xy 64.77 109.22)
 		)
 		(stroke
 			(width 0)
@@ -4829,7 +4829,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 97.79) (xy 35.56 109.22)
+			(xy 35.56 99.06) (xy 35.56 109.22)
 		)
 		(stroke
 			(width 0)
@@ -5439,7 +5439,7 @@
 	)
 	(wire
 		(pts
-			(xy 20.32 97.79) (xy 20.32 109.22)
+			(xy 20.32 99.06) (xy 20.32 109.22)
 		)
 		(stroke
 			(width 0)
@@ -6755,7 +6755,7 @@
 	)
 	(global_label "RCC_OSC_IN"
 		(shape input)
-		(at 35.56 97.79 90)
+		(at 35.56 99.06 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6764,7 +6764,7 @@
 		)
 		(uuid "4f2d782f-9105-4079-8bc5-13f1804424c6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 35.56 97.79 90)
+			(at 35.56 99.06 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7009,7 +7009,7 @@
 	)
 	(global_label "RCC_OSC_OUT"
 		(shape input)
-		(at 20.32 97.79 90)
+		(at 20.32 99.06 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7018,7 +7018,7 @@
 		)
 		(uuid "cbd46f35-2dd7-451f-86df-a265b31a33ef")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 20.32 97.79 90)
+			(at 20.32 99.06 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7031,7 +7031,7 @@
 	)
 	(global_label "RCC_OSC32_OUT"
 		(shape input)
-		(at 64.77 97.79 90)
+		(at 64.77 99.06 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7040,7 +7040,7 @@
 		)
 		(uuid "cf4f1ba4-0ca4-4aa6-8e06-9113027a135c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 64.77 97.79 90)
+			(at 64.77 99.06 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7101,7 +7101,7 @@
 	)
 	(global_label "RCC_OSC32_IN"
 		(shape input)
-		(at 49.53 97.79 90)
+		(at 49.53 99.06 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7110,7 +7110,7 @@
 		)
 		(uuid "e8e0c083-9b30-459b-bb41-0b7163bd3a54")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 49.53 97.79 90)
+			(at 49.53 99.06 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10161,7 +10161,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 27.94 90.17 0)
+		(at 27.94 91.44 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10171,7 +10171,7 @@
 		(dnp no)
 		(uuid "7b8f003a-1ca9-4338-9ad5-6a726e76bf8c")
 		(property "Reference" "C18"
-			(at 29.21 87.63 0)
+			(at 29.21 88.9 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10182,7 +10182,7 @@
 			)
 		)
 		(property "Value" "27pF"
-			(at 29.21 92.71 0)
+			(at 29.21 93.98 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10193,7 +10193,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 28.9052 93.98 0)
+			(at 28.9052 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10204,7 +10204,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 27.94 90.17 0)
+			(at 27.94 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10215,7 +10215,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 27.94 90.17 0)
+			(at 27.94 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11444,7 +11444,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 57.15 90.17 0)
+		(at 57.15 91.44 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11454,7 +11454,7 @@
 		(dnp no)
 		(uuid "b42e9472-9631-4db1-a718-29836ecabdf7")
 		(property "Reference" "C27"
-			(at 58.42 87.63 0)
+			(at 58.42 88.9 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11465,7 +11465,7 @@
 			)
 		)
 		(property "Value" "15pF"
-			(at 58.42 92.71 0)
+			(at 58.42 93.98 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11476,7 +11476,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 58.1152 93.98 0)
+			(at 58.1152 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11487,7 +11487,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 90.17 0)
+			(at 57.15 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11498,7 +11498,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 57.15 90.17 0)
+			(at 57.15 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

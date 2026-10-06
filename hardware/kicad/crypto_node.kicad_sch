@@ -585,7 +585,7 @@
 	)
 	(text "MOUNTING HOLES"
 		(exclude_from_sim no)
-		(at 15.24 163.83 0)
+		(at 15.24 165.1 0)
 		(effects
 			(font
 				(size 2.032 2.032)
