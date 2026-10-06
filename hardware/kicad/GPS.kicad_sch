@@ -4,6 +4,11 @@
 	(generator_version "10.0")
 	(uuid "483ecf5e-6fb1-4ee0-8759-466e66445de2")
 	(paper "A5")
+	(title_block
+		(title "Cryptographic Tactical Node")
+		(date "06-10-2020")
+		(company "Done By :- Arudhran")
+	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x02_Pin"
 			(pin_names
@@ -409,7 +414,7 @@
 						(type default)
 					)
 					(fill
-						(type none)
+						(type background)
 					)
 				)
 			)
@@ -810,17 +815,31 @@
 	)
 	(text "NEO-M8N GPS"
 		(exclude_from_sim no)
-		(at 58.42 25.4 0)
+		(at 58.42 26.67 0)
 		(effects
 			(font
-				(face "JetBrainsMono NF")
-				(size 3 3)
+				(size 2.032 2.032)
+				(thickness 0.6)
 				(bold yes)
+				(italic yes)
 				(color 0 255 0 1)
 			)
-			(justify left top)
+			(justify left)
 		)
 		(uuid "08920e75-ab91-4840-8aa4-fee885b2648b")
+	)
+	(text "DEBUGGING"
+		(exclude_from_sim no)
+		(at 58.42 54.61 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+				(thickness 0.127)
+				(color 0 255 255 1)
+			)
+			(justify left)
+		)
+		(uuid "1f1df682-6f40-4b49-b824-4e03fcbdb926")
 	)
 	(text "DECOUPLING CAPS"
 		(exclude_from_sim no)
@@ -846,6 +865,16 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "eede3fcf-38ea-48f7-8e27-22a34ece2cc0")
+	)
+	(polyline
+		(pts
+			(xy 57.15 35.56) (xy 83.82 35.56)
+		)
+		(stroke
+			(width 0)
+			(type dash_dot)
+		)
+		(uuid "1a2b981a-29ca-4ce0-b241-a0d9087515db")
 	)
 	(wire
 		(pts
@@ -883,7 +912,7 @@
 		)
 		(stroke
 			(width 0)
-			(type solid)
+			(type dash_dot)
 		)
 		(uuid "5187199f-eb96-4ea5-9793-bc44192540ce")
 	)
@@ -899,17 +928,27 @@
 	)
 	(polyline
 		(pts
+			(xy 57.15 52.07) (xy 83.82 52.07)
+		)
+		(stroke
+			(width 0)
+			(type dash_dot)
+		)
+		(uuid "68ba9f0b-8d54-4599-a9b9-33fa1b247233")
+	)
+	(polyline
+		(pts
 			(xy 57.15 55.88) (xy 83.82 55.88)
 		)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash_dot)
 		)
 		(uuid "6d13ea82-15d9-457c-8594-0c54bc1ec96a")
 	)
 	(wire
 		(pts
-			(xy 81.28 39.37) (xy 74.93 39.37)
+			(xy 72.39 45.72) (xy 66.04 45.72)
 		)
 		(stroke
 			(width 0)
@@ -946,6 +985,16 @@
 			(type default)
 		)
 		(uuid "a2d98091-61d8-40af-b704-a49d40724231")
+	)
+	(polyline
+		(pts
+			(xy 83.82 35.56) (xy 83.82 55.88)
+		)
+		(stroke
+			(width 0)
+			(type dash_dot)
+		)
+		(uuid "aa1c2bcf-d53c-482c-849c-e52ee89cb6f4")
 	)
 	(wire
 		(pts
@@ -1013,7 +1062,7 @@
 		)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash_dot)
 		)
 		(uuid "ea6149c3-21c4-4d6c-bb2d-bf11b69b4d0c")
 	)
@@ -1023,13 +1072,13 @@
 		)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash_dot)
 		)
 		(uuid "f02627d3-760c-4cf6-ad98-44f6448fd4a7")
 	)
 	(wire
 		(pts
-			(xy 81.28 41.91) (xy 74.93 41.91)
+			(xy 72.39 48.26) (xy 66.04 48.26)
 		)
 		(stroke
 			(width 0)
@@ -1079,7 +1128,7 @@
 	)
 	(hierarchical_label "GPS_TX"
 		(shape output)
-		(at 81.28 39.37 0)
+		(at 72.39 45.72 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1090,7 +1139,7 @@
 	)
 	(hierarchical_label "GPS_RX"
 		(shape input)
-		(at 81.28 41.91 0)
+		(at 72.39 48.26 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1527,7 +1576,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "dfb054bc-b53f-425d-abb7-39daa249fe81")
+		(uuid "c87f46eb-2120-422f-a79d-110a4ec88f26")
 		(property "Reference" "U5"
 			(at 127 71.12 0)
 			(show_name no)
@@ -1583,17 +1632,17 @@
 				)
 			)
 		)
-		(pin "1"
-			(uuid "9ab04ea6-7699-4f7e-bd31-5e44b330db00")
+		(pin "3"
+			(uuid "8f62960f-9142-47e9-8278-5e3b58452ff7")
 		)
 		(pin "4"
-			(uuid "d65d4fb1-11eb-42d6-83a8-3ef8ac70300a")
+			(uuid "8464e05d-8499-4389-9cc8-f80a92996947")
 		)
-		(pin "3"
-			(uuid "b321839e-e583-46ef-bc08-9b1ef8777078")
+		(pin "1"
+			(uuid "b49d7f41-f48e-47f1-9afe-16cecefac603")
 		)
 		(pin "2"
-			(uuid "5e06168e-2de3-4161-bccd-9137340e0b66")
+			(uuid "64be2ed4-d894-40b7-b4d4-0803be3b93bf")
 		)
 		(instances
 			(project "crypto_node"
@@ -1683,7 +1732,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x02_Pin")
-		(at 69.85 39.37 0)
+		(at 60.96 45.72 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1691,10 +1740,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "f25addfe-350d-44e4-a09a-61e34af5b12c")
 		(property "Reference" "J4"
-			(at 70.485 34.29 0)
+			(at 68.58 39.37 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1704,7 +1752,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02_Pin"
-			(at 70.485 36.83 0)
+			(at 68.58 41.91 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1714,7 +1762,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 69.85 39.37 0)
+			(at 60.96 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1725,7 +1773,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 69.85 39.37 0)
+			(at 60.96 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1736,7 +1784,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 69.85 39.37 0)
+			(at 60.96 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

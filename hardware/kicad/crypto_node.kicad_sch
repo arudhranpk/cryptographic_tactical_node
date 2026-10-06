@@ -5,8 +5,10 @@
 	(uuid "6c72b0cb-17b9-42a6-811c-297d0c354af3")
 	(paper "A4")
 	(title_block
-		(title "Cryptographical Node")
+		(title "Cryptographic Tactical Node")
+		(date "06-10-2020")
 		(rev "1.0.0")
+		(company "Done By :- Arudhran")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x02_Pin"

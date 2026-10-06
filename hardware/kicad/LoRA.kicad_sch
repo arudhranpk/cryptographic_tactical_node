@@ -4,6 +4,11 @@
 	(generator_version "10.0")
 	(uuid "7e5e306d-f91f-47a0-9aef-c91b0bb7eb49")
 	(paper "A5")
+	(title_block
+		(title "Cryptographic Tactical Node")
+		(date "06-10-2020")
+		(company "Done By :- Arudhran")
+	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x02_Pin"
 			(pin_names
@@ -1004,15 +1009,15 @@
 	)
 	(text "EBYTE 900T20D LoRA"
 		(exclude_from_sim no)
-		(at 58.42 34.29 0)
+		(at 58.42 35.56 0)
 		(effects
 			(font
-				(face "JetBrainsMono NF")
-				(size 3 3)
+				(size 2.032 2.032)
 				(bold yes)
+				(italic yes)
 				(color 0 255 0 1)
 			)
-			(justify left top)
+			(justify left)
 		)
 		(uuid "184d07b8-dfc2-46dd-b963-65b2fdb11b97")
 	)
@@ -1028,6 +1033,19 @@
 			(justify left)
 		)
 		(uuid "6a99e74a-84ed-4883-90d2-35151ed99a5e")
+	)
+	(text "DEBUGGING"
+		(exclude_from_sim no)
+		(at 130.81 92.71 0)
+		(effects
+			(font
+				(size 1.016 1.016)
+				(thickness 0.127)
+				(color 0 255 255 1)
+			)
+			(justify left)
+		)
+		(uuid "ec1c4ff4-3cf8-4377-ac36-aa77a1cc308b")
 	)
 	(junction
 		(at 81.28 68.58)
@@ -1079,9 +1097,19 @@
 		)
 		(uuid "0957f37d-9d9e-4c46-a2c4-77749bd81525")
 	)
+	(polyline
+		(pts
+			(xy 129.54 76.2) (xy 129.54 93.98)
+		)
+		(stroke
+			(width 0)
+			(type dash_dot)
+		)
+		(uuid "10661c43-b298-4960-9f07-99020b2bea6f")
+	)
 	(wire
 		(pts
-			(xy 134.62 87.63) (xy 142.24 87.63)
+			(xy 137.16 86.36) (xy 144.78 86.36)
 		)
 		(stroke
 			(width 0)
@@ -1119,6 +1147,16 @@
 		)
 		(uuid "29d7aa5e-490d-4e0d-af4a-4da940e533b6")
 	)
+	(polyline
+		(pts
+			(xy 129.54 90.17) (xy 154.94 90.17)
+		)
+		(stroke
+			(width 0)
+			(type dash_dot)
+		)
+		(uuid "49176a37-eadc-46c5-b901-07ea868305ac")
+	)
 	(wire
 		(pts
 			(xy 68.58 68.58) (xy 81.28 68.58)
@@ -1145,13 +1183,13 @@
 		)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash_dot)
 		)
 		(uuid "5955a73a-a237-4831-b8e4-e1c50e7c52de")
 	)
 	(wire
 		(pts
-			(xy 134.62 85.09) (xy 142.24 85.09)
+			(xy 137.16 83.82) (xy 144.78 83.82)
 		)
 		(stroke
 			(width 0)
@@ -1255,7 +1293,7 @@
 		)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash_dot)
 		)
 		(uuid "9585044a-1a90-48d6-9acc-cf42c7cc412a")
 	)
@@ -1305,7 +1343,7 @@
 		)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash_dot)
 		)
 		(uuid "a88d9a4d-d832-4ef2-88f6-3c8ade60cdc8")
 	)
@@ -1385,7 +1423,7 @@
 		)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash_dot)
 		)
 		(uuid "f60c306b-33ef-4c5f-b560-396da0efc7e8")
 	)
@@ -1451,7 +1489,7 @@
 	)
 	(hierarchical_label "LORA_RX"
 		(shape input)
-		(at 142.24 87.63 0)
+		(at 144.78 86.36 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1462,7 +1500,7 @@
 	)
 	(hierarchical_label "LORA_TX"
 		(shape output)
-		(at 142.24 85.09 0)
+		(at 144.78 83.82 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2109,7 +2147,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x02_Pin")
-		(at 129.54 85.09 0)
+		(at 132.08 83.82 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2117,10 +2155,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "c442ddf6-46a9-40c9-aeda-43d61aa24002")
 		(property "Reference" "J6"
-			(at 130.175 80.01 0)
+			(at 132.715 78.74 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2130,7 +2167,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02_Pin"
-			(at 130.175 82.55 0)
+			(at 139.7 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2140,7 +2177,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 129.54 85.09 0)
+			(at 132.08 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2151,7 +2188,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 85.09 0)
+			(at 132.08 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2162,7 +2199,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 129.54 85.09 0)
+			(at 132.08 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

@@ -4,6 +4,12 @@
 	(generator_version "10.0")
 	(uuid "b15173e9-fbd3-4889-8e6a-ae30bc0c73cf")
 	(paper "A4")
+	(title_block
+		(title "Cryptographic Tactical Node")
+		(date "06-10-2020")
+		(rev "1.0.4")
+		(company "Done By :- Arudhran")
+	)
 	(lib_symbols
 		(symbol "Device:Battery_Cell"
 			(pin_numbers
@@ -2244,7 +2250,7 @@
 						(type default)
 					)
 					(fill
-						(type none)
+						(type background)
 					)
 				)
 			)
@@ -4121,63 +4127,63 @@
 	)
 	(text "POLARITY & PROTECTION"
 		(exclude_from_sim no)
-		(at 64.77 16.51 0)
+		(at 64.77 17.78 0)
 		(effects
 			(font
-				(face "JetBrainsMono NF")
-				(size 3 3)
+				(size 2.032 2.032)
 				(bold yes)
+				(italic yes)
 				(color 0 255 0 1)
 			)
-			(justify left top)
+			(justify left)
 		)
 		(uuid "0ee3ed6f-bc9f-408b-a777-6d7159923c32")
 	)
 	(text "BATTERY (1S Li-Po)"
 		(exclude_from_sim no)
-		(at 15.24 16.51 0)
+		(at 15.24 17.78 0)
 		(effects
 			(font
-				(face "JetBrainsMono NF")
-				(size 3 3)
+				(size 2.032 2.032)
 				(bold yes)
+				(italic yes)
 				(color 0 255 0 1)
 			)
-			(justify left top)
+			(justify left)
 		)
 		(uuid "214afad3-a92e-4bc4-a33a-055e3cce1a1e")
 	)
 	(text "SWITCHING & VOLTAGE MONITORING"
 		(exclude_from_sim no)
-		(at 121.92 16.51 0)
+		(at 121.92 17.78 0)
 		(effects
 			(font
-				(face "JetBrainsMono NF")
-				(size 3 3)
+				(size 2.032 2.032)
 				(bold yes)
+				(italic yes)
 				(color 0 255 0 1)
 			)
-			(justify left top)
+			(justify left)
 		)
 		(uuid "38a8bf60-e4cf-48d7-a7bf-a36449656e80")
 	)
 	(text "STM32 LDO"
 		(exclude_from_sim no)
-		(at 203.2 16.51 0)
+		(at 203.2 17.78 0)
 		(effects
 			(font
-				(face "JetBrainsMono NF")
-				(size 3 3)
+				(size 2.032 2.032)
 				(bold yes)
+				(italic yes)
 				(color 0 255 0 1)
 			)
-			(justify left top)
+			(justify left)
 		)
 		(uuid "4a1440dd-8b08-43d9-b6aa-edb24f6239d8")
 	)
 	(text "BUCK CONVERTER 5V"
 		(exclude_from_sim no)
-		(at 15.24 130.81 0)
+		(at 15.24 132.08 0)
 		(effects
 			(font
 				(size 2.032 2.032)
@@ -4218,29 +4224,29 @@
 	)
 	(text "USB (POWER ONLY)"
 		(exclude_from_sim no)
-		(at 15.24 60.96 0)
+		(at 15.24 62.23 0)
 		(effects
 			(font
-				(face "JetBrainsMono NF")
-				(size 3 3)
+				(size 2.032 2.032)
 				(bold yes)
+				(italic yes)
 				(color 0 255 0 1)
 			)
-			(justify left top)
+			(justify left)
 		)
 		(uuid "ced83bb2-1f37-4608-8865-69ed3b904220")
 	)
 	(text "CRYPT LDO"
 		(exclude_from_sim no)
-		(at 203.2 58.42 0)
+		(at 203.2 59.69 0)
 		(effects
 			(font
-				(face "JetBrainsMono NF")
-				(size 3 3)
+				(size 2.032 2.032)
 				(bold yes)
+				(italic yes)
 				(color 0 255 0 1)
 			)
-			(justify left top)
+			(justify left)
 		)
 		(uuid "e38b77a0-2efa-4da3-b0cf-5c9590ef5365")
 	)
@@ -5050,7 +5056,7 @@
 		)
 		(stroke
 			(width 0)
-			(type dash_dot)
+			(type solid)
 		)
 		(uuid "6283d190-506f-4d77-b5f1-2d880e624122")
 	)
@@ -5070,7 +5076,7 @@
 		)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash_dot)
 		)
 		(uuid "66bdf2a1-268a-4872-9d85-23bf5b4bab71")
 	)
@@ -5080,7 +5086,7 @@
 		)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash_dot)
 		)
 		(uuid "6724c587-a8e6-40e5-b00b-8b9d6d733c76")
 	)
@@ -5260,7 +5266,7 @@
 		)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash_dot)
 		)
 		(uuid "930cdf3d-2c95-4268-bc29-22ea770aee73")
 	)
@@ -5620,7 +5626,7 @@
 		)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash_dot)
 		)
 		(uuid "b7ebb776-a2f5-426f-b7ca-194a4d048de5")
 	)
@@ -6080,7 +6086,7 @@
 		)
 		(stroke
 			(width 0)
-			(type default)
+			(type dash_dot)
 		)
 		(uuid "fef79eff-fa59-47e7-b408-b19efe46046a")
 	)
@@ -7660,6 +7666,95 @@
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
 					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "TLV74333PDBVR:TLV74333PDBVR")
+		(at 245.11 33.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "41eb9c23-bf06-44be-acf4-d6b06d3855db")
+		(property "Reference" "U2"
+			(at 245.11 22.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TLV74333PDBVR"
+			(at 245.11 25.4 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5_HandSoldering"
+			(at 246.38 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 245.11 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 245.11 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "39ef0a13-c533-47c1-b303-768c209fe9c7")
+		)
+		(pin "4"
+			(uuid "a0fbcf36-f348-4bf8-aa86-8dc130059edf")
+		)
+		(pin "5"
+			(uuid "e88462c6-6e10-489d-bc4f-b1bb0e9652c2")
+		)
+		(pin "3"
+			(uuid "ddbd6b86-b567-4e42-8173-18c90973f314")
+		)
+		(pin "1"
+			(uuid "57dd39ff-29c8-4706-9f16-c02ab817ee81")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -10270,6 +10365,95 @@
 		)
 	)
 	(symbol
+		(lib_id "TLV74333PDBVR:TLV74333PDBVR")
+		(at 245.11 74.93 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8d2f6c55-5e6f-4151-a69f-beb9ce3c8143")
+		(property "Reference" "U3"
+			(at 245.11 64.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TLV74333PDBVR"
+			(at 245.11 67.31 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5_HandSoldering"
+			(at 246.38 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 245.11 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 245.11 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "39ef0a13-c533-47c1-b303-768c209fe9c8")
+		)
+		(pin "4"
+			(uuid "a0fbcf36-f348-4bf8-aa86-8dc130059ee0")
+		)
+		(pin "5"
+			(uuid "e88462c6-6e10-489d-bc4f-b1bb0e9652c3")
+		)
+		(pin "3"
+			(uuid "ddbd6b86-b567-4e42-8173-18c90973f315")
+		)
+		(pin "1"
+			(uuid "57dd39ff-29c8-4706-9f16-c02ab817ee82")
+		)
+		(instances
+			(project "crypto_node"
+				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PCM_SparkFun-PowerSymbol:VUSB")
 		(at 68.58 69.85 0)
 		(unit 1)
@@ -10584,94 +10768,6 @@
 		)
 	)
 	(symbol
-		(lib_id "TLV74333PDBVR:TLV74333PDBVR")
-		(at 245.11 74.93 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "9a3df665-4da2-42e0-8573-71ddd2dc5c20")
-		(property "Reference" "U3"
-			(at 245.11 66.04 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TLV74333PDBVR"
-			(at 245.11 68.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5_HandSoldering"
-			(at 246.38 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 245.11 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 245.11 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "12a8acf6-03c9-4b1f-9b71-d28bd5b9d719")
-		)
-		(pin "5"
-			(uuid "d34e2fd0-4a9b-465c-a944-e420735e8a2b")
-		)
-		(pin "4"
-			(uuid "46a70043-b25d-4d07-afbe-1af7e4e8f707")
-		)
-		(pin "1"
-			(uuid "0b935ea5-4845-42c7-988a-0c8a4469c855")
-		)
-		(pin "3"
-			(uuid "22cc7dd2-b7e2-44d1-a446-be8328026356")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "U3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+BATT")
 		(at 128.27 25.4 0)
 		(unit 1)
@@ -10743,94 +10839,6 @@
 			(project "crypto_node"
 				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
 					(reference "#PWR027")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "TLV74333PDBVR:TLV74333PDBVR")
-		(at 245.11 33.02 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a661a45e-85b4-47b6-87f4-cfae3473fd74")
-		(property "Reference" "U2"
-			(at 245.11 24.13 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TLV74333PDBVR"
-			(at 245.11 26.67 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5_HandSoldering"
-			(at 246.38 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 245.11 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 245.11 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "2e66a442-cfe3-4811-8f7e-430220bd00a6")
-		)
-		(pin "5"
-			(uuid "6bdeb2ed-530c-4b1a-bd72-3f2a126acc87")
-		)
-		(pin "4"
-			(uuid "9c3d6394-43c2-4bbd-a83d-2d9619cf802f")
-		)
-		(pin "1"
-			(uuid "37f79766-c9f6-4600-a185-7544e639212c")
-		)
-		(pin "3"
-			(uuid "58bd3699-80e2-4b5e-8443-92bc2bb47526")
-		)
-		(instances
-			(project "crypto_node"
-				(path "/6c72b0cb-17b9-42a6-811c-297d0c354af3/0878dbd6-f23a-45b7-803f-70f55a38d748"
-					(reference "U2")
 					(unit 1)
 				)
 			)
